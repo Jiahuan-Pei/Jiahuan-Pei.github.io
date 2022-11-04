@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Homepage"
+title                    : "π' Homepage"
 title_separator          : "-"
 name                     : &name "Jiahuan Pei | 裴家欢"
 description              : &description "personal description"
