@@ -35,7 +35,7 @@ publist = {
         
     },
     "journal":{
-        "file": "pubs.bib",
+        "file": "journals.bib",
         "venuekey" : "journal",
         "venue-pretext" : "",
         "collection" : {"name":"publications",

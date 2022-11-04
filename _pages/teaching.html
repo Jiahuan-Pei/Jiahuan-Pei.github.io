@@ -7,6 +7,12 @@ author_profile: true
 
 {% include base_path %}
 
+<h2>Teaching Assistant</h2>
 {% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+  {% include archive-single.html role="Teaching Assistant" %}
+{% endfor %}
+
+<h2>Thesis Supervisor</h2>
+{% for post in site.teaching reversed %}
+  {% include archive-single.html role="Thesis Supervisor" %}
 {% endfor %}
