@@ -22,7 +22,8 @@ embedding).
 News
 ======
 - **October 27, 2022**, the source code of [stochastic transformers](https://github.com/amzn/sto-transformer) is approved and released by Amazon.
-- **July 25, 2022**, I give an invited talk at UCL [[Details]](talks/2022-07-26-talk-ucl).
+- **July 25, 2022**, I give an invited talk at University College London (UCL) [[Details]](talks/2022-07-06-ucl2022).
+- **April 29, 2022**, I give an invited talk at Search Engine Amsterdam (SEA) [[Details]](talks/2022-04-29-sea2022).
 - **April 2, 2022**, 1 paper is accepted by SIGIR 2022 [[Paper]](https://arxiv.org/pdf/2109.00430.pdf) [[Code]](https://github.com/yanguojun123/Medical-Dialogue) [[Data]](https://github.com/yanguojun123/Medical-Dialogue/tree/main/data).
 - **December 1, 2021**, 1 paper is acceted by AAAI 2022 [[Paper]](https://arxiv.org/pdf/2112.13776.pdf) [[Code]](https://github.com/amzn/sto-transformer). 
 - **December 1, 2021**, I join Amazon as a full-time employee.
