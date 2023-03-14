@@ -1,12 +1,24 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Pei, Jiahuan at 2022-11-04 03:28:52 +0100 
+%% Created for Jiahuan Pei at 2023-03-14 21:30:49 +0100 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@book{pei-2022-doctoral,
+	abstract = {Dialogue systems (a.k.a. conversational agents) aim to help people interact with machines through natural language. They are playing an increasingly important role in our daily life. There are two categories of approaches: modularized pipeline agents and end-to-end single-module agents. A challenge of the former is error accumulation because multiple modules are sequentially dependent. And concerning the latter, it is impractical to use a single general agent to handle all complex cases. In this thesis, we introduce a new framework, namely collaborative task-oriented dialogue systems. Within this framework, we propose a series of approaches where a group of collaborative specialized agents outperforms a single general agent, in terms of four dimensions: (i) model collaboration, (ii) user collaboration, (iii) language collaboration, and (iv) uncertainty estimation.},
+	author = {Jiahuan Pei},
+	date-added = {2021-03-24 04:21:20 +0100},
+	date-modified = {2022-11-04 03:28:50 +0100},
+	keywords = {Collaborative Agents, Task-oritend Dialogue Systems},
+	month = {December},
+	publisher = {Univeristy of Amsterdam},
+	title = {Collaborative Agents for Task-oriented Dialogue Systems (Doctoral Thesis)},
+	year = {2022},
+	bdsk-url-1 = {http://dx.doi.org/10.13140/RG.2.2.35045.52967}}
 
 @book{pei-2017-master,
 	abstract = {Word semantic similarity is a measure of the degree of similarity in terms of the meanings of two words. Word semantic similarity computation is a fundamental and core task, and it can be used to map the abstract relationship of ``similarity between words'' into real value, therefore, a natural language processing problem can be transformed into a machine learning problem. Its performance will directly affect various tasks in the natural language processing and information retrieval field. In recent years, computing word semantic similarity using embedding-based methods and its improved methods has become the frontier and hot research topic in this field. In this thesis, we study on the ``Chinese Word Semantic Similarity Computation'', and mainly focus on how to improve the word similarity computation based on word embeddings and divide the research into two parts:(1) Embedding-based Word Similarity Computation without Semantic Constraints. We use machine translation techniques and LSTMs network to improve a standard Skip-gram model respectively: firstly, the standard Skip-gram model is used to obtain a basic word embedding according to different training corpus. The influence of the size and quality of corpus on word embedding model is analyzed experimentally. Secondly, we try to construct the relationship between Chinese and English words by machine translation, to be more specific, we use large-scale English word embedding to alternatively replace the Chinese one to get a better performance. Finally, the problem of word similarity computation is transformed into word relationship prediction problem, and the word relationship is constructed by learning the coherent sentence through LSTMs network.(2)Embedding-based Word Similarity Computation with Semantic Constraints. In this paper, we propose an improved Counter-fitting model to incorporate semantic constraints into a pre-train word embedding to compute word semantic similarity: firstly, we use a web crawler to expand the context of the words. Specifically, we capture the sentences that a word occurs or word pairs co-occur as the ``context'', and we get some synonyms and antonyms to expand the existing manual semantic lexicons. Secondly, we compute the word semantic similarity using semantic lexicons, retrieval results and pre-trained word vectors. Finally, the improved counter-fitting model is used to optimize the pre-trained word vectors. The concrete approach is to construct the polynomial objective function by semantic constraints and topological space reservation, and then use the gradient descent algorithm to solve the objective function. The semantic constraints include not only synonym constraints and antonym constraints, but also the similarity constraints. The experimental results show that the method based on semantic lexicons has the inherent advantages in the case of high coverage of known words. While methods based on word embedding and retrieval are more practical when there are a large number of unknown words. In addition, the counter-fitting method that incorporates semantic constraints into word embedding get the state-of-the-art performance on PKU-500 dataset with a Spearman's rank correlation coefficient of 0.552,which outperforms the performance of semantic lexicon-based model, retrieval-based model and embedding-based model.},
@@ -33,9 +45,3 @@
 	url = {http://dx.doi.org/10.13140/RG.2.2.35045.52967},
 	year = {2014},
 	bdsk-url-1 = {http://dx.doi.org/10.13140/RG.2.2.35045.52967}}
-
-@book{pei-2022-doctoral,
-	title={Collaborative agents for task-oriented dialogue systems},
-	author={Pei, J and others},
-	year={2022}
-  }
