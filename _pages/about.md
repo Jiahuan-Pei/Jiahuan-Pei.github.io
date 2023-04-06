@@ -21,7 +21,7 @@ embedding).
 
 News
 ======
-- **Apr. 03, 2023**, I join [CWI](https://www.dis.cwi.nl/people/) on-site as a postdoctoral researcher.
+- **Apr. 03, 2023**, I join [CWI](https://www.dis.cwi.nl/people/) on-site as a p ostdoctoral researcher.
 - **Oct. 27, 2022**, the source code of [stochastic transformers](https://github.com/amzn/sto-transformer) is approved and released by Amazon.
 - **Oct. 10, 2022**, I give a spotlight talk at AMLC (Amazon Machine Learning Conference) workshop [[Details]](talks/2022-10-14-amlc2022).
 - **Jul. 25, 2022**, I give an invited talk at University College London (UCL) [[Details]](talks/2022-07-06-ucl2022).
