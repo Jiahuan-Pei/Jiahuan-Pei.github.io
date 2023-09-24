@@ -21,10 +21,10 @@ embedding).
 
 News
 ======
-- **Sep. 19, 2023**, I give an invited talk entitled "Language Model Powered Dialogue Agents and Virtual KB" at Sony AI.
-- **Jul. 24, 2023**, I give an invited talk entitled "Advancements and Prospects in Dialogue Agents and LLMs" at Bosch Center of Artificial Intelligence (BCAI).
+- **Sep. 19, 2023**, I give an invited talk at Sony AI.
+- **Jul. 24, 2023**, I give an invited talk at Bosch Center of Artificial Intelligence (BCAI).
 - **Jul. 03, 2023**, 1 paper is acceted by Transactions of ACL 2023 [[Paper]](https://arxiv.org/pdf/2307.06703.pdf) [[Code]](https://github.com/dengwentao99/ICAST). 
-- **Apr. 29, 2023**, I give an invited talk entitled "Generative AI towards Scientific Discovery" at Microsoft Research AI4Science.
+- **Apr. 29, 2023**, I give an invited talk at Microsoft Research AI4Science.
 - **Apr. 03, 2023**, I join [CWI](https://www.dis.cwi.nl/people/) on-site as a researcher.
 - **Oct. 27, 2022**, the source code of [stochastic transformers](https://github.com/amzn/sto-transformer) is approved and released by Amazon.
 - **Oct. 10, 2022**, I give a spotlight talk at AMLC (Amazon Machine Learning Conference) workshop [[Details]](talks/2022-10-14-amlc2022).
