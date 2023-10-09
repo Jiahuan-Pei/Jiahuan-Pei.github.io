@@ -21,6 +21,7 @@ embedding).
 
 News
 ======
+- **Oct. 08, 2023**, 1 paper is accepted by EMNLP 2023 [[Paper]](TBA) [[Code]](TBA) [[Data]](TBA).
 - **Sep. 19, 2023**, I give an invited talk at Sony AI.
 - **Jul. 24, 2023**, I give an invited talk at Bosch Center of Artificial Intelligence (BCAI).
 - **Jul. 03, 2023**, 1 paper is acceted by Transactions of ACL 2023 [[Paper]](https://arxiv.org/pdf/2307.06703.pdf) [[Code]](https://github.com/dengwentao99/ICAST). 
