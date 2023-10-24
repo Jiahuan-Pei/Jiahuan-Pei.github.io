@@ -1,7 +1,7 @@
 ---
 title: "Hierarchical Merchant Category Code Assignment for E-commerce Merchants (Basak Tugce Eskili)"
 id: "11731540"
-role: "Thesis Supervisor"
+role: "Student Supervisor"
 collection: teaching
 type: "Master Thesis"
 permalink: /teaching/2019-05-thesis-basak
