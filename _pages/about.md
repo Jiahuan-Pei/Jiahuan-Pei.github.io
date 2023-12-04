@@ -21,6 +21,8 @@ embedding).
 
 News
 ======
+- **Dec. 04, 2023**, I give an invited talk at Utrecht University.
+- **Nov. 29, 2023**, I give an invited panel talk at Immersive Tech Week with all VOXReality partners.
 - **Oct. 08, 2023**, 1 paper is accepted by EMNLP 2023 [[Paper]](TBA) [[Code]](TBA) [[Data]](TBA).
 - **Sep. 19, 2023**, I give an invited talk at Sony AI.
 - **Jul. 24, 2023**, I give an invited talk at Bosch Center of Artificial Intelligence (BCAI).
