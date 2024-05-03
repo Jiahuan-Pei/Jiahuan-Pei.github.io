@@ -21,7 +21,6 @@ embedding).
 
 News
 ======
-- **Feb. 20, 2024**, 1 paper has been accepted by COLING 2024.
 - **Feb. 07, 2024**, I give an invited talk at Microsoft Research, Cambridge, United Kingdom.
 - **Dec. 04, 2023**, I give an invited talk at Utrecht University.
 - **Nov. 29, 2023**, I give an invited panel talk at Immersive Tech Week with all VOXReality partners.
