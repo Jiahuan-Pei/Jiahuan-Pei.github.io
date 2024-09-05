@@ -20,9 +20,9 @@ embedding).
 
 Updates
 ======
-- **Aug. 01, 2024**, I joined the [Social AI Group](https://socialai.nl/) at Vrije Universiteit Amsterdam as an asssistant professor.
+- **Aug. 01, 2024**, I join Vrije Universiteit Amsterdam as an asssistant professor.
 - **Jul. 16, 2024**, 1 paper has been accepted by ACM Multimedia 2024.
-- **Jul. 02, 2024**, 1 paper has been accepted by the ACM Transactions on Information Systems (TOIS).
+- **Jul. 02, 2024**, 1 paper has been accepted by TOIS 2024.
 - **May. 16, 2024**, 2 paper has been accepted by ACL 2024.
 - **Feb. 20, 2024**, 1 paper has been accepted by COLING 2024.
 - **Feb. 07, 2024**, I give an invited talk at Microsoft Research, Cambridge, United Kingdom.
