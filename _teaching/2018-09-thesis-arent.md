@@ -1,7 +1,7 @@
 ---
 title: "Role-aware Recurrent Entity Networks for Task-oriented Dialogue Systems (Arent Stienstra)"
 id: "10074279"
-role: "Student Supervisor"
+role: "Supervisor"
 collection: teaching
 type: "Master Thesis"
 permalink: /teaching/2018-09-thesis-arent
