@@ -10,17 +10,19 @@ redirect_from:
 
 About me
 ======
-I am a researcher at Dutch national research institute [CWI](https://www.dis.cwi.nl/people/), working on [generative dialogue systems in 
- extended reality (XR) spaces](https://voxreality.eu/).
-Formerly, I was an applied scientist at Amazon's A9 team, working on core NLP/IR in Amazon product search.
+I am working as an assistant professor with the [Social AI Group](https://socialai.nl/) at Vrije Universiteit Amsterdam, focusing on multimodal agents for conversational AI. 
+Formerly, I worked with [Centrum Wiskunde & Informatica (CWI)](https://www.dis.cwi.nl/people/) and Amazon, focusing on core NLP/IR problems in both industry and academia.
 I have pursued my Ph.D. with the [IRLab](https://irlab.science.uva.nl/) at University of Amsterdam, supervised by [Prof. dr. Maarten de Rijke](https://staff.fnwi.uva.nl/m.derijke/) and
 [Prof. dr. Pengjie Ren](https://pengjieren.github.io/). 
 My interest includes natural language processing (dialogue systems, word embedding,
 parsing, summarization) and information retrieval (query understanding, recommender system, matcher
 embedding).
 
-News
+Updates
 ======
+- **Aug. 01, 2024**, I joined the [Social AI Group](https://socialai.nl/) at Vrije Universiteit Amsterdam as an asssistant professor.
+- **Jul. 16, 2024**, 1 paper has been accepted by ACM Multimedia 2024.
+- **May. 16, 2024**, 2 paper has been accepted by ACL 2024.
 - **Feb. 20, 2024**, 1 paper has been accepted by COLING 2024.
 - **Feb. 07, 2024**, I give an invited talk at Microsoft Research, Cambridge, United Kingdom.
 - **Dec. 04, 2023**, I give an invited talk at Utrecht University.
@@ -37,4 +39,4 @@ News
 - **Apr. 29, 2022**, I give an invited talk at Search Engine Amsterdam (SEA) [[Details]](talks/2022-04-29-sea2022).
 - **Apr. 02, 2022**, 1 paper is accepted by SIGIR 2022 [[Paper]](https://arxiv.org/pdf/2109.00430.pdf) [[Code]](https://github.com/yanguojun123/Medical-Dialogue) [[Data]](https://github.com/yanguojun123/Medical-Dialogue/tree/main/data).
 - **Dec. 01, 2021**, 1 paper is acceted by AAAI 2022 [[Paper]](https://arxiv.org/pdf/2112.13776.pdf) [[Code]](https://github.com/amzn/sto-transformer). 
-- **Dec. 01, 2021**, I join Amazon as a full-time employee.
+- **Dec. 01, 2021**, I join Amazon as an applied scientist.
