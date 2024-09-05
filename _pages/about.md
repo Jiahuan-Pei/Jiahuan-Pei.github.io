@@ -11,7 +11,7 @@ redirect_from:
 About me
 ======
 I am working as an assistant professor with the [Social AI Group](https://socialai.nl/) at Vrije Universiteit Amsterdam, focusing on multimodal agents for conversational AI. 
-Formerly, I worked with [DIS group](https://www.dis.cwi.nl/) at Centrum Wiskunde & Informatica (CWI) and Amazon, focusing on core NLP/IR problems in both industry and academia.
+Formerly, I worked with [DIS Group](https://www.dis.cwi.nl/) at Centrum Wiskunde & Informatica (CWI) and Amazon, focusing on core NLP/IR problems in both industry and academia.
 I have pursued my Ph.D. with the [IRLab](https://irlab.science.uva.nl/) at University of Amsterdam, supervised by [Prof. dr. Maarten de Rijke](https://staff.fnwi.uva.nl/m.derijke/) and
 [Prof. dr. Pengjie Ren](https://pengjieren.github.io/). 
 My interest includes natural language processing (dialogue systems, word embedding,
