@@ -1,5 +1,5 @@
 ---
-title: "Master Thesis: Role-aware Recurrent Entity Networks for Task-oriented Dialogue Systems"
+title: "Role-aware Recurrent Entity Networks for Task-oriented Dialogue Systems (Master Thesis, Done)"
 id: "10074279"
 role: "Supervisor"
 collection: teaching

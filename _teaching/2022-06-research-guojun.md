@@ -1,5 +1,5 @@
 ---
-title: "Research topic: Medical Dialogue Agents (Done)"
+title: "Medical Dialogue Agents (Research, Master student, Done)"
 id: ""
 role: "Supervisor"
 collection: teaching

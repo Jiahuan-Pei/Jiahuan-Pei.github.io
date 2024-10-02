@@ -1,5 +1,5 @@
 ---
-title: "Bachelor Thesis: Using Source Awareness in Memory End-to-End Task-oriented Dialog Learning (Done)"
+title: "Using Source Awareness in Memory End-to-End Task-oriented Dialog Learning (Bachelor Thesis, Done)"
 id: "11004851"
 role: "Supervisor"
 collection: teaching

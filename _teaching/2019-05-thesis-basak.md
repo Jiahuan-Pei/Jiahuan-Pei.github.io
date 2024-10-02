@@ -1,5 +1,5 @@
 ---
-title: "Master Thesis: Hierarchical Merchant Category Code Assignment for E-commerce Merchants"
+title: "Hierarchical Merchant Category Code Assignment for E-commerce Merchants (Master Thesis, Done)"
 id: "11731540"
 role: "Supervisor"
 collection: teaching

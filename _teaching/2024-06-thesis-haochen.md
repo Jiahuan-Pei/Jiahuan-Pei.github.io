@@ -1,5 +1,5 @@
 ---
-title: "Master Thesis: Fine-Grained Vision-Language Modeling for Multimodal Training Assistants in Augmented Reality (Done)"
+title: "Fine-Grained Vision-Language Modeling for Multimodal Training Assistants in Augmented Reality (Master Thesis, Done)"
 id: "2765409"
 role: "Supervisor"
 collection: teaching
