@@ -3,7 +3,7 @@ title: "Fine-Grained Vision-Language Modeling for Multimodal Training Assistants
 id: "2765409"
 role: "Supervisor"
 collection: teaching
-type: "Haochen (Peter) Huang (Master Student, Done)"
+type: "Haochen Huang (Master Student, Nominated for Amsterdam AI Thesis Awards, Done)"
 permalink: /teaching/2024-07-thesis-haochen
 venue: "University of Amsterdam / Vrije Universiteit Amsterdam / Centrum Wiskunde & Informatica"
 date: "2024-07-15"
