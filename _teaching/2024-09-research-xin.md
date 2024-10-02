@@ -4,9 +4,9 @@ id: ""
 role: "Supervisor"
 collection: teaching
 type: "Xin Sun (PhD Student, Ongoing)"
-permalink: /teaching/2024-07-research-xin
+permalink: /teaching/2024-09-research-xin
 venue: "University of Amsterdam / Centrum Wiskunde & Informatica (CWI)"
-date: "2024-07-01"
+date: "2024-09-01"
 location: "Amsterdam, Netherlands"
 ---
 

@@ -1,11 +1,11 @@
 ---
-title: "Fine-Grained Vision-Language Modeling for Multimodal Training Assistants in Augmented Reality (Thesis)"
+title: "BrickDream: Multimodal Immersive Systems in Augmented Reality (Thesis)"
 id: "2765409"
 role: "Supervisor"
 collection: teaching
-type: "Haochen (Peter) Huang (Master Student, Done)"
+type: "Luca Becheanu (Master Student, Done)"
 permalink: /teaching/2024-07-thesis-haochen
-venue: "University of Amsterdam / Vrije Universiteit Amsterdam / Centrum Wiskunde & Informatica"
+venue: "Utrecht University / Centrum Wiskunde & Informatica"
 date: "2024-07-15"
 location: "Amsterdam, Netherlands"
 ---
