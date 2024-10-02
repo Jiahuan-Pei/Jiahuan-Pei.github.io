@@ -13,5 +13,9 @@ author_profile: true
 {% endfor %}
 
 <h2>Student Supervision</h2>
-<iframe src="/files/students.pdf" style="width: 100%;height: 1000px ;border: none;">
-</iframe>
+{% for post in site.teaching reversed %}
+  {% include archive-single.html role="Supervisor" %}
+{% endfor %}
+
+<!-- <iframe src="/files/students.pdf" style="width: 100%;height: 1000px ;border: none;">
+</iframe> -->
