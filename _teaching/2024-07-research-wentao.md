@@ -1,12 +1,12 @@
 ---
-title: "Medical Dialogue Agents"
+title: "Legal Dialogue Generation and Reasoning with Large Language Models"
 id: ""
 role: "Supervisor"
 collection: teaching
-type: "Guojun Yan , Master Student (Done)"
-permalink: /teaching/2022-06-research-guojun
+type: "Wentao Deng (PhD Student, Done)"
+permalink: /teaching/2024-07-wentao
 venue: "Shandong University"
-date: "2022-06-01"
+date: "2024-07-01"
 location: "Qingdao, China"
 ---
 

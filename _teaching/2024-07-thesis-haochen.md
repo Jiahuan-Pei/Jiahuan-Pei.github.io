@@ -1,11 +1,11 @@
 ---
-title: "Fine-Grained Vision-Language Modeling for Multimodal Training Assistants in Augmented Reality (Master Thesis, Done)"
+title: "Fine-Grained Vision-Language Modeling for Multimodal Training Assistants in Augmented Reality (Thesis)"
 id: "2765409"
 role: "Supervisor"
 collection: teaching
-type: "Haochen (Peter) Huang"
+type: "Haochen (Peter) Huang (Master Student, Done)"
 permalink: /teaching/2024-07-thesis-haochen
-venue: "University of Amsterdam / Vrije Universiteit Amsterdam"
+venue: "University of Amsterdam / Vrije Universiteit Amsterdam / Centrum Wiskunde & Informatica (CWI)"
 date: "2024-07-15"
 location: "Amsterdam, Netherlands"
 ---
