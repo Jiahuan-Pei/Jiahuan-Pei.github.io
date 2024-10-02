@@ -1,9 +1,9 @@
 ---
-title: "Using Source Awareness in Memory End-to-End Task-oriented Dialog Learning (Tyler Cools)"
+title: "Bachelor Thesis: Using Source Awareness in Memory End-to-End Task-oriented Dialog Learning (Done)"
 id: "11004851"
 role: "Supervisor"
 collection: teaching
-type: "Bachelor Thesis"
+type: "Tyler Cools"
 permalink: /teaching/2018-12-thesis-tyler
 venue: " University of Amsterdam, Informatics Institute "
 date: "2018-12-12"

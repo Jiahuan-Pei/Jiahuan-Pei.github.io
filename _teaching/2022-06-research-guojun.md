@@ -1,9 +1,9 @@
 ---
-title: "Medical Dialogue Agents (Guojun Yan)"
+title: "Research topic: Medical Dialogue Agents (Done)"
 id: ""
 role: "Supervisor"
 collection: teaching
-type: "Research"
+type: "Guojun Yan"
 permalink: /teaching/2022-06-research-guojun
 venue: "Shandong University"
 date: "2022-06-01"
