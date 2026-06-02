@@ -1,7 +1,7 @@
 ---
 title: "Intent-calibrated Self-training for Answer Selection in Open-domain Dialogues"
 collection: publications
-pubsource: proceeding
+pubsource: journal
 permalink: /publication/2023-01-01-Intent-calibrated-Self-training-for-Answer-Selection-in-Open-domain-Dialogues
 date: 2023-01-01
 venue: 'Transactions of the Association for Computational Linguistics (TACL)'

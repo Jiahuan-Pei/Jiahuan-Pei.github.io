@@ -42,7 +42,7 @@ OUTPUT_DIR      = os.path.join(os.path.dirname(__file__), "../_publications")
 
 # Keywords used to classify venues into categories
 CONFERENCE_KEYWORDS = [
-    "proceedings", "workshop", "conference", "symposium", "annual meeting", "acm"
+    "proceedings", "workshop", "conference", "symposium", "annual meeting",
     "acl", "emnlp", "naacl", "coling", "eacl", "findings",
     "aaai", "ijcai", "neurips", "nips", "icml", "iclr",
     "sigir", "www", "cikm", "wsdm", "ecir", "ictir",
