@@ -1,7 +1,7 @@
 ---
 title: "Deciphering Perceptual Quality in Colored Point Cloud: Prioritizing Geometry or Texture Distortion?"
 collection: publications
-pubsource: journal
+pubsource: proceeding
 permalink: /publication/2024-01-01-Deciphering-Perceptual-Quality-in-Colored-Point-Cloud-Prioritizing-Geometry-or-Texture-Distortion
 date: 2024-01-01
 venue: 'ACM Multimedia 2024'

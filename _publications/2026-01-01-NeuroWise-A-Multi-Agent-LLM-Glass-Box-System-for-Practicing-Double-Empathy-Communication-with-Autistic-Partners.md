@@ -1,5 +1,5 @@
 ---
-title: "NeuroWise: A Multi-Agent LLM 'Glass-Box' System for Practicing Double-Empathy Communication with Autistic Partners"
+title: "NeuroWise: A Multi-Agent LLM Glass-Box System for Practicing Double-Empathy Communication with Autistic Partners"
 collection: publications
 pubsource: proceeding
 permalink: /publication/2026-01-01-NeuroWise-A-Multi-Agent-LLM-Glass-Box-System-for-Practicing-Double-Empathy-Communication-with-Autistic-Partners

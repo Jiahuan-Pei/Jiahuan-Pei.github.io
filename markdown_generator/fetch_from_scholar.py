@@ -42,11 +42,11 @@ OUTPUT_DIR      = os.path.join(os.path.dirname(__file__), "../_publications")
 
 # Keywords used to classify venues into categories
 CONFERENCE_KEYWORDS = [
-    "proceedings", "workshop", "conference", "symposium", "annual meeting",
+    "proceedings", "workshop", "conference", "symposium", "annual meeting", "acm"
     "acl", "emnlp", "naacl", "coling", "eacl", "findings",
     "aaai", "ijcai", "neurips", "nips", "icml", "iclr",
     "sigir", "www", "cikm", "wsdm", "ecir", "ictir",
-    "ecai", "aclanthology", "nlpcc", "chi", "cscw", "icmi"
+    "ecai", "aclanthology", "nlpcc", "chi", "cscw", "icmi", "multimedia"
 ]
 JOURNAL_KEYWORDS = [
     "journal", "transactions", "tacl", "ieee", "acm",
@@ -134,6 +134,7 @@ def build_md(pub: dict) -> tuple[str, str]:
 
     # Citation string
     citation = f'{citation_authors}, "{html_escape(title)}." {html_escape(venue)}, {year}.'
+    # citation = citation.replace("&quot;", "'")
 
     # YAML front-matter
     md  = f'---\ntitle: "{html_escape(title)}"\n'
