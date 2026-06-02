@@ -16,8 +16,6 @@ author_profile: true
 
 {% assign supervisees = site.teaching | where: "role", "Supervisor" | sort: "startdate" | reverse %}
 
-{% comment %}Macro: format a startdate–enddate pair as "Mon YYYY – Mon YYYY" or "Mon YYYY – Present"{% endcomment %}
-{% macro date_range post %}{% endmacro %}
 
 <h3>PhD Students</h3>
 {% assign phd = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
