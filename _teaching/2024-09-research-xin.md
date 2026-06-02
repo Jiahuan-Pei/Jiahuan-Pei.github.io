@@ -3,7 +3,7 @@ title: "Psychotherapy Dialogue Generation with Large Language Models"
 id: ""
 role: "Supervisor"
 collection: teaching
-type: "Xin Sun (PhD Student, Ongoing)"
+type: "Xin Sun (PhD Student, Done)"
 permalink: /teaching/2024-09-research-xin
 venue: "University of Amsterdam / Centrum Wiskunde & Informatica"
 date: "2024-09-01"
