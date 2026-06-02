@@ -1,12 +1,13 @@
 ---
+name: "Arent Stienstra"
 title: "Role-aware Recurrent Entity Networks for Task-oriented Dialogue Systems (Thesis)"
-id: "10074279"
 role: "Supervisor"
 collection: teaching
-type: "Arent Stienstra (Master Student, Done)"
+type: "Master"
 permalink: /teaching/2018-09-thesis-arent
 venue: " University of Amsterdam, Informatics Institute "
-date: "2018-09-19"
+startdate: "2018-03-19"
+enddate: "2018-09-19"
 location: "Amsterdam, Netherlands"
 ---
 

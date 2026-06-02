@@ -1,12 +1,13 @@
 ---
-title: "Conversational Recommendation"
-id: ""
+name: "Yuanxing Liu"
+title: "Conversational Recommendation (Research)"
 role: "Supervisor"
 collection: teaching
-type: "Yuanxing Liu (PhD Student, Done)"
+type: "PhD"
 permalink: /teaching/2023-07-yuanxing
 venue: "University of Amsterdam"
-date: "2023-07-01"
+startdate: "2023-01-01"
+enddate: "2023-07-01"
 location: "Amsterdam, Netherlands"
 ---
 

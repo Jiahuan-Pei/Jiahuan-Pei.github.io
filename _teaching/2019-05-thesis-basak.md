@@ -1,12 +1,13 @@
 ---
+name: "Basak Tugce Eskili"
 title: "Hierarchical Merchant Category Code Assignment for E-commerce Merchants (Thesis)"
-id: "11731540"
 role: "Supervisor"
 collection: teaching
-type: "Basak Tugce Eskili, (Master Student, Done)"
+type: "Master"
 permalink: /teaching/2019-05-thesis-basak
 venue: "University of Amsterdam, Informatics Institute"
-date: "2019-05-26"
+startdate: "2019-01-26"
+enddate: "2019-05-26"
 location: "Amsterdam, Netherlands"
 ---
 

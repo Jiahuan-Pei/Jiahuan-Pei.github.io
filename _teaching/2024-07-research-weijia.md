@@ -1,12 +1,13 @@
 ---
-title: "Faithfulness Evaluation of Large Language Models"
-id: ""
+name: "Weijia Zhang"
+title: "Faithfulness Evaluation of Large Language Models (Research)"
 role: "Supervisor"
 collection: teaching
-type: "Weijia Zhang (PhD Student, Done)"
+type: "PhD"
 permalink: /teaching/2024-07-weijia
 venue: "University of Amsterdam"
-date: "2024-07-01"
+startdate: "2024-01-01"
+enddate: "2024-07-01"
 location: "Amsterdam, Netherlands"
 ---
 
