@@ -1,7 +1,7 @@
 ---
 title: "Talking-to-Build: How LLM-Assisted Interface Shapes Player Performance and Experience in Minecraft"
 collection: publications
-pubsource: journal
+pubsource: proceeding
 permalink: /publication/2025-01-01-Talking-to-Build-How-LLM-Assisted-Interface-Shapes-Player-Performance-and-Experience-in-Minecraft
 date: 2025-01-01
 venue: 'ICMI 2025'

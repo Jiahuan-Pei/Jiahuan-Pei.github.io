@@ -46,7 +46,7 @@ CONFERENCE_KEYWORDS = [
     "acl", "emnlp", "naacl", "coling", "eacl", "findings",
     "aaai", "ijcai", "neurips", "nips", "icml", "iclr",
     "sigir", "www", "cikm", "wsdm", "ecir", "ictir",
-    "ecai", "aclanthology", "nlpcc"
+    "ecai", "aclanthology", "nlpcc", "chi", "cscw", "icmi"
 ]
 JOURNAL_KEYWORDS = [
     "journal", "transactions", "tacl", "ieee", "acm",
@@ -108,7 +108,7 @@ def format_authors(authors_list: list, highlight: str) -> str:
 def build_md(pub: dict) -> tuple[str, str]:
     """Return (filename, markdown_content)."""
     bib   = pub.get("bib", {})
-    title = bib.get("title", "Untitled").strip()
+    title = bib.get("title", "Untitled").strip().replace("&quot;", "'")
     year  = str(bib.get("pub_year", "1900")).strip()
     # scholarly uses 'journal'/'conference' on filled pubs, 'venue' on listing-only pubs
     venue = (bib.get("journal") or bib.get("conference") or bib.get("venue") or "").strip()
