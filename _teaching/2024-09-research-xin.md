@@ -1,12 +1,13 @@
 ---
-title: "Psychotherapy Dialogue Generation with Large Language Models"
-id: ""
+name: "Xin Sun"
+title: "From Aligned Models to Trusted Interfaces: Explainable Health Intervention and Transparent Health Information Seeking (Research)"
 role: "Supervisor"
 collection: teaching
-type: "Xin Sun (PhD Student, Done)"
+type: "PhD"
 permalink: /teaching/2024-09-research-xin
 venue: "University of Amsterdam / Centrum Wiskunde & Informatica"
-date: "2024-09-01"
+startdate: "2024-09-01"
+enddate: "2025-10"
 location: "Amsterdam, Netherlands"
 ---
 
