@@ -1,12 +1,13 @@
 ---
-name: "Wentao Deng"
-title: "Legal Dialogue Generation and Reasoning with Large Language Models (Research)"
+name: "Chengshun Shi"
+title: "Efficient Fine-tuning for Large Language Models"
 role: "Supervisor"
 collection: teaching
-type: "PhD"
-permalink: /teaching/2024-07-wentao
+type: "Master"
+permalink: /teaching/2024-06-research-chengshun
 venue: "Shandong University"
-date: "2024-07-01"
+startdate: "2023-06-01"
+enddate: "2024-07-01"
 location: "Qingdao, China"
 ---
 
