@@ -1,0 +1,11 @@
+# Latest updates shown on the about page.
+# Add new items at the TOP. Keep ~5 most recent.
+# Fields: date, text, url (optional)
+
+- date: "Jun 2026"
+  text: "Our paper on psychotherapy dialogue generation was accepted at ACL 2026."
+  url: ""
+
+- date: "Aug 2024"
+  text: "Joined Vrije Universiteit Amsterdam as assistant professor with the Social AI Group."
+  url: "https://socialai.nl/"

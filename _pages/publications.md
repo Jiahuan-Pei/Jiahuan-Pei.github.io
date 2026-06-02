@@ -21,6 +21,11 @@ author_profile: true
   {% include archive-single.html pubsource="journal" %}
 {% endfor %}
 
+<h2>arXiv Papers</h2>
+{% for post in site.publications reversed %}
+  {% include archive-single.html pubsource="arxiv" %}
+{% endfor %}
+
 <h2>Books</h2>
 {% for post in site.publications reversed %}
   {% include archive-single.html pubsource="book" %}

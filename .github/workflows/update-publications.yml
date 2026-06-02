@@ -1,0 +1,41 @@
+name: Update Publications from Google Scholar
+
+on:
+  schedule:
+    # Run every Sunday at 02:00 UTC
+    - cron: "0 2 * * 0"
+  workflow_dispatch: # allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  update-pubs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install scholarly free-proxy
+
+      - name: Fetch publications from Google Scholar
+        run: python markdown_generator/fetch_from_scholar.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _publications/
+          if git diff --cached --quiet; then
+            echo "No changes to publications."
+          else
+            git commit -m "chore: auto-update publications from Google Scholar [skip ci]"
+            git push
+          fi
