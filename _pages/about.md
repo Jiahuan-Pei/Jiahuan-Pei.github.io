@@ -20,9 +20,9 @@ embedding).
 
 Work Experience
 ======
-- **Aug. 01, 2024**, Joined Vrije Universiteit Amsterdam as an asssistant professor with [SocialAI Group](https://socialai.nl/).
-- **Apr. 03, 2023**, Joined [CWI](https://www.dis.cwi.nl/people/) on-site as a researcher.
-- **Dec. 01, 2021**, I join Amazon as an applied scientist.
+- **Aug. 01, 2024**, I joined Vrije Universiteit Amsterdam as an asssistant professor with [Social AI Group](https://socialai.nl/).
+- **Apr. 03, 2023**, I joined [CWI](https://www.dis.cwi.nl/people/) on-site as a researcher.
+- **Dec. 01, 2021**, I joined Amazon as an applied scientist.
 
 
 News
