@@ -20,20 +20,10 @@ embedding).
 
 Work Experience
 ======
-- **Aug. 01, 2024**, I join Vrije Universiteit Amsterdam as an asssistant professor.
-- **Apr. 03, 2023**, I join [CWI](https://www.dis.cwi.nl/people/) on-site as a researcher.
+- **Aug. 01, 2024**, Joined Vrije Universiteit Amsterdam as an asssistant professor with [SocialAI Group](https://socialai.nl/).
+- **Apr. 03, 2023**, Joined [CWI](https://www.dis.cwi.nl/people/) on-site as a researcher.
 - **Dec. 01, 2021**, I join Amazon as an applied scientist.
 
-Latest LinkedIn Post
-======
-{% if site.data.linkedin_embed.url and site.data.linkedin_embed.url != '' %}
-<iframe src="{{ site.data.linkedin_embed.url }}" height="400" width="100%" frameborder="0" allowfullscreen title="Latest LinkedIn post" style="max-width:504px; display:block;"></iframe>
-<p><small><a href="https://www.linkedin.com/in/jiahuan-joanne-pei-b4b507b4/" target="_blank">View LinkedIn profile →</a></small></p>
-{% else %}
-<p><a href="https://www.linkedin.com/in/jiahuan-joanne-pei-b4b507b4/" target="_blank">View my LinkedIn profile →</a></p>
-{% endif %}
-
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7465750515176325121" height="1069" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 
 News
 ======

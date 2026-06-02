@@ -165,6 +165,14 @@ def fetch_with_retry(fn, *args, retries=3, base_delay=10, **kwargs):
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Fetch publications from Google Scholar.")
+    parser.add_argument(
+        "--since", type=int, default=None, metavar="YEAR",
+        help="Only fetch papers published in YEAR or later (e.g. --since 2024).",
+    )
+    args = parser.parse_args()
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # Try direct access first; fall back to free proxy on failure
@@ -181,7 +189,16 @@ def main():
         author = fetch_with_retry(scholarly.fill, search_query, sections=["publications"])
 
     publications = author.get("publications", [])
-    log.info(f"Found {len(publications)} publications")
+    log.info(f"Found {len(publications)} publications total")
+
+    if args.since:
+        # Filter using the year available on the listing (before filling) to avoid
+        # fetching every paper's detail page just to discard it.
+        publications = [
+            p for p in publications
+            if int(p.get("bib", {}).get("pub_year") or 0) >= args.since
+        ]
+        log.info(f"Filtered to {len(publications)} publications since {args.since}")
 
     written = 0
     skipped = 0

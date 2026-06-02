@@ -26,7 +26,9 @@ jobs:
         run: pip install scholarly free-proxy
 
       - name: Fetch publications from Google Scholar
-        run: python markdown_generator/fetch_from_scholar.py
+        run: |
+          SINCE=$(( $(date +%Y) - 1 ))
+          python markdown_generator/fetch_from_scholar.py --since $SINCE
 
       - name: Commit and push if anything changed
         run: |
