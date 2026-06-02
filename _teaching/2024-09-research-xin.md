@@ -7,7 +7,7 @@ type: "PhD"
 permalink: /teaching/2024-09-research-xin
 venue: "University of Amsterdam / Centrum Wiskunde & Informatica"
 startdate: "2024-09-01"
-enddate: "2025-10"
+enddate: "2025-10-30"
 location: "Amsterdam, Netherlands"
 ---
 
