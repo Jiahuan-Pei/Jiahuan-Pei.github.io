@@ -1,12 +1,13 @@
 ---
-title: "Gaze Perception and Understanding Beyond Conversations"
-id: ""
-role: "Supervisor"
 collection: teaching
-type: "Yue Su (PhD Student, Ongoing)"
+name: "Yue Su"
+title: "Gaze Perception and Understanding Beyond Conversations"
+role: "Supervisor"
+type: "PhD"
 permalink: /teaching/2026-11-research-yue
 venue: "Vrije Universiteit Amsterdam"
-date: "2026-11-15"
+startdate: "2026-11-15"
+enddate: ""
 location: "Amsterdam, Netherlands"
 ---
 

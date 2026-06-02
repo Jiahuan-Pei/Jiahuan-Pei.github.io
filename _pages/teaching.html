@@ -14,14 +14,14 @@ author_profile: true
 
 <h2>Student Supervision</h2>
 
-{% assign supervisees = site.teaching | where: "role", "Supervisor" | sort: "date" | reverse %}
+{% assign supervisees = site.teaching | where: "role", "Supervisor" | sort: "startdate" | reverse %}
 
 <h3>PhD Students</h3>
 {% assign phd = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
 {% if phd.size > 0 %}
 <ul>
 {% for post in phd %}
-  <li>{{ post.type }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  <li>{{ post.name }} {{ post.startdate - post.enddate }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
 {% else %}
@@ -29,11 +29,11 @@ author_profile: true
 {% endif %}
 
 <h3>Master Students</h3>
-{% assign master = supervisees | where_exp: "item", "item.type contains 'Master'" %}
+{% assign master = supervisees | where_exp: "item", "item.type contains 'Master'" | sort: "startdate" | reverse %}
 {% if master.size > 0 %}
 <ul>
 {% for post in master %}
-  <li>{{ post.type }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  <li>{{ post.name }} {{ post.startdate - post.enddate }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
 {% else %}
@@ -41,11 +41,11 @@ author_profile: true
 {% endif %}
 
 <h3>Bachelor Students</h3>
-{% assign bachelor = supervisees | where_exp: "item", "item.type contains 'Bachelor'" %}
+{% assign bachelor = supervisees | where_exp: "item", "item.type contains 'Bachelor'" | sort: "startdate" | reverse %}
 {% if bachelor.size > 0 %}
 <ul>
 {% for post in bachelor %}
-  <li>{{ post.type }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  <li>{{ post.name }} {{ post.startdate - post.enddate }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
 {% else %}
@@ -53,11 +53,11 @@ author_profile: true
 {% endif %}
 
 <h3>High School Students</h3>
-{% assign highschool = supervisees | where_exp: "item", "item.type contains 'High School'" %}
+{% assign highschool = supervisees | where_exp: "item", "item.type contains 'High School'" | sort: "startdate" | reverse %}
 {% if highschool.size > 0 %}
 <ul>
 {% for post in highschool %}
-  <li>{{ post.type }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  <li>{{ post.name }} {{ post.startdate - post.enddate }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
 {% else %}
