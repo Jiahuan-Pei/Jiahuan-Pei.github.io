@@ -3,7 +3,7 @@ title: "Gaze Perception and Understanding Beyond Conversations"
 id: ""
 role: "Supervisor"
 collection: teaching
-type: "Yifan Mo (PhD Student, Ongoing)"
+type: "Yue Su (PhD Student, Ongoing)"
 permalink: /teaching/2026-11-research-yue
 venue: "Vrije Universiteit Amsterdam"
 date: "2026-11-15"
