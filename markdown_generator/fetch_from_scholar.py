@@ -46,7 +46,7 @@ CONFERENCE_KEYWORDS = [
     "acl", "emnlp", "naacl", "coling", "eacl", "findings",
     "aaai", "ijcai", "neurips", "nips", "icml", "iclr",
     "sigir", "www", "cikm", "wsdm", "ecir", "ictir",
-    "ecai", "aclanthology",
+    "ecai", "aclanthology", "nlpcc"
 ]
 JOURNAL_KEYWORDS = [
     "journal", "transactions", "tacl", "ieee", "acm",
@@ -59,7 +59,8 @@ BOOK_KEYWORDS  = ["thesis", "dissertation", "book", "chapter", "springer", "else
 
 def classify_venue(title: str, venue: str, pub_url: str) -> str:
     """Return one of: proceeding | journal | arxiv | book"""
-    text = (venue + " " + title + " " + pub_url).lower()
+    # text = (venue + " " + title + " " + pub_url).lower()
+    text = (venue + " " + title).lower()
 
     for kw in ARXIV_KEYWORDS:
         if kw in text:

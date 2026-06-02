@@ -1,7 +1,7 @@
 ---
 title: "MultiJustice: A Chinese Dataset for Multi-Party, Multi-Charge Legal Prediction"
 collection: publications
-pubsource: book
+pubsource: proceeding
 permalink: /publication/2025-01-01-MultiJustice-A-Chinese-Dataset-for-Multi-Party-Multi-Charge-Legal-Prediction
 date: 2025-01-01
 venue: 'NLPCC 2025'

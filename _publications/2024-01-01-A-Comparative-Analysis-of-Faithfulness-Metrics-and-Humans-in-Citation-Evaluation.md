@@ -1,7 +1,7 @@
 ---
 title: "A Comparative Analysis of Faithfulness Metrics and Humans in Citation Evaluation"
 collection: publications
-pubsource: arxiv
+pubsource: proceeding
 permalink: /publication/2024-01-01-A-Comparative-Analysis-of-Faithfulness-Metrics-and-Humans-in-Citation-Evaluation
 date: 2024-01-01
 venue: 'LLM4EVAL Workshop at SIGIR 2024'
