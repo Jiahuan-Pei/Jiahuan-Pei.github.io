@@ -108,7 +108,8 @@ def format_authors(authors_list: list, highlight: str) -> str:
 def build_md(pub: dict) -> tuple[str, str]:
     """Return (filename, markdown_content)."""
     bib   = pub.get("bib", {})
-    title = bib.get("title", "Untitled").strip().replace("&quot;", "")
+    title = bib.get("title", "Untitled").strip()
+    title = title.replace("&quot;", "")
     year  = str(bib.get("pub_year", "1900")).strip()
     # scholarly uses 'journal'/'conference' on filled pubs, 'venue' on listing-only pubs
     venue = (bib.get("journal") or bib.get("conference") or bib.get("venue") or "").strip()
@@ -134,7 +135,7 @@ def build_md(pub: dict) -> tuple[str, str]:
 
     # Citation string
     citation = f'{citation_authors}, "{html_escape(title)}." {html_escape(venue)}, {year}.'
-    # citation = citation.replace("&quot;", "'")
+    citation = citation.replace("&quot;", "'").replace("&amp;", "")
 
     # YAML front-matter
     md  = f'---\ntitle: "{html_escape(title)}"\n'
