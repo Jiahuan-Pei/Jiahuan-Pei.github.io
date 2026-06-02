@@ -1,111 +1,138 @@
+#!/usr/bin/env python3
+"""
+Talks markdown generator for academicpages.
 
-# coding: utf-8
+Reads talks.tsv and writes one .md file per row into ../_talks/.
 
-# # Talks markdown generator for academicpages
-# 
-# Takes a TSV of talks with metadata and converts them for use with [academicpages.github.io](academicpages.github.io). This is an interactive Jupyter notebook ([see more info here](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html)). The core python code is also in `talks.py`. Run either from the `markdown_generator` folder after replacing `talks.tsv` with one containing your data.
-# 
-# TODO: Make this work with BibTex and other databases, rather than Stuart's non-standard TSV format and citation style.
+TSV columns (header row required):
+    title       – talk title                         [required]
+    url_slug    – slug for filename and permalink    [required]
+    date        – YYYY-MM-DD                         [required]
+    type        – e.g. "Talk", "Invited Talk"        [defaults to "Talk"]
+    venue       – conference / event name
+    location    – city, country
+    talk_url    – link to slides, video, etc.
+    description – free-text description
 
-# In[1]:
+Usage:
+    python talks.py                    # reads talks.tsv, writes to ../_talks/
+    python talks.py --tsv my.tsv       # custom input file
+    python talks.py --output /path/    # custom output directory
+"""
 
-import pandas as pd
+import argparse
 import os
+import pandas as pd
+from datetime import datetime
+
+# ── Helpers ────────────────────────────────────────────────────────────────────
+
+HTML_ESCAPE = {"&": "&amp;", '"': "&quot;", "'": "&apos;"}
+
+def html_escape(text: str) -> str:
+    if not isinstance(text, str):
+        return ""
+    return "".join(HTML_ESCAPE.get(c, c) for c in text)
 
 
-# ## Data format
-# 
-# The TSV needs to have the following columns: title, type, url_slug, venue, date, location, talk_url, description, with a header at the top. Many of these fields can be blank, but the columns must be in the TSV.
-# 
-# - Fields that cannot be blank: `title`, `url_slug`, `date`. All else can be blank. `type` defaults to "Talk" 
-# - `date` must be formatted as YYYY-MM-DD.
-# - `url_slug` will be the descriptive part of the .md file and the permalink URL for the page about the paper. 
-#     - The .md file will be `YYYY-MM-DD-[url_slug].md` and the permalink will be `https://[yourdomain]/talks/YYYY-MM-DD-[url_slug]`
-#     - The combination of `url_slug` and `date` must be unique, as it will be the basis for your filenames
-# 
+def is_set(value) -> bool:
+    """Return True if the value is a non-empty, non-NaN string."""
+    return pd.notna(value) and str(value).strip() != ""
 
 
-# ## Import TSV
-# 
-# Pandas makes this easy with the read_csv function. We are using a TSV, so we specify the separator as a tab, or `\t`.
-# 
-# I found it important to put this data in a tab-separated values format, because there are a lot of commas in this kind of data and comma-separated values can get messed up. However, you can modify the import statement, as pandas also has read_excel(), read_json(), and others.
-
-# In[3]:
-
-talks = pd.read_csv("talks.tsv", sep="\t", header=0)
-talks
-
-
-# ## Escape special characters
-# 
-# YAML is very picky about how it takes a valid string, so we are replacing single and double quotes (and ampersands) with their HTML encoded equivilents. This makes them look not so readable in raw format, but they are parsed and rendered nicely.
-
-# In[4]:
-
-html_escape_table = {
-    "&": "&amp;",
-    '"': "&quot;",
-    "'": "&apos;"
-    }
-
-def html_escape(text):
-    if type(text) is str:
-        return "".join(html_escape_table.get(c,c) for c in text)
-    else:
-        return "False"
+def normalise_date(raw: str) -> str:
+    """
+    Normalise a date string to YYYY-MM-DD.
+    Handles D/M/YY, DD/MM/YYYY, D/M/YYYY, YYYY-MM-DD, etc.
+    Assumes day-first ordering (European style) for ambiguous inputs.
+    """
+    raw = str(raw).strip()
+    if not raw:
+        raise ValueError("Empty date")
+    # Already ISO format
+    if len(raw) == 10 and raw[4] == "-":
+        return raw
+    # Try day-first parsing for slash-separated dates
+    for fmt in ("%d/%m/%Y", "%d/%m/%y", "%d-%m-%Y", "%d-%m-%y",
+                "%m/%d/%Y", "%m/%d/%y"):
+        try:
+            dt = datetime.strptime(raw, fmt)
+            return dt.strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    # Fallback: let pandas infer with dayfirst=True
+    try:
+        dt = pd.to_datetime(raw, dayfirst=True)
+        return dt.strftime("%Y-%m-%d")
+    except Exception:
+        raise ValueError(f"Cannot parse date: {raw!r}")
 
 
-# ## Creating the markdown files
-# 
-# This is where the heavy lifting is done. This loops through all the rows in the TSV dataframe, then starts to concatentate a big string (```md```) that contains the markdown for each type. It does the YAML metadata first, then does the description for the individual page.
+# ── Main ───────────────────────────────────────────────────────────────────────
 
-# In[5]:
+def main():
+    parser = argparse.ArgumentParser(description="Generate talk markdown files from TSV.")
+    parser.add_argument("--tsv",    default="talks.tsv",   help="Input TSV file (default: talks.tsv)")
+    parser.add_argument("--output", default="../_talks/",  help="Output directory (default: ../_talks/)")
+    args = parser.parse_args()
 
-loc_dict = {}
+    os.makedirs(args.output, exist_ok=True)
 
-for row, item in talks.iterrows():
-    
-    md_filename = str(item.date) + "-" + item.url_slug + ".md"
-    html_filename = str(item.date) + "-" + item.url_slug 
-    year = item.date[:4]
-    
-    md = "---\ntitle: \""   + item.title + '"\n'
-    md += "collection: talks" + "\n"
-    
-    if len(str(item.type)) > 3:
-        md += 'type: "' + item.type + '"\n'
-    else:
-        md += 'type: "Talk"\n'
-    
-    md += "permalink: /talks/" + html_filename + "\n"
-    
-    if len(str(item.venue)) > 3:
-        md += 'venue: "' + item.venue + '"\n'
-        
-    if len(str(item.location)) > 3:
-        md += "date: " + str(item.date) + "\n"
-    
-    if len(str(item.location)) > 3:
-        md += 'location: "' + str(item.location) + '"\n'
-           
-    md += "---\n"
-    
-    
-    if len(str(item.talk_url)) > 3:
-        md += "\n[More information here](" + item.talk_url + ")\n" 
-        
-    
-    if len(str(item.description)) > 3:
-        md += "\n" + html_escape(item.description) + "\n"
-        
-        
-    md_filename = os.path.basename(md_filename)
-    #print(md)
-    
-    with open("../_talks/" + md_filename, 'w') as f:
-        f.write(md)
+    talks = pd.read_csv(args.tsv, sep="\t", header=0, encoding="latin-1")
+    print(f"Loaded {len(talks)} talks from {args.tsv}")
+
+    written = 0
+    for _, item in talks.iterrows():
+
+        # ── Required fields ────────────────────────────────────────────────
+        if not is_set(item.get("title")) or not is_set(item.get("url_slug")) or not is_set(item.get("date")):
+            print(f"  SKIP: missing title/url_slug/date in row: {dict(item)}")
+            continue
+
+        try:
+            date = normalise_date(item["date"])
+        except ValueError as e:
+            print(f"  SKIP: {e}")
+            continue
+
+        url_slug  = str(item["url_slug"]).strip()
+        md_filename  = f"{date}-{url_slug}.md"
+        html_filename = f"{date}-{url_slug}"
+
+        # ── YAML front-matter ──────────────────────────────────────────────
+        md  = "---\n"
+        md += f'title: "{html_escape(str(item["title"]))}"\n'
+        md += "collection: talks\n"
+        md += f'type: "{html_escape(str(item["type"])) if is_set(item.get("type")) else "Talk"}"\n'
+        md += f"permalink: /talks/{html_filename}\n"
+
+        if is_set(item.get("venue")):
+            md += f'venue: "{html_escape(str(item["venue"]))}"\n'
+
+        md += f"date: {date}\n"   # always written — was incorrectly gated on location before
+
+        if is_set(item.get("location")):
+            md += f'location: "{html_escape(str(item["location"]))}"\n'
+
+        md += "---\n"
+
+        # ── Body ──────────────────────────────────────────────────────────
+        if is_set(item.get("talk_url")):
+            md += f"\n[More information here]({str(item['talk_url']).strip()})\n"
+
+        if is_set(item.get("description")):
+            md += f"\n{html_escape(str(item['description']))}\n"
+
+        # ── Write file ────────────────────────────────────────────────────
+        out_path = os.path.join(args.output, os.path.basename(md_filename))
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(md)
+
+        print(f"  Wrote: {md_filename}")
+        written += 1
+
+    print(f"Done. {written}/{len(talks)} talks written to {args.output}")
 
 
-# These files are in the talks directory, one directory below where we're working from.
-
+if __name__ == "__main__":
+    main()
