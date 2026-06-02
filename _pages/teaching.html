@@ -13,9 +13,53 @@ author_profile: true
 {% endfor %}
 
 <h2>Student Supervision</h2>
-{% for post in site.teaching reversed %}
-  {% include archive-single.html role="Supervisor" %}
-{% endfor %}
 
-<!-- <iframe src="/files/students.pdf" style="width: 100%;height: 1000px ;border: none;">
-</iframe> -->
+{% assign supervisees = site.teaching | where: "role", "Supervisor" | sort: "date" | reverse %}
+
+<h3>PhD Students</h3>
+{% assign phd = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
+{% if phd.size > 0 %}
+<ul>
+{% for post in phd %}
+  <li>{{ post.type }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p><em>None yet.</em></p>
+{% endif %}
+
+<h3>Master Students</h3>
+{% assign master = supervisees | where_exp: "item", "item.type contains 'Master'" %}
+{% if master.size > 0 %}
+<ul>
+{% for post in master %}
+  <li>{{ post.type }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p><em>None yet.</em></p>
+{% endif %}
+
+<h3>Bachelor Students</h3>
+{% assign bachelor = supervisees | where_exp: "item", "item.type contains 'Bachelor'" %}
+{% if bachelor.size > 0 %}
+<ul>
+{% for post in bachelor %}
+  <li>{{ post.type }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p><em>None yet.</em></p>
+{% endif %}
+
+<h3>High School Students</h3>
+{% assign highschool = supervisees | where_exp: "item", "item.type contains 'High School'" %}
+{% if highschool.size > 0 %}
+<ul>
+{% for post in highschool %}
+  <li>{{ post.type }}{% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p><em>None yet.</em></p>
+{% endif %}
