@@ -33,6 +33,8 @@ Latest LinkedIn Post
 <p><a href="https://www.linkedin.com/in/jiahuan-joanne-pei-b4b507b4/" target="_blank">View my LinkedIn profile →</a></p>
 {% endif %}
 
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7465750515176325121" height="1069" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+
 News
 ======
 {% for update in site.data.updates %}
