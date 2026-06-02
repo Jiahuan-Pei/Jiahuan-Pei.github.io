@@ -1,9 +1,9 @@
 ---
-title: "Legal Dialogue Generation and Reasoning with Large Language Models"
-id: ""
+name: "Wentao Deng"
+title: "Legal Dialogue Generation and Reasoning with Large Language Models (Research)"
 role: "Supervisor"
 collection: teaching
-type: "Wentao Deng (PhD Student, Done)"
+type: "PhD"
 permalink: /teaching/2024-07-wentao
 venue: "Shandong University"
 date: "2024-07-01"
