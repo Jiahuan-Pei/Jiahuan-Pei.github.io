@@ -21,7 +21,7 @@ author_profile: true
 {% if phd.size > 0 %}
 <ul>
 {% for post in phd %}
-  <li>{{ post.name }} ({{ post.startdate - post.enddate }}), {% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  <li>{{ post.name }}({{ post.startdate}} - {{ post.enddate }}) {% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
 {% else %}
@@ -33,7 +33,7 @@ author_profile: true
 {% if master.size > 0 %}
 <ul>
 {% for post in master %}
-  <li>{{ post.name }} ({{ post.startdate - post.enddate }}), {% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  <li>{{ post.name }}({{ post.startdate}} - {{ post.enddate }}) {% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
 {% else %}
@@ -45,7 +45,7 @@ author_profile: true
 {% if bachelor.size > 0 %}
 <ul>
 {% for post in bachelor %}
-  <li>{{ post.name }} ({{ post.startdate - post.enddate }}), {% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  <li>{{ post.name }} ({{ post.startdate}} - {{ post.enddate }}) {% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
 {% else %}
@@ -57,7 +57,7 @@ author_profile: true
 {% if highschool.size > 0 %}
 <ul>
 {% for post in highschool %}
-  <li>{{ post.name }} ({{ post.startdate - post.enddate }}), {% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  <li>{{ post.name }} ({{ post.startdate}} - {{ post.enddate }}) {% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
 {% else %}

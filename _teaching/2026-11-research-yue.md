@@ -1,8 +1,8 @@
 ---
-collection: teaching
 name: "Yue Su"
 title: "Gaze Perception and Understanding Beyond Conversations"
 role: "Supervisor"
+collection: teaching
 type: "PhD"
 permalink: /teaching/2026-11-research-yue
 venue: "Vrije Universiteit Amsterdam"
