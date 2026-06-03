@@ -122,29 +122,30 @@ author_profile: true
 </style>
 
 <script>
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('ul.paginated-list').forEach(function (ul) {
-    var pageSize = parseInt(ul.dataset.pageSize, 10) || 5;
-    var items    = Array.from(ul.querySelectorAll('li'));
+    var pageSize = parseInt(ul.getAttribute('data-page-size'), 10) || 5;
+    var items    = Array.from(ul.children);  // direct <li> children only
     var total    = items.length;
 
     // No pagination needed
     if (total <= pageSize) return;
 
-    var totalPages = Math.ceil(total / pageSize);
+    var totalPages  = Math.ceil(total / pageSize);
     var currentPage = 1;
 
-    var ctrlId  = ul.id.replace('list-', 'ctrl-');
-    var ctrl    = document.getElementById(ctrlId);
+    // Find the sibling controls div (immediately follows the <ul>)
+    var ctrl = ul.nextElementSibling;
+    if (!ctrl || !ctrl.classList.contains('pagination-controls')) return;
 
     var btnPrev = document.createElement('button');
     btnPrev.textContent = '← Prev';
 
-    var btnNext = document.createElement('button');
-    btnNext.textContent = 'Next →';
-
     var info = document.createElement('span');
     info.className = 'page-info';
+
+    var btnNext = document.createElement('button');
+    btnNext.textContent = 'Next →';
 
     ctrl.appendChild(btnPrev);
     ctrl.appendChild(info);
@@ -170,5 +171,5 @@ author_profile: true
 
     render();
   });
-})();
+});
 </script>
