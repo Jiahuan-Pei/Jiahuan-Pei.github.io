@@ -39,7 +39,7 @@ details.more-students[open] summary { margin-bottom: 4px; }
 {% assign PAGE_SIZE = 5 %}
 
 <!-- ── PhD Students ─────────────────────────────────────────────────────── -->
-<h3>PhD Students</h3>
+<h3>PhD Students <span style="font-size:0.8em; font-weight:normal; color:#666;">({{ phd.size }} total)</span></h3>
 {% assign phd = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
 {% if phd.size > 0 %}
 <ul class="student-list">
@@ -67,7 +67,7 @@ details.more-students[open] summary { margin-bottom: 4px; }
 {% endif %}
 
 <!-- ── Master Students ────────────────────────────────────────────────────── -->
-<h3>Master Students</h3>
+<h3>Master Students <span style="font-size:0.8em; font-weight:normal; color:#666;">({{ master.size }} total)</span></h3>
 {% assign master = supervisees | where_exp: "item", "item.type contains 'Master'" %}
 {% if master.size > 0 %}
 <ul class="student-list">
@@ -95,7 +95,7 @@ details.more-students[open] summary { margin-bottom: 4px; }
 {% endif %}
 
 <!-- ── Bachelor Students ──────────────────────────────────────────────────── -->
-<h3>Bachelor Students</h3>
+<h3>Bachelor Students <span style="font-size:0.8em; font-weight:normal; color:#666;">({{ bachelor.size }} total)</span></h3>
 {% assign bachelor = supervisees | where_exp: "item", "item.type contains 'Bachelor'" %}
 {% if bachelor.size > 0 %}
 <ul class="student-list">
@@ -123,7 +123,7 @@ details.more-students[open] summary { margin-bottom: 4px; }
 {% endif %}
 
 <!-- ── High School Students ───────────────────────────────────────────────── -->
-<h3>High School Students</h3>
+<h3>High School Students <span style="font-size:0.8em; font-weight:normal; color:#666;">({{ highschool.size }} total)</span></h3>
 {% assign highschool = supervisees | where_exp: "item", "item.type contains 'High School'" %}
 {% if highschool.size > 0 %}
 <ul class="student-list">
