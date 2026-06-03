@@ -7,4 +7,4 @@ tags:
   - Talk
 ---
 
-Lei Wang (MSc student) and her AI agents present our work accepted by ICMI 2025.
+Lei Wang (MSc student) and her AI agents present our paper accepted by ICMI 2025 conference.
