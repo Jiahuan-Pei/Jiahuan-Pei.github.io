@@ -16,11 +16,11 @@ author_profile: true
 
 {% assign supervisees = site.teaching | where: "role", "Supervisor" | sort: "startdate" | reverse %}
 
-
+<!-- ── PhD Students ─────────────────────────────────────────────────────── -->
 <h3>PhD Students</h3>
 {% assign phd = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
 {% if phd.size > 0 %}
-<ul>
+<ul class="paginated-list" id="list-phd" data-page-size="5">
 {% for post in phd %}
   {% assign start_fmt = post.startdate | date: "%b %Y" %}
   {% if post.enddate and post.enddate != '' %}
@@ -31,14 +31,16 @@ author_profile: true
   <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
+<div class="pagination-controls" id="ctrl-phd"></div>
 {% else %}
 <p><em>None yet.</em></p>
 {% endif %}
 
+<!-- ── Master Students ────────────────────────────────────────────────────── -->
 <h3>Master Students</h3>
 {% assign master = supervisees | where_exp: "item", "item.type contains 'Master'" %}
 {% if master.size > 0 %}
-<ul>
+<ul class="paginated-list" id="list-master" data-page-size="5">
 {% for post in master %}
   {% assign start_fmt = post.startdate | date: "%b %Y" %}
   {% if post.enddate and post.enddate != '' %}
@@ -49,14 +51,16 @@ author_profile: true
   <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
+<div class="pagination-controls" id="ctrl-master"></div>
 {% else %}
 <p><em>None yet.</em></p>
 {% endif %}
 
+<!-- ── Bachelor Students ──────────────────────────────────────────────────── -->
 <h3>Bachelor Students</h3>
 {% assign bachelor = supervisees | where_exp: "item", "item.type contains 'Bachelor'" %}
 {% if bachelor.size > 0 %}
-<ul>
+<ul class="paginated-list" id="list-bachelor" data-page-size="5">
 {% for post in bachelor %}
   {% assign start_fmt = post.startdate | date: "%b %Y" %}
   {% if post.enddate and post.enddate != '' %}
@@ -67,14 +71,16 @@ author_profile: true
   <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
+<div class="pagination-controls" id="ctrl-bachelor"></div>
 {% else %}
 <p><em>None yet.</em></p>
 {% endif %}
 
+<!-- ── High School Students ───────────────────────────────────────────────── -->
 <h3>High School Students</h3>
 {% assign highschool = supervisees | where_exp: "item", "item.type contains 'High School'" %}
 {% if highschool.size > 0 %}
-<ul>
+<ul class="paginated-list" id="list-highschool" data-page-size="5">
 {% for post in highschool %}
   {% assign start_fmt = post.startdate | date: "%b %Y" %}
   {% if post.enddate and post.enddate != '' %}
@@ -85,6 +91,84 @@ author_profile: true
   <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
+<div class="pagination-controls" id="ctrl-highschool"></div>
 {% else %}
 <p><em>None yet.</em></p>
 {% endif %}
+
+<!-- ── Pagination script ───────────────────────────────────────────────────── -->
+<style>
+.pagination-controls {
+  margin: 6px 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+}
+.pagination-controls button {
+  padding: 3px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  border-radius: 3px;
+}
+.pagination-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.pagination-controls .page-info {
+  color: #555;
+}
+</style>
+
+<script>
+(function () {
+  document.querySelectorAll('ul.paginated-list').forEach(function (ul) {
+    var pageSize = parseInt(ul.dataset.pageSize, 10) || 5;
+    var items    = Array.from(ul.querySelectorAll('li'));
+    var total    = items.length;
+
+    // No pagination needed
+    if (total <= pageSize) return;
+
+    var totalPages = Math.ceil(total / pageSize);
+    var currentPage = 1;
+
+    var ctrlId  = ul.id.replace('list-', 'ctrl-');
+    var ctrl    = document.getElementById(ctrlId);
+
+    var btnPrev = document.createElement('button');
+    btnPrev.textContent = '← Prev';
+
+    var btnNext = document.createElement('button');
+    btnNext.textContent = 'Next →';
+
+    var info = document.createElement('span');
+    info.className = 'page-info';
+
+    ctrl.appendChild(btnPrev);
+    ctrl.appendChild(info);
+    ctrl.appendChild(btnNext);
+
+    function render() {
+      var start = (currentPage - 1) * pageSize;
+      var end   = start + pageSize;
+      items.forEach(function (li, i) {
+        li.style.display = (i >= start && i < end) ? '' : 'none';
+      });
+      info.textContent = 'Page ' + currentPage + ' of ' + totalPages;
+      btnPrev.disabled = (currentPage === 1);
+      btnNext.disabled = (currentPage === totalPages);
+    }
+
+    btnPrev.addEventListener('click', function () {
+      if (currentPage > 1) { currentPage--; render(); }
+    });
+    btnNext.addEventListener('click', function () {
+      if (currentPage < totalPages) { currentPage++; render(); }
+    });
+
+    render();
+  });
+})();
+</script>
