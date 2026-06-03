@@ -37,10 +37,13 @@ details.more-students[open] summary { margin-bottom: 4px; }
 </style>
 
 {% assign PAGE_SIZE = 5 %}
+{% assign phd        = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
+{% assign master     = supervisees | where_exp: "item", "item.type contains 'Master'" %}
+{% assign bachelor   = supervisees | where_exp: "item", "item.type contains 'Bachelor'" %}
+{% assign highschool = supervisees | where_exp: "item", "item.type contains 'High School'" %}
 
 <!-- ── PhD Students ─────────────────────────────────────────────────────── -->
 <h3>PhD Students <span style="font-size:0.8em; font-weight:normal; color:#666;">({{ phd.size }} total)</span></h3>
-{% assign phd = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
 {% if phd.size > 0 %}
 <ul class="student-list">
 {% for post in phd limit: PAGE_SIZE %}
@@ -68,7 +71,6 @@ details.more-students[open] summary { margin-bottom: 4px; }
 
 <!-- ── Master Students ────────────────────────────────────────────────────── -->
 <h3>Master Students <span style="font-size:0.8em; font-weight:normal; color:#666;">({{ master.size }} total)</span></h3>
-{% assign master = supervisees | where_exp: "item", "item.type contains 'Master'" %}
 {% if master.size > 0 %}
 <ul class="student-list">
 {% for post in master limit: PAGE_SIZE %}
@@ -96,7 +98,6 @@ details.more-students[open] summary { margin-bottom: 4px; }
 
 <!-- ── Bachelor Students ──────────────────────────────────────────────────── -->
 <h3>Bachelor Students <span style="font-size:0.8em; font-weight:normal; color:#666;">({{ bachelor.size }} total)</span></h3>
-{% assign bachelor = supervisees | where_exp: "item", "item.type contains 'Bachelor'" %}
 {% if bachelor.size > 0 %}
 <ul class="student-list">
 {% for post in bachelor limit: PAGE_SIZE %}
@@ -124,7 +125,6 @@ details.more-students[open] summary { margin-bottom: 4px; }
 
 <!-- ── High School Students ───────────────────────────────────────────────── -->
 <h3>High School Students <span style="font-size:0.8em; font-weight:normal; color:#666;">({{ highschool.size }} total)</span></h3>
-{% assign highschool = supervisees | where_exp: "item", "item.type contains 'High School'" %}
 {% if highschool.size > 0 %}
 <ul class="student-list">
 {% for post in highschool limit: PAGE_SIZE %}
