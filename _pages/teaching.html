@@ -6,6 +6,7 @@ author_profile: true
 ---
 
 {% include base_path %}
+{% assign PAGE_SIZE = 5 %}
 
 <h2>Teaching Courses</h2>
 {% assign courses = site.teaching | where: "collection", "teaching" | where_exp: "item", "item.role != 'Supervisor'" | sort: "startdate" | reverse %}
@@ -64,7 +65,6 @@ details.more-students summary::-webkit-details-marker { display: none; }
 details.more-students[open] summary { margin-bottom: 4px; }
 </style>
 
-{% assign PAGE_SIZE = 5 %}
 {% assign phd        = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
 {% assign master     = supervisees | where_exp: "item", "item.type contains 'Master'" %}
 {% assign bachelor   = supervisees | where_exp: "item", "item.type contains 'Bachelor'" %}
