@@ -16,22 +16,52 @@ author_profile: true
 
 {% assign supervisees = site.teaching | where: "role", "Supervisor" | sort: "startdate" | reverse %}
 
+<style>
+.student-list { margin: 0 0 4px; padding-left: 1.5em; }
+.student-list li { margin-bottom: 4px; }
+details.more-students { margin-bottom: 16px; }
+details.more-students summary {
+  cursor: pointer;
+  color: #555;
+  font-size: 0.9em;
+  margin-top: 4px;
+  list-style: none;
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #f8f8f8;
+}
+details.more-students summary::-webkit-details-marker { display: none; }
+details.more-students[open] summary { margin-bottom: 4px; }
+</style>
+
+{% assign PAGE_SIZE = 5 %}
+
 <!-- ── PhD Students ─────────────────────────────────────────────────────── -->
 <h3>PhD Students</h3>
 {% assign phd = supervisees | where_exp: "item", "item.type contains 'PhD'" %}
 {% if phd.size > 0 %}
-<ul class="paginated-list" id="list-phd" data-page-size="5">
-{% for post in phd %}
+<ul class="student-list">
+{% for post in phd limit: PAGE_SIZE %}
   {% assign start_fmt = post.startdate | date: "%b %Y" %}
-  {% if post.enddate and post.enddate != '' %}
-    {% assign end_fmt = post.enddate | date: "%b %Y" %}
-  {% else %}
-    {% assign end_fmt = "Present" %}
-  {% endif %}
+  {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
   <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
-<div class="pagination-controls" id="ctrl-phd"></div>
+{% if phd.size > PAGE_SIZE %}
+{% assign phd_more = phd.size | minus: PAGE_SIZE %}
+<details class="more-students">
+  <summary>Show {{ phd_more }} more ▾</summary>
+  <ul class="student-list">
+  {% for post in phd offset: PAGE_SIZE %}
+    {% assign start_fmt = post.startdate | date: "%b %Y" %}
+    {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
+    <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  {% endfor %}
+  </ul>
+</details>
+{% endif %}
 {% else %}
 <p><em>None yet.</em></p>
 {% endif %}
@@ -40,18 +70,26 @@ author_profile: true
 <h3>Master Students</h3>
 {% assign master = supervisees | where_exp: "item", "item.type contains 'Master'" %}
 {% if master.size > 0 %}
-<ul class="paginated-list" id="list-master" data-page-size="5">
-{% for post in master %}
+<ul class="student-list">
+{% for post in master limit: PAGE_SIZE %}
   {% assign start_fmt = post.startdate | date: "%b %Y" %}
-  {% if post.enddate and post.enddate != '' %}
-    {% assign end_fmt = post.enddate | date: "%b %Y" %}
-  {% else %}
-    {% assign end_fmt = "Present" %}
-  {% endif %}
+  {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
   <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
-<div class="pagination-controls" id="ctrl-master"></div>
+{% if master.size > PAGE_SIZE %}
+{% assign master_more = master.size | minus: PAGE_SIZE %}
+<details class="more-students">
+  <summary>Show {{ master_more }} more ▾</summary>
+  <ul class="student-list">
+  {% for post in master offset: PAGE_SIZE %}
+    {% assign start_fmt = post.startdate | date: "%b %Y" %}
+    {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
+    <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  {% endfor %}
+  </ul>
+</details>
+{% endif %}
 {% else %}
 <p><em>None yet.</em></p>
 {% endif %}
@@ -60,18 +98,26 @@ author_profile: true
 <h3>Bachelor Students</h3>
 {% assign bachelor = supervisees | where_exp: "item", "item.type contains 'Bachelor'" %}
 {% if bachelor.size > 0 %}
-<ul class="paginated-list" id="list-bachelor" data-page-size="5">
-{% for post in bachelor %}
+<ul class="student-list">
+{% for post in bachelor limit: PAGE_SIZE %}
   {% assign start_fmt = post.startdate | date: "%b %Y" %}
-  {% if post.enddate and post.enddate != '' %}
-    {% assign end_fmt = post.enddate | date: "%b %Y" %}
-  {% else %}
-    {% assign end_fmt = "Present" %}
-  {% endif %}
+  {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
   <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
-<div class="pagination-controls" id="ctrl-bachelor"></div>
+{% if bachelor.size > PAGE_SIZE %}
+{% assign bachelor_more = bachelor.size | minus: PAGE_SIZE %}
+<details class="more-students">
+  <summary>Show {{ bachelor_more }} more ▾</summary>
+  <ul class="student-list">
+  {% for post in bachelor offset: PAGE_SIZE %}
+    {% assign start_fmt = post.startdate | date: "%b %Y" %}
+    {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
+    <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  {% endfor %}
+  </ul>
+</details>
+{% endif %}
 {% else %}
 <p><em>None yet.</em></p>
 {% endif %}
@@ -80,96 +126,26 @@ author_profile: true
 <h3>High School Students</h3>
 {% assign highschool = supervisees | where_exp: "item", "item.type contains 'High School'" %}
 {% if highschool.size > 0 %}
-<ul class="paginated-list" id="list-highschool" data-page-size="5">
-{% for post in highschool %}
+<ul class="student-list">
+{% for post in highschool limit: PAGE_SIZE %}
   {% assign start_fmt = post.startdate | date: "%b %Y" %}
-  {% if post.enddate and post.enddate != '' %}
-    {% assign end_fmt = post.enddate | date: "%b %Y" %}
-  {% else %}
-    {% assign end_fmt = "Present" %}
-  {% endif %}
+  {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
   <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
 {% endfor %}
 </ul>
-<div class="pagination-controls" id="ctrl-highschool"></div>
+{% if highschool.size > PAGE_SIZE %}
+{% assign highschool_more = highschool.size | minus: PAGE_SIZE %}
+<details class="more-students">
+  <summary>Show {{ highschool_more }} more ▾</summary>
+  <ul class="student-list">
+  {% for post in highschool offset: PAGE_SIZE %}
+    {% assign start_fmt = post.startdate | date: "%b %Y" %}
+    {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
+    <li>{{ post.name }} ({{ start_fmt }} – {{ end_fmt }}){% if post.title %} — <em>{{ post.title }}</em>{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}</li>
+  {% endfor %}
+  </ul>
+</details>
+{% endif %}
 {% else %}
 <p><em>None yet.</em></p>
 {% endif %}
-
-<!-- ── Pagination script ───────────────────────────────────────────────────── -->
-<style>
-.pagination-controls {
-  margin: 6px 0 18px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9em;
-}
-.pagination-controls button {
-  padding: 3px 10px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background: #f8f8f8;
-  border-radius: 3px;
-}
-.pagination-controls button:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-.pagination-controls .page-info {
-  color: #555;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('ul.paginated-list').forEach(function (ul) {
-    var pageSize = parseInt(ul.getAttribute('data-page-size'), 10) || 5;
-    var items    = Array.from(ul.children);  // direct <li> children only
-    var total    = items.length;
-
-    // No pagination needed
-    if (total <= pageSize) return;
-
-    var totalPages  = Math.ceil(total / pageSize);
-    var currentPage = 1;
-
-    // Find the sibling controls div (immediately follows the <ul>)
-    var ctrl = ul.nextElementSibling;
-    if (!ctrl || !ctrl.classList.contains('pagination-controls')) return;
-
-    var btnPrev = document.createElement('button');
-    btnPrev.textContent = '← Prev';
-
-    var info = document.createElement('span');
-    info.className = 'page-info';
-
-    var btnNext = document.createElement('button');
-    btnNext.textContent = 'Next →';
-
-    ctrl.appendChild(btnPrev);
-    ctrl.appendChild(info);
-    ctrl.appendChild(btnNext);
-
-    function render() {
-      var start = (currentPage - 1) * pageSize;
-      var end   = start + pageSize;
-      items.forEach(function (li, i) {
-        li.style.display = (i >= start && i < end) ? '' : 'none';
-      });
-      info.textContent = 'Page ' + currentPage + ' of ' + totalPages;
-      btnPrev.disabled = (currentPage === 1);
-      btnNext.disabled = (currentPage === totalPages);
-    }
-
-    btnPrev.addEventListener('click', function () {
-      if (currentPage > 1) { currentPage--; render(); }
-    });
-    btnNext.addEventListener('click', function () {
-      if (currentPage < totalPages) { currentPage++; render(); }
-    });
-
-    render();
-  });
-});
-</script>
