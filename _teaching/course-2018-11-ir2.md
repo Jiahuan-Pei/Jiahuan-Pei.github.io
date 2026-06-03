@@ -4,7 +4,7 @@ role: "Teacher"
 collection: teaching
 type: "Master Course"
 permalink: /teaching/course-2018-11-ir2
-venue: "University of Amsterdam, Informatics Institute"
+venue: "University of Amsterdam"
 date: "2018-11-01"
 location: "Amsterdam, Netherlands"
 ---

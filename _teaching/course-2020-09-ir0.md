@@ -4,7 +4,7 @@ role: "Teacher"
 collection: teaching
 type: "Bachelor Course"
 permalink: /teaching/course-2020-09-ir0
-venue: "University of Amsterdam, Informatics Institute"
+venue: "University of Amsterdam"
 date: "2020-09-01"
 location: "Amsterdam, Netherlands"
 ---
