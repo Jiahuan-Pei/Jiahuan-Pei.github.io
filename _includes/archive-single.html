@@ -46,6 +46,9 @@
                 {% if post.demourl %}
                     <a href="{{ post.demourl }}" rel="permalink">[Demo]</a>
                 {% endif %}
+                {% if post.talkurl %}
+                    <a href="{{ post.talkurl }}" rel="permalink">[Talk]</a>
+                {% endif %}
             </li>
         {% endif %}
     {% endif %}

@@ -6,5 +6,6 @@ permalink: /publication/2025-01-01-Talking-to-Build-How-LLM-Assisted-Interface-S
 date: 2025-01-01
 venue: 'ICMI 2025'
 paperurl: 'https://dl.acm.org/doi/abs/10.1145/3716553.3756015'
+talkurl: 'https://youtu.be/O2wCckGwbMs?si=aTh_1XLhH97UV8j_'
 citation: 'Xin Sun, Lei Wang, Yue Li, Jie Li, Massimo Poesio, Julian Frommel, Koen Hinriks, <b>Jiahuan Pei</b>, &quot;Talking-to-Build: How LLM-Assisted Interface Shapes Player Performance and Experience in Minecraft.&quot; ICMI 2025.'
 ---

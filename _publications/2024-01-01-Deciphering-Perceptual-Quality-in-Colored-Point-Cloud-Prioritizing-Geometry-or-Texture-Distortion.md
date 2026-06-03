@@ -6,5 +6,6 @@ permalink: /publication/2024-01-01-Deciphering-Perceptual-Quality-in-Colored-Poi
 date: 2024-01-01
 venue: 'ACM Multimedia 2024'
 paperurl: 'https://dl.acm.org/doi/abs/10.1145/3664647.3680566'
+codeurl: 'https://github.com/cwi-dis/ACMMM2024-Oral'
 citation: 'Xuemei Zhou, Irene Viola, Yunlu Chen, <b>Jiahuan Pei</b>, Pablo Cesar, &quot;Deciphering Perceptual Quality in Colored Point Cloud: Prioritizing Geometry or Texture Distortion?.&quot; ACM Multimedia 2024.'
 ---
