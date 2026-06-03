@@ -8,9 +8,23 @@ author_profile: true
 {% include base_path %}
 
 <h2>Teaching Courses</h2>
-{% for post in site.teaching reversed %}
-  {% include archive-single.html role="Teacher" %}
+{% assign courses = site.teaching | where: "collection", "teaching" | where_exp: "item", "item.role != 'Supervisor'" | sort: "startdate" | reverse %}
+<ul>
+{% for post in courses %}
+  {% assign start_fmt = post.startdate | default: post.date | date: "%b %Y" %}
+  {% if post.enddate and post.enddate != '' %}
+    {% assign end_fmt = post.enddate | date: "%b %Y" %}
+  {% else %}
+    {% assign end_fmt = "Present" %}
+  {% endif %}
+  <li>
+    <b>{% if post.course_url %}<a href="{{ post.course_url }}" target="_blank">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</b>
+    — {{ post.role }}{% if post.type %}, {{ post.type }}{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}
+    ({{ start_fmt }}{% if end_fmt != start_fmt %} – {{ end_fmt }}{% endif %})
+    <a href="{{ post.url }}">[Details]</a>
+  </li>
 {% endfor %}
+</ul>
 
 <h2>Student Supervision</h2>
 

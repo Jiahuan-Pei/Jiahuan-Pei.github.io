@@ -1,11 +1,12 @@
 ---
 title: "Information Retrieval (Zoekmachines)"
-role: "Teaching Assisant"
+role: "TA"
 collection: teaching
 type: "Bachelor Course"
 permalink: /teaching/course-2018-09-ir0
 venue: "University of Amsterdam"
 startdate: "2018-09-01"
+enddate: "2018-10-01"
 location: "Amsterdam, Netherlands"
 ---
 
