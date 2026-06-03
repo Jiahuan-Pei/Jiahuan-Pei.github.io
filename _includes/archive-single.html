@@ -27,8 +27,11 @@
     {% endif %}
 
     {% if post.collection == 'teaching' %}
-      {% if post.role == include.role%}
-      <li itemprop="description"> <b> {{ post.title }} </b>, {{ post.type }}, {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y/%m" }} </li>
+      {% if post.role == include.role %}
+      <li itemprop="description">
+        <b>{% if post.course_url %}<a href="{{ post.course_url }}" target="_blank">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</b>,
+        {{ post.type }}, {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y/%m" }}
+      </li>
       {% endif %}
     {% elsif post.collection == 'publications' %}
         {% if post.pubsource == include.pubsource%}

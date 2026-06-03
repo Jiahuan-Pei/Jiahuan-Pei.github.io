@@ -8,10 +8,11 @@ Spreadsheet columns (header row required):
     title     – course title                          [required]
     type      – e.g. "Bachelor Course", "Master Course"
     url_slug  – slug for filename and permalink       [required]
-    venue     – university / institution name
-    date      – YYYY-MM-DD
-    location  – city, country
-    notes     – body text shown on the page (markdown supported)
+    venue      – university / institution name
+    date       – DD/MM/YYYY
+    location   – city, country
+    course_url – link to the course page (optional)
+    notes      – body text shown on the page (markdown supported)
 
 Usage:
     python courses.py                        # reads courses.xlsx
@@ -89,8 +90,9 @@ def main():
         course_type = str(row.get("type",     "")).strip() if is_set(row.get("type"))     else ""
         venue       = str(row.get("venue",    "")).strip() if is_set(row.get("venue"))    else ""
         date        = normalise_date(row.get("date", ""))
-        location    = str(row.get("location", "")).strip() if is_set(row.get("location")) else ""
-        notes       = str(row.get("notes",    "")).strip() if is_set(row.get("notes"))    else ""
+        location    = str(row.get("location",   "")).strip() if is_set(row.get("location"))   else ""
+        course_url  = str(row.get("course_url", "")).strip() if is_set(row.get("course_url")) else ""
+        notes       = str(row.get("notes",      "")).strip() if is_set(row.get("notes"))      else ""
 
         # Ensure 'course-' prefix
         slug_with_prefix = url_slug if url_slug.startswith("course-") else f"course-{url_slug}"
@@ -111,9 +113,13 @@ def main():
             md += f'date: "{date}"\n'
         if location:
             md += f'location: "{html_escape(location)}"\n'
+        if course_url:
+            md += f'course_url: "{course_url}"\n'
         md += "---\n"
 
         # ── Body ──────────────────────────────────────────────────────────
+        if course_url:
+            md += f"\n[Course page]({course_url})\n"
         if notes:
             md += f"\n{notes}\n"
 
