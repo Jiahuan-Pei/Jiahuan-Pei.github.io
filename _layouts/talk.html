@@ -34,8 +34,8 @@ layout: default
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
         {% elsif page.date %}
           <p class="page__date">
-            <h4><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></h4> 
-            <h4><strong><i class="fa fa-fw fa-microphone" aria-hidden="true"></i></strong>{% if page.type %}{{page.type}}{% endif %}, {% if page.venue %}{{page.venue}}{% endif %}, {% if page.location %}{{page.location}}{% endif %}</h4>
+            <h4><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+            <strong><i class="fa fa-fw fa-microphone" aria-hidden="true"></i></strong>{% if page.type %}{{page.type}}{% endif %}, {% if page.venue %}{{page.venue}}{% endif %}, {% if page.location %}{{page.location}}{% endif %}</h4>
           </p>
         {% endif %}
 
