@@ -45,9 +45,8 @@ def is_set(value) -> bool:
 def normalise_date(raw: str) -> str:
     """
     Normalise a date string to YYYY-MM-DD.
-    Uses 2-digit-year formats (M/D/YY) explicitly before any 4-digit format
-    so that "5/12/26" → 2026-05-12 (May 12) not 0026-05-12 or 2026-12-05.
-    Falls back to D/M/Y when the month part exceeds 12 (e.g. "29/11/2023").
+    Standard input format is DD/MM/YYYY (tried first).
+    Also accepts ISO YYYY-MM-DD and other common variants.
     """
     raw = str(raw).strip()
     if not raw:
@@ -55,12 +54,11 @@ def normalise_date(raw: str) -> str:
     # Already ISO format
     if len(raw) == 10 and raw[4] == "-":
         return raw
-    # Try 2-digit-year M/D/YY first (avoids %Y silently accepting "26" as 26 AD)
-    for fmt in ("%m/%d/%y", "%m-%d-%y", "%d/%m/%y", "%d-%m-%y",
-                "%m/%d/%Y", "%m-%d-%Y", "%d/%m/%Y", "%d-%m-%Y"):
+    # DD/MM/YYYY first (canonical format), then fallbacks
+    for fmt in ("%d/%m/%Y", "%d-%m-%Y", "%d/%m/%y", "%d-%m-%y",
+                "%m/%d/%Y", "%m-%d-%Y", "%m/%d/%y", "%m-%d-%y"):
         try:
             dt = datetime.strptime(raw, fmt)
-            # Reject implausible years (e.g. year 26 from %Y matching "26")
             if dt.year < 100:
                 raise ValueError("Implausible year")
             return dt.strftime("%Y-%m-%d")

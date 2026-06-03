@@ -3,7 +3,7 @@ title: "Information Retrieval 2"
 role: "Teacher"
 collection: teaching
 type: "Master Course"
-permalink: /teaching/2018-11-ir2
+permalink: /teaching/course-2018-11-ir2
 venue: "University of Amsterdam, Informatics Institute"
 date: "2018-11-01"
 location: "Amsterdam, Netherlands"

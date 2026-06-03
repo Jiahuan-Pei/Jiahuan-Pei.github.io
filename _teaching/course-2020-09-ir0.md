@@ -3,9 +3,9 @@ title: "Information Retrieval (Zoekmachines)"
 role: "Teacher"
 collection: teaching
 type: "Bachelor Course"
-permalink: /teaching/2018-09-ir0
+permalink: /teaching/course-2020-09-ir0
 venue: "University of Amsterdam, Informatics Institute"
-date: "2018-09-01"
+date: "2020-09-01"
 location: "Amsterdam, Netherlands"
 ---
 

@@ -55,7 +55,8 @@ def normalise_date(raw) -> str:
     if re.match(r"^\d{4}-\d{2}-\d{2}$", s):
         return s
     # Try common formats
-    for fmt in ("%Y-%m-%d", "%d/%m/%Y", "%m/%d/%Y", "%d-%m-%Y", "%m-%d-%Y"):
+    for fmt in ("%d/%m/%Y", "%d-%m-%Y", "%d/%m/%y", "%d-%m-%y",
+                "%Y-%m-%d", "%m/%d/%Y", "%m-%d-%Y"):
         try:
             return datetime.strptime(s, fmt).strftime("%Y-%m-%d")
         except ValueError:

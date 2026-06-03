@@ -54,6 +54,14 @@ python3 markdown_generator/enrich_venues.py
    python3 markdown_generator/talks.py
    ```
 
+## Courses (Teaching)
+1. Open `markdown_generator/courses.xlsx` and add a new row.  
+   Key columns: `title`, `type` (Bachelor Course / Master Course / etc.), `url_slug` (unique slug), `venue`, `date` (YYYY-MM-DD), `location`, `notes`.
+2. Regenerate markdown files:
+   ```bash
+   python3 markdown_generator/courses.py
+   ```
+
 ## Students (Teaching / Supervision)
 1. Open `markdown_generator/students.xlsx` and add a new row.  
    Key columns: `Name`, `Type` (PhD / Master / Bachelor / High School), `Institution`, `Thesis / Research Topic`, `Start Date`, `End Date`, `Location`, `Notes`.
