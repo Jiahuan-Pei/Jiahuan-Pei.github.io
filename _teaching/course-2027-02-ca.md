@@ -10,4 +10,4 @@ enddate: "2027-03-26"
 location: "Amsterdam, Netherlands"
 ---
 
-My role is a coordinator and teacher to design, develop the course and teach it.
+My role is a coordinator and teacher to design, develop the course and teach it with Prof.dr. Koen Hindriks.
