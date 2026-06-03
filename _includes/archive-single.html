@@ -49,6 +49,12 @@
                 {% if post.talkurl %}
                     <a href="{{ post.talkurl }}" rel="permalink">[Talk]</a>
                 {% endif %}
+                {% if post.slideurl %}
+                    <a href="{{ post.slideurl }}" rel="permalink">[Talk]</a>
+                {% endif %}
+                {% if post.posterurl %}
+                    <a href="{{ post.posterurl }}" rel="permalink">[Talk]</a>
+                {% endif %}
             </li>
         {% endif %}
     {% endif %}

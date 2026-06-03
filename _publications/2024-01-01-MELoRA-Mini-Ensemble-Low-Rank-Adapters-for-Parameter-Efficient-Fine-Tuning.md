@@ -6,5 +6,6 @@ permalink: /publication/2024-01-01-MELoRA-Mini-Ensemble-Low-Rank-Adapters-for-Pa
 date: 2024-01-01
 venue: 'ACL 2024'
 paperurl: 'https://aclanthology.org/2024.acl-long.168/'
+codeurl: 'https://github.com/ChasonShi/MELoRA'
 citation: 'Pengjie Ren, Chengshun Shi, Shiguang Wu, Mengqi Zhang, Zhaochun Ren, Maarten Rijke, Zhumin Chen, <b>Jiahuan Pei</b>, &quot;MELoRA: Mini-Ensemble Low-Rank Adapters for Parameter-Efficient Fine-Tuning.&quot; ACL 2024.'
 ---
