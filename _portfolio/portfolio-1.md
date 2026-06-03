@@ -1,5 +1,5 @@
 ---
-title: "Social AI LEGO"
+title: "Social AI Group LEGO"
 collection: portfolio
 image: "/images/Social AI@VU-logo.png"
 description: "Social AI Group"
@@ -8,4 +8,4 @@ tags:
   - Lego
 ---
 
-I designed the logo of [Social AI Group](https://socialai.nl). Follow up our group's latest work on [Linkedin](https://www.linkedin.com/company/social-ai-group-vu/).
+I designed the logo of [Social AI Group](https://socialai.nl). Welcome to follow up our group's [Linkedin](https://www.linkedin.com/company/social-ai-group-vu/) page for our latest work.
