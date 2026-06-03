@@ -35,7 +35,15 @@ layout: default
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
         {% endif %}
-        {% if page.talk_type %}<p>{{page.talk_type}} at {{ page.venue }},  {{page.location}} {% endif %}
+        {% if page.type %}
+          <p class="page__meta"><strong>Type:</strong> {{ page.type }}</p>
+        {% endif %}
+        {% if page.venue %}
+          <p class="page__meta"><strong>Venue:</strong> {{ page.venue }}</p>
+        {% endif %}
+        {% if page.location %}
+          <p class="page__meta"><strong>Location:</strong> {{ page.location }}</p>
+        {% endif %}
 
         </header>
       {% endunless %}
@@ -43,21 +51,6 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
-
-        <dl style="margin-top:1.2em; font-size:0.92em; line-height:1.8;">
-          {% if page.type %}
-            <dt style="font-weight:bold; float:left; width:80px;">Type</dt>
-            <dd style="margin-left:90px;">{{ page.type }}</dd>
-          {% endif %}
-          {% if page.venue %}
-            <dt style="font-weight:bold; float:left; width:80px;">Venue</dt>
-            <dd style="margin-left:90px;">{{ page.venue }}</dd>
-          {% endif %}
-          {% if page.location %}
-            <dt style="font-weight:bold; float:left; width:80px;">Location</dt>
-            <dd style="margin-left:90px;">{{ page.location }}</dd>
-          {% endif %}
-        </dl>
 
         {% if page.image %}
           <img src="{{ page.image }}" alt="{{ page.title }}"
