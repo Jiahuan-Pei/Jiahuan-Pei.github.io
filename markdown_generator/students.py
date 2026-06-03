@@ -75,11 +75,6 @@ def slugify(text: str) -> str:
     return re.sub(r"-{2,}", "-", text)
 
 
-def first_name_slug(full_name: str) -> str:
-    """Return the last token (last name) lowercased for use in filename."""
-    parts = full_name.strip().split()
-    return slugify(parts[-1]) if parts else "student"
-
 
 # ── Column name normalisation ──────────────────────────────────────────────────
 
@@ -136,10 +131,10 @@ def main():
         startdate = normalise_date(row.get("startdate", ""))
         enddate   = normalise_date(row.get("enddate",   ""))
 
-        # ── Filename  <startYYYY-MM>-<type-slug>-<lastname>.md ─────────────
+        # ── Filename  <startYYYY-MM>-<type-slug>-<full-name>.md ──────────────
         date_prefix = startdate[:7] if startdate else "0000-00"   # YYYY-MM
         type_slug   = slugify(typ.split()[0])                     # "phd", "master", etc.
-        name_slug   = first_name_slug(name)
+        name_slug   = slugify(name)                               # e.g. "jiahuan-pei"
         md_filename = f"{date_prefix}-{type_slug}-{name_slug}.md"
         permalink   = f"/teaching/{date_prefix}-{type_slug}-{name_slug}"
 

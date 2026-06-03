@@ -4,11 +4,7 @@ title: "Trustworthy Multi-Agents and Safety Alignment"
 role: "Supervisor"
 collection: teaching
 type: "PhD"
-permalink: /teaching/2025-10-research-qingyu
+permalink: /teaching/2025-10-phd-qingyu-meng
 venue: "Vrije Universiteit Amsterdam"
 startdate: "2025-10-15"
-enddate: ""
-location: "Amsterdam, Netherlands"
 ---
-
-My role is main supervisor.

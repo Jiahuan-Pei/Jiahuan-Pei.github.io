@@ -4,7 +4,7 @@ title: "Psycholinguistic Bonding in Conversational Agents"
 role: "Supervisor"
 collection: teaching
 type: "PhD"
-permalink: /teaching/2025-11-phd-mo
+permalink: /teaching/2025-11-phd-yifan-mo
 venue: "Vrije Universiteit Amsterdam"
 startdate: "2025-11-01"
 ---

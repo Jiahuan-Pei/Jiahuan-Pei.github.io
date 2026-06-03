@@ -78,20 +78,12 @@ url: "https://www.linkedin.com/embed/feed/update/urn:li:share:XXXXXXXXX"
 ```
 
 ## Portfolio
-Add a new `.md` file in `_portfolio/`. Use front matter:
-```yaml
----
-title: "Your Project Title"
-collection: portfolio
-image: "/images/your-photo.jpg"     # for a photo card
-youtube: "VIDEO_ID"                 # for a YouTube card (omit image)
-description: "Short caption."
-tags:
-  - Tag1
-  - Tag2
----
-Optional longer description here.
-```
+1. Open `markdown_generator/portfolio.xlsx` and add a new row.  
+   Key columns: `title`, `image` (local path or URL), `youtube` (video ID), `description`, `tags` (comma-separated), `body` (full page text).
+2. Regenerate markdown files:
+   ```bash
+   python3 markdown_generator/portfolio.py
+   ```
 
 ## Navigation Bar
 Edit `_data/navigation.yml` to add, remove, or reorder top-bar links.
