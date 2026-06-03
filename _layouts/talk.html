@@ -35,10 +35,10 @@ layout: default
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
         {% endif %}
-        <p class="page__date"><strong><i class="fa fa-fw fa-microphone" aria-hidden="true"></i>
-        {% if page.type %} {{ page.type }} {% endif %}
-        {% if page.venue %} {{ page.venue }} {% endif %}
-        {% if page.location %} {{ page.location }} {% endif %}
+        <p class="page__date"><strong><i class="fa fa-fw fa-microphone" aria-hidden="true"></i></strong>
+        {% if page.type %} {{ page.type }} {% endif %},
+        {% if page.venue %} {{ page.venue }} {% endif %},
+        {% if page.location %} {{ page.location }} {% endif %},
         </p>
 
         </header>
