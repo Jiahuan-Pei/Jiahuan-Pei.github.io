@@ -7,4 +7,4 @@ tags:
   - Talk
 ---
 
-Talking-to-Build: How LLM-Assisted Interface Shapes Player Performance and Experience in Minecraft.
+Lei Wang (MSc student) and her AI agents present our work accepted by ICMI 2025.
