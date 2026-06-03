@@ -41,6 +41,9 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        {% if page.image %}
+          <img src="{{ page.image }}" alt="{{ page.title }}" style="max-width:100%; height:auto; border-radius:4px; margin-bottom:1em; display:block;">
+        {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>

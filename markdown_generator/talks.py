@@ -13,6 +13,7 @@ TSV columns (header row required):
     location    – city, country
     talk_url    – link to slides, video, etc.
     description – free-text description
+    image       – path or URL to an image shown on the talk page (optional)
 
 Usage:
     python talks.py                    # reads talks.tsv, writes to ../_talks/
@@ -117,6 +118,9 @@ def main():
 
         if is_set(item.get("location")):
             md += f'location: "{html_escape(str(item["location"]))}"\n'
+
+        if is_set(item.get("image")):
+            md += f'image: "{str(item["image"]).strip()}"\n'
 
         md += "---\n"
 

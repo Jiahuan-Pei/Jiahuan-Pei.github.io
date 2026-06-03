@@ -1,7 +1,7 @@
 ---
 title: "Social AI Group LEGO"
 collection: portfolio
-image: "/images/Social AI@VU-logo.png"
+image: "/images/portfolio/Social AI@VU-logo.png"
 description: "Social AI Group"
 tags:
   - Group
