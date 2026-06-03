@@ -1,8 +1,8 @@
 ---
-title: "Social AI Group LEGO"
+title: "Social AI Group Logo"
 collection: portfolio
 image: "/images/portfolio/Social AI@VU-logo.png"
-description: "I designed the logo of Social AI Group. Welcome to follow up our group's Linkedin page for our latest work."
+description: "I designed a logo for Social AI Group. Welcome to follow up our group's Linkedin page for our latest work."
 tags:
   - Group
   - Lego
