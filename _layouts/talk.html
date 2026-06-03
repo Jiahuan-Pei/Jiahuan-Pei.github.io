@@ -35,7 +35,6 @@ layout: default
         {% elsif page.date %}
           <p class="page__date">
             <h4><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></h4> 
-            <br/>
             <h4><strong><i class="fa fa-fw fa-microphone" aria-hidden="true"></i></strong>{% if page.type %}{{page.type}}{% endif %}, {% if page.venue %}{{page.venue}}{% endif %}, {% if page.location %}{{page.location}}{% endif %}</h4>
           </p>
         {% endif %}
