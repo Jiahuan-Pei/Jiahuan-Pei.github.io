@@ -1,7 +1,11 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Example: Photo Item"
 collection: portfolio
+image: "/images/500x300.png"
+description: "An example portfolio item with a photo. Replace image with the path to your own image under /images/."
+tags:
+  - Research
+  - NLP
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+Full description of this portfolio item goes here.

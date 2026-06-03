@@ -7,8 +7,109 @@ author_profile: true
 
 {% include base_path %}
 
+<style>
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+.portfolio-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-card .card-media img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.portfolio-card .card-media .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.portfolio-card .card-media .video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.portfolio-card .card-body {
+  padding: 14px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-card .card-title {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 0 6px;
+}
+.portfolio-card .card-title a { text-decoration: none; color: inherit; }
+.portfolio-card .card-title a:hover { text-decoration: underline; }
+.portfolio-card .card-desc {
+  font-size: 0.88em;
+  color: #444;
+  margin: 0;
+  flex: 1;
+}
+.portfolio-card .card-tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.portfolio-card .card-tag {
+  font-size: 0.78em;
+  background: #f0f0f0;
+  border-radius: 3px;
+  padding: 2px 7px;
+  color: #555;
+}
+</style>
 
+<div class="portfolio-grid">
 {% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+  <div class="portfolio-card">
 
+    {% if post.youtube %}
+    <div class="card-media">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/{{ post.youtube }}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen title="{{ post.title }}"></iframe>
+      </div>
+    </div>
+    {% elsif post.image %}
+    <div class="card-media">
+      <img src="{{ post.image }}" alt="{{ post.title }}">
+    </div>
+    {% endif %}
+
+    <div class="card-body">
+      <p class="card-title">
+        {% if post.url %}<a href="{{ post.url }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
+      </p>
+      {% if post.description %}
+        <p class="card-desc">{{ post.description }}</p>
+      {% elsif post.excerpt %}
+        <p class="card-desc">{{ post.excerpt | strip_html }}</p>
+      {% endif %}
+      {% if post.tags and post.tags.size > 0 %}
+      <div class="card-tags">
+        {% for tag in post.tags %}<span class="card-tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+{% endfor %}
+</div>
