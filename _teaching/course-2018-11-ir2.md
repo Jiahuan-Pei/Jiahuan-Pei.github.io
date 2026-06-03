@@ -1,11 +1,11 @@
 ---
 title: "Information Retrieval 2"
-role: "Teacher"
+role: "Teaching Assisant"
 collection: teaching
 type: "Master Course"
 permalink: /teaching/course-2018-11-ir2
 venue: "University of Amsterdam"
-date: "2018-11-01"
+startdate: "2018-11-01"
 location: "Amsterdam, Netherlands"
 ---
 

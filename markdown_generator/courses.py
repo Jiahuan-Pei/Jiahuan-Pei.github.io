@@ -5,13 +5,15 @@ Teaching course markdown generator for academicpages.
 Reads courses.xlsx and writes one .md file per row into ../_teaching/.
 
 Spreadsheet columns (header row required):
-    title     – course title                          [required]
-    type      – e.g. "Bachelor Course", "Master Course"
-    url_slug  – slug for filename and permalink       [required]
+    title      – course title                          [required]
+    type       – e.g. "Bachelor Course", "Master Course"
+    role       – "Teacher" (default) or "Guest Lecturer" etc.
+    url_slug   – slug for filename and permalink       [required]
     venue      – university / institution name
-    date       – DD/MM/YYYY
+    startdate  – DD/MM/YYYY
+    enddate    – DD/MM/YYYY (leave blank if ongoing)
     location   – city, country
-    course_url – link to the course page (optional)
+    course_url – link to the external course page (optional)
     notes      – body text shown on the page (markdown supported)
 
 Usage:
@@ -87,9 +89,11 @@ def main():
             continue
 
         # ── Optional fields ────────────────────────────────────────────────
-        course_type = str(row.get("type",     "")).strip() if is_set(row.get("type"))     else ""
-        venue       = str(row.get("venue",    "")).strip() if is_set(row.get("venue"))    else ""
-        date        = normalise_date(row.get("date", ""))
+        course_type = str(row.get("type",       "")).strip() if is_set(row.get("type"))       else ""
+        role        = str(row.get("role",       "")).strip() if is_set(row.get("role"))       else "Teacher"
+        venue       = str(row.get("venue",      "")).strip() if is_set(row.get("venue"))      else ""
+        startdate   = normalise_date(row.get("startdate", ""))
+        enddate     = normalise_date(row.get("enddate",   ""))
         location    = str(row.get("location",   "")).strip() if is_set(row.get("location"))   else ""
         course_url  = str(row.get("course_url", "")).strip() if is_set(row.get("course_url")) else ""
         notes       = str(row.get("notes",      "")).strip() if is_set(row.get("notes"))      else ""
@@ -102,15 +106,17 @@ def main():
         # ── YAML front-matter ──────────────────────────────────────────────
         md  = "---\n"
         md += f'title: "{html_escape(title)}"\n'
-        md += 'role: "Teacher"\n'
+        md += f'role: "{html_escape(role)}"\n'
         md += 'collection: teaching\n'
         if course_type:
             md += f'type: "{html_escape(course_type)}"\n'
         md += f'permalink: {permalink}\n'
         if venue:
             md += f'venue: "{html_escape(venue)}"\n'
-        if date:
-            md += f'date: "{date}"\n'
+        if startdate:
+            md += f'startdate: "{startdate}"\n'
+        if enddate:
+            md += f'enddate: "{enddate}"\n'
         if location:
             md += f'location: "{html_escape(location)}"\n'
         if course_url:

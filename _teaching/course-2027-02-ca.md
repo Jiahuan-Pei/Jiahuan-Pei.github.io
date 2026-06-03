@@ -1,11 +1,12 @@
 ---
 title: "Conversational Agents (XB_0182)"
-role: "Teacher"
+role: "Coordinator, Teacher"
 collection: teaching
 type: "Bachelor Course (6EC)"
 permalink: /teaching/course-2027-02-ca
 venue: "Vrije Universiteit Amsterdam"
-date: "2027-02-01"
+startdate: "2027-02-01"
+enddate: "2027-03-26"
 location: "Amsterdam, Netherlands"
 ---
 

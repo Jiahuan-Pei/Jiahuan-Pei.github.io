@@ -5,7 +5,8 @@ collection: teaching
 type: "Bachelor Course (6EC)"
 permalink: /teaching/course-2025-01-pca
 venue: "Vrije Universiteit Amsterdam"
-date: "2025-01-01"
+startdate: "2025-01-01"
+enddate: "2025-02-28"
 location: "Amsterdam, Netherlands"
 course_url: "https://socialrobotics.atlassian.net/wiki/spaces/PCA2/overview"
 ---
