@@ -2,9 +2,9 @@
 """
 Talks markdown generator for academicpages.
 
-Reads talks.tsv and writes one .md file per row into ../_talks/.
+Reads talks.xlsx (or talks.tsv) and writes one .md file per row into ../_talks/.
 
-TSV columns (header row required):
+Spreadsheet / TSV columns (header row required):
     title       – talk title                         [required]
     url_slug    – slug for filename and permalink    [required]
     date        – YYYY-MM-DD                         [required]
@@ -16,9 +16,10 @@ TSV columns (header row required):
     image       – path or URL to an image shown on the talk page (optional)
 
 Usage:
-    python talks.py                    # reads talks.tsv, writes to ../_talks/
-    python talks.py --tsv my.tsv       # custom input file
-    python talks.py --output /path/    # custom output directory
+    python talks.py                       # reads talks.xlsx, writes to ../_talks/
+    python talks.py --input my.xlsx       # custom xlsx input
+    python talks.py --input my.tsv        # also accepts TSV
+    python talks.py --output /path/       # custom output directory
 """
 
 import argparse
@@ -76,15 +77,18 @@ def normalise_date(raw: str) -> str:
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate talk markdown files from TSV.")
-    parser.add_argument("--tsv",    default="talks.tsv",   help="Input TSV file (default: talks.tsv)")
+    parser = argparse.ArgumentParser(description="Generate talk markdown files from XLSX or TSV.")
+    parser.add_argument("--input",  default="talks.xlsx",  help="Input file: .xlsx or .tsv (default: talks.xlsx)")
     parser.add_argument("--output", default="../_talks/",  help="Output directory (default: ../_talks/)")
     args = parser.parse_args()
 
     os.makedirs(args.output, exist_ok=True)
 
-    talks = pd.read_csv(args.tsv, sep="\t", header=0, encoding="latin-1")
-    print(f"Loaded {len(talks)} talks from {args.tsv}")
+    if args.input.endswith(".xlsx") or args.input.endswith(".xls"):
+        talks = pd.read_excel(args.input, header=0)
+    else:
+        talks = pd.read_csv(args.input, sep="\t", header=0, encoding="latin-1")
+    print(f"Loaded {len(talks)} talks from {args.input}")
 
     written = 0
     for _, item in talks.iterrows():

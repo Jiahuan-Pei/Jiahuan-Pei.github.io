@@ -29,3 +29,76 @@ See more info at https://academicpages.github.io/
 There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
 
 To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+
+---
+
+# 🗒️ Quick Update Guide
+
+## Publications
+Fetched automatically from Google Scholar every Sunday via GitHub Actions.  
+To manually refresh (wait 24 h between runs to avoid rate limiting):
+```bash
+python3 markdown_generator/fetch_from_scholar.py          # all papers
+python3 markdown_generator/fetch_from_scholar.py --since 2024  # only recent
+```
+To fill missing venue fields using Semantic Scholar:
+```bash
+python3 markdown_generator/enrich_venues.py
+```
+
+## Talks
+1. Open `markdown_generator/talks.xlsx` and add a new row.  
+   Key columns: `title`, `url_slug` (unique slug), `date` (YYYY-MM-DD or DD/MM/YYYY), `type`, `venue`, `location`, `talk_url`, `description`, `image` (optional path/URL).
+2. Regenerate markdown files:
+   ```bash
+   python3 markdown_generator/talks.py
+   ```
+
+## Students (Teaching / Supervision)
+1. Open `markdown_generator/students.xlsx` and add a new row.  
+   Key columns: `Name`, `Type` (PhD / Master / Bachelor / High School), `Institution`, `Thesis / Research Topic`, `Start Date`, `End Date`, `Location`, `Notes`.
+2. Regenerate markdown files:
+   ```bash
+   python3 markdown_generator/students.py
+   ```
+
+## News / Updates (About page)
+Edit `_data/updates.yml` — add new items at the **top**:
+```yaml
+- date: "Jun. 2026"
+  text: "Your news item here."
+  url: "https://optional-link.com"   # omit if no link
+```
+
+## LinkedIn Embed (About page)
+Go to your LinkedIn post → **···** → **Embed this post** → copy the `src="..."` value.  
+Paste it into `_data/linkedin_embed.yml`:
+```yaml
+url: "https://www.linkedin.com/embed/feed/update/urn:li:share:XXXXXXXXX"
+```
+
+## Portfolio
+Add a new `.md` file in `_portfolio/`. Use front matter:
+```yaml
+---
+title: "Your Project Title"
+collection: portfolio
+image: "/images/your-photo.jpg"     # for a photo card
+youtube: "VIDEO_ID"                 # for a YouTube card (omit image)
+description: "Short caption."
+tags:
+  - Tag1
+  - Tag2
+---
+Optional longer description here.
+```
+
+## Navigation Bar
+Edit `_data/navigation.yml` to add, remove, or reorder top-bar links.
+
+## Site Info (name, bio, social links)
+Edit `_config.yml` — key fields: `title`, `name`, `description`, `url`, `author` (bio, avatar, social links).
+
+## Talk Page Layout
+Each talk's individual page is controlled by `_layouts/talk.html`.  
+Front matter fields rendered: `date`, `type`, `venue`, `location`, `image`.
