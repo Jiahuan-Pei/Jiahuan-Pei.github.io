@@ -52,8 +52,13 @@ layout: default
 
         {% if page.image %}
           <div style="text-align:center; margin-top:1.4em;">
-            <img src="{{ page.image }}" alt="{{ page.title }}"
-                 style="max-width:100%; height:auto; border-radius:4px;">
+            {% if page.image contains "://" %}
+              <img src="{{ page.image }}" alt="{{ page.title }}"
+                   style="max-width:100%; height:auto; border-radius:4px;">
+            {% else %}
+              <img src="{{ page.image | prepend: base_path }}" alt="{{ page.title }}"
+                   style="max-width:100%; height:auto; border-radius:4px;">
+            {% endif %}
           </div>
         {% endif %}
       </section>
