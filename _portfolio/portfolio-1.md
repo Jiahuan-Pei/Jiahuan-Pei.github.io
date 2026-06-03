@@ -8,4 +8,4 @@ tags:
   - Lego
 ---
 
-Full description of this portfolio item goes here.
+I designed the logo of [Social AI Group](https://socialai.nl). Follow up our group's latest work on [Linkedin](https://www.linkedin.com/company/social-ai-group-vu/).
