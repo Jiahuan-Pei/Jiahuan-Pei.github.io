@@ -1,11 +1,11 @@
 ---
-title: "Example: Photo Item"
+title: "Social AI LEGO"
 collection: portfolio
-image: "/images/500x300.png"
-description: "An example portfolio item with a photo. Replace image with the path to your own image under /images/."
+image: "/images/Social AI@VU-logo.png"
+description: "Social AI Group"
 tags:
-  - Research
-  - NLP
+  - Group
+  - Lego
 ---
 
 Full description of this portfolio item goes here.
