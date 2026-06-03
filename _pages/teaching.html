@@ -9,14 +9,10 @@ author_profile: true
 
 <h2>Teaching Courses</h2>
 {% assign courses = site.teaching | where: "collection", "teaching" | where_exp: "item", "item.role != 'Supervisor'" | sort: "startdate" | reverse %}
-<ul>
-{% for post in courses %}
+<ul class="student-list">
+{% for post in courses limit: PAGE_SIZE %}
   {% assign start_fmt = post.startdate | default: post.date | date: "%b %Y" %}
-  {% if post.enddate and post.enddate != '' %}
-    {% assign end_fmt = post.enddate | date: "%b %Y" %}
-  {% else %}
-    {% assign end_fmt = "Present" %}
-  {% endif %}
+  {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
   <li>
     <b>{% if post.course_url %}<a href="{{ post.course_url }}" target="_blank">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</b>
     — {{ post.role }}{% if post.type %}, {{ post.type }}{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}
@@ -25,6 +21,24 @@ author_profile: true
   </li>
 {% endfor %}
 </ul>
+{% if courses.size > PAGE_SIZE %}
+{% assign courses_more = courses.size | minus: PAGE_SIZE %}
+<details class="more-students">
+  <summary>Show {{ courses_more }} more ▾</summary>
+  <ul class="student-list">
+  {% for post in courses offset: PAGE_SIZE %}
+    {% assign start_fmt = post.startdate | default: post.date | date: "%b %Y" %}
+    {% if post.enddate and post.enddate != '' %}{% assign end_fmt = post.enddate | date: "%b %Y" %}{% else %}{% assign end_fmt = "Present" %}{% endif %}
+    <li>
+      <b>{% if post.course_url %}<a href="{{ post.course_url }}" target="_blank">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</b>
+      — {{ post.role }}{% if post.type %}, {{ post.type }}{% endif %}{% if post.venue %}, {{ post.venue }}{% endif %}
+      ({{ start_fmt }}{% if end_fmt != start_fmt %} – {{ end_fmt }}{% endif %})
+      <a href="{{ post.url }}">[Details]</a>
+    </li>
+  {% endfor %}
+  </ul>
+</details>
+{% endif %}
 
 <h2>Student Supervision</h2>
 
