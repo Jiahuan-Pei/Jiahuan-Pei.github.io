@@ -30,7 +30,7 @@
       {% if post.role == include.role %}
       <li itemprop="description">
         <b>{% if post.course_url %}<a href="{{ post.course_url }}" target="_blank">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</b>,
-        {{ post.type }}, {{ post.venue }}, {{ post.startdate | default: post.date | default: "1900-01-01" | date: "%Y/%m" }}
+        {{ post.role }}, {{ post.type }}, {{ post.venue }}, {{ post.startdate | default: post.date | default: "1900-01-01" | date: "%Y/%m" }}
         <a href="{{ post.url }}">[Details]</a>
       </li>
       {% endif %}
