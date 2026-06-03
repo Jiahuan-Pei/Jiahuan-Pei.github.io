@@ -43,6 +43,9 @@
                 {% if post.dataurl %}
                     <a href="{{ post.dataurl }}" rel="permalink">[Data]</a>
                 {% endif %}
+                {% if post.demourl %}
+                    <a href="{{ post.demourl }}" rel="permalink">[Demo]</a>
+                {% endif %}
             </li>
         {% endif %}
     {% endif %}
