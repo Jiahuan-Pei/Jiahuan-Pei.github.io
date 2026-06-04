@@ -1,6 +1,6 @@
 ---
 name: "Yifan Mo"
-title: "Psycholinguistic Bonding in Conversational Agents"
+title: "Psycholinguistic Bonding in Conversational Agents  (Ongoing PhD=>ACL26, CHI26)"
 role: "Supervisor"
 collection: teaching
 type: "PhD"

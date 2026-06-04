@@ -1,6 +1,6 @@
 ---
 name: "Albert Tang"
-title: "Human-Centered AI for Neurodiverse Communication"
+title: "Human-Centered AI for Neurodiverse Communication (Research=>CHI26)"
 role: "Supervisor"
 collection: teaching
 type: "High School"

@@ -1,6 +1,6 @@
 ---
 name: "Thomas Glatz"
-title: "Digital Employee with LLMs"
+title: "Digital Employee with LLMs (Thesis=>Conference Submission)"
 role: "Supervisor"
 collection: teaching
 type: "Master"

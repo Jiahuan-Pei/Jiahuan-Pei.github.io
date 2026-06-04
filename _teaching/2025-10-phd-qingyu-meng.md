@@ -1,6 +1,6 @@
 ---
 name: "Qingyu Meng"
-title: "Trustworthy Multi-Agents and Safety Alignment"
+title: "Trustworthy Multi-Agents and Safety Alignment (Ongoing PhD=>ACL26)"
 role: "Supervisor"
 collection: teaching
 type: "PhD"

@@ -1,6 +1,6 @@
 ---
 name: "Yas Lotfi"
-title: "Explainable Conversational Agent for Mental Health Chatbots Using LLMs"
+title: "Explainable Conversational Agent for Mental Health Chatbots Using LLMs (Thesis)"
 role: "Supervisor"
 collection: teaching
 type: "Bachelor"

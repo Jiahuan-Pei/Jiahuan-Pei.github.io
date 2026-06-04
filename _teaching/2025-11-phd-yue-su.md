@@ -1,6 +1,6 @@
 ---
 name: "Yue Su"
-title: "Gaze Perception and Understanding Beyond Conversations"
+title: "Gaze Perception and Understanding Beyond Conversations (Ongoing PhD=>ACL26, CHI26)"
 role: "Supervisor"
 collection: teaching
 type: "PhD"

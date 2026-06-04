@@ -1,6 +1,6 @@
 ---
 name: "Chi Zhang"
-title: "Pre-play – visual communication for everyday autistic life"
+title: "Pre-play – Visual Communication for Everyday Autistic Life (Thesis)"
 role: "Supervisor"
 collection: teaching
 type: "Bachelor"

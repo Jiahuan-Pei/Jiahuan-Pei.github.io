@@ -1,6 +1,6 @@
 ---
 name: "Arent Stienstra"
-title: "Role-aware Recurrent Entity Networks for Task-oriented Dialogue Systems (Thesis)"
+title: "Role-aware Recurrent Entity Networks for Task-oriented Dialogue Systems (Thesis=>IJCAI SCAI Workshop)"
 role: "Supervisor"
 collection: teaching
 type: "Master"

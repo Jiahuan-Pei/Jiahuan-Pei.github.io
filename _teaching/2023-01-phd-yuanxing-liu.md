@@ -1,6 +1,6 @@
 ---
 name: "Yuanxing Liu"
-title: "Conversational Recommendation (Research)"
+title: "Conversational Recommendation (Research=>TOIS25)"
 role: "Supervisor"
 collection: teaching
 type: "PhD"

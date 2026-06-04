@@ -1,6 +1,6 @@
 ---
 name: "Hristina Chalokova"
-title: "Soften Resistance in LLM Mental Health Agents"
+title: "Soften Resistance in LLM Mental Health Agents (Thesis=>Conference Submission)"
 role: "Supervisor"
 collection: teaching
 type: "Master"

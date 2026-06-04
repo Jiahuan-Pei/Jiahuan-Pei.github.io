@@ -1,6 +1,6 @@
 ---
 name: "Wentao Deng"
-title: "Legal Dialogue Generation and Reasoning with Large Language Models (Research)"
+title: "Legal Dialogue Generation and Reasoning with Large Language Models (Research=>EMNLP23, TACL23, NeruIPS25)"
 role: "Supervisor"
 collection: teaching
 type: "PhD"

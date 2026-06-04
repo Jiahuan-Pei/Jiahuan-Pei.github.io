@@ -1,6 +1,6 @@
 ---
 name: "Jiaqi Shi"
-title: "Real-Time Cognitive Load Classification for Adaptive Online Learning Systems"
+title: "Real-Time Cognitive Load Classification for Adaptive Online Learning Systems (Thesis)"
 role: "Supervisor"
 collection: teaching
 type: "Bachelor"

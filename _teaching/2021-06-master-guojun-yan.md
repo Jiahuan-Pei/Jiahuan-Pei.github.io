@@ -1,6 +1,6 @@
 ---
 name: "Guojun Yan"
-title: "Medical Dialogue Agents (Research)"
+title: "Medical Dialogue Agents (Research=>SIGIR23)"
 role: "Supervisor"
 collection: teaching
 type: "Master"

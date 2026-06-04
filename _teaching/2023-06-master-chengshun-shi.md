@@ -1,6 +1,6 @@
 ---
 name: "Chengshun Shi"
-title: "Efficient Fine-tuning for Large Language Models"
+title: "Efficient Fine-tuning for Large Language Models (Research=>ACL24)"
 role: "Supervisor"
 collection: teaching
 type: "Master"

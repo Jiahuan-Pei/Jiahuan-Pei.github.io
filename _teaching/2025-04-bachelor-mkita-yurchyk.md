@@ -1,6 +1,6 @@
 ---
 name: "Mkita Yurchyk"
-title: "Design, Implementation and Evaluation of Vision and Language Agents for LEGO Assembly in Augmented Reality"
+title: "Design, Implementation and Evaluation of Vision and Language Agents for LEGO Assembly in Augmented Reality (Thesis=>Conference Submission)"
 role: "Supervisor"
 collection: teaching
 type: "Bachelor"

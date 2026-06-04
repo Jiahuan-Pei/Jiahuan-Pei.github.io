@@ -1,6 +1,6 @@
 ---
 name: "Jason Wang"
-title: "Gaze Language Models for Mental Health Support"
+title: "Gaze Language Models for Mental Health Support (Thesis)"
 role: "Supervisor"
 collection: teaching
 type: "Master"

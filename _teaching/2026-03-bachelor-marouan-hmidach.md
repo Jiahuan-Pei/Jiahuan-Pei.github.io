@@ -1,6 +1,6 @@
 ---
 name: "Marouan Hmidach"
-title: "Learning-to-Ask Agent for Structured Report Generation in Special Education"
+title: "Learning-to-Ask Agent for Structured Report Generation in Special Education (Thesis)"
 role: "Supervisor"
 collection: teaching
 type: "Bachelor"

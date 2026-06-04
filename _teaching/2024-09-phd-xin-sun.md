@@ -1,6 +1,6 @@
 ---
 name: "Xin Sun"
-title: "Psycholinguistic Dialogue Generation (Research)"
+title: "Psycholinguistic Dialogue Generation (Research=> COLING24,COLING25, CSCW25)"
 role: "Supervisor"
 collection: teaching
 type: "PhD"
