@@ -30,19 +30,16 @@ author_profile: true
   object-fit: cover;
   display: block;
 }
-.portfolio-card .card-media {
-  margin: 0;
-  padding: 0;
-  line-height: 0;
+.portfolio-card .card-media .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
   overflow: hidden;
 }
-/* Shift iframe up by title bar height; extend height to fill the gap at bottom */
 .portfolio-card .card-media .video-wrapper iframe {
   position: absolute;
-  top: -40px; left: 0;
   top: 0; left: 0;
   width: 100%;
-  height: calc(100% + 40px);
   height: 100%;
   border: none;
 }
@@ -144,7 +141,7 @@ details.more-portfolio[open] summary { margin-bottom: 16px; }
       {% if post.youtube %}
       <div class="card-media">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/{{ post.youtube }}"
+          <iframe src="https://www.youtube-nocookie.com/embed/{{ post.youtube }}?modestbranding=1&rel=0&iv_load_policy=3"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen title="{{ post.title }}"></iframe>
         </div>
