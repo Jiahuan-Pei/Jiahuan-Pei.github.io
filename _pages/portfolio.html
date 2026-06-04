@@ -34,40 +34,24 @@ author_profile: true
   margin: 0;
   padding: 0;
   line-height: 0;
+  overflow: hidden;
 }
 .portfolio-card .card-media .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%;
+  /* Subtract title bar height so card stays compact */
+  padding-bottom: calc(56.25% - 46px);
   height: 0;
   overflow: hidden;
   margin: 0;
 }
+/* Shift iframe up by title bar height; extend height to fill the gap at bottom */
 .portfolio-card .card-media .video-wrapper iframe {
   position: absolute;
-  top: 0; left: 0;
+  top: -46px;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 46px);
   border: none;
-}
-/* cover YouTube title/username/profile bar */
-.portfolio-card .card-media .video-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 40px;
-  background: #000;
-  z-index: 2;
-  pointer-events: none;
-}
-/* cover YouTube bottom bar on hover */
-.portfolio-card .card-media .video-wrapper::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 4px;
-  background: #000;
-  z-index: 2;
-  pointer-events: none;
 }
 .portfolio-card .card-body {
   padding: 14px 16px;
