@@ -1,6 +1,6 @@
 ---
 name: "Haochen Huang"
-title: "Fine-Grained Vision-Language Modeling for Multimodal Training Assistants in Augmented Reality (Thesis, Nominated for Amsterdam AI Thesis Awards)"
+title: "Fine-Grained Vision-Language Modeling for Multimodal Training Assistants in Augmented Reality (Thesis=>Nominated for Amsterdam AI Thesis Awards, Conference Submission)"
 role: "Supervisor"
 collection: teaching
 type: "Master"
