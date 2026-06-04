@@ -93,8 +93,10 @@ details.more-portfolio[open] summary { margin-bottom: 16px; }
 
 {% capture card %}{% endcapture %}
 
+{% assign portfolio_sorted = site.portfolio | sort: "date" | reverse %}
+
 <div class="portfolio-grid">
-{% for post in site.portfolio limit: PAGE_SIZE %}
+{% for post in portfolio_sorted limit: PAGE_SIZE %}
   <div class="portfolio-card">
     {% if post.youtube %}
     <div class="card-media">
@@ -128,13 +130,13 @@ details.more-portfolio[open] summary { margin-bottom: 16px; }
 {% endfor %}
 </div>
 
-{% assign total = site.portfolio | size %}
+{% assign total = portfolio_sorted | size %}
 {% if total > PAGE_SIZE %}
 {% assign more_count = total | minus: PAGE_SIZE %}
 <details class="more-portfolio">
   <summary>Show {{ more_count }} more ▾</summary>
   <div class="portfolio-grid">
-  {% for post in site.portfolio offset: PAGE_SIZE %}
+  {% for post in portfolio_sorted offset: PAGE_SIZE %}
     <div class="portfolio-card">
       {% if post.youtube %}
       <div class="card-media">

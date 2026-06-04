@@ -6,6 +6,7 @@ Reads portfolio.xlsx and writes one .md file per row into ../_portfolio/.
 
 Spreadsheet columns (header row required):
     title       – item title                          [required]
+    date        – DD/MM/YYYY (used for sorting newest-first)
     image       – local path or URL to a photo        (mutually exclusive with youtube)
     youtube     – YouTube video ID (e.g. dQw4w9WgXcQ) (mutually exclusive with image)
     description – short caption shown on the card
@@ -55,6 +56,11 @@ def main():
     os.makedirs(args.output, exist_ok=True)
 
     df = pd.read_excel(args.xlsx, header=0)
+    # Sort newest-first by date if column present
+    if "date" in df.columns:
+        df["_date_sort"] = pd.to_datetime(df["date"], dayfirst=True, errors="coerce")
+        df = df.sort_values("_date_sort", ascending=False, na_position="last").drop(columns=["_date_sort"])
+        df = df.reset_index(drop=True)
     print(f"Loaded {len(df)} rows from {args.xlsx}")
 
     written = 0
@@ -69,6 +75,21 @@ def main():
             continue
 
         # ── Optional fields ────────────────────────────────────────────────
+        date_raw    = row.get("date", "")
+        date        = ""
+        if is_set(date_raw):
+            try:
+                from datetime import datetime
+                for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%m/%d/%Y"):
+                    try:
+                        date = datetime.strptime(str(date_raw).strip(), fmt).strftime("%Y-%m-%d")
+                        break
+                    except ValueError:
+                        continue
+                if not date:
+                    date = pd.to_datetime(date_raw, dayfirst=True).strftime("%Y-%m-%d")
+            except Exception:
+                pass
         image       = str(row.get("image",       "")).strip() if is_set(row.get("image"))       else ""
         youtube     = str(row.get("youtube",     "")).strip() if is_set(row.get("youtube"))     else ""
         description = str(row.get("description", "")).strip() if is_set(row.get("description")) else ""
@@ -85,6 +106,8 @@ def main():
         md  = "---\n"
         md += f'title: "{html_escape(title)}"\n'
         md += "collection: portfolio\n"
+        if date:
+            md += f'date: "{date}"\n'
         if image:
             md += f'image: "{image}"\n'
         if youtube:
