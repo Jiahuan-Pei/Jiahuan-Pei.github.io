@@ -1,6 +1,6 @@
 ---
 name: "Weijia Zhang"
-title: "Faithfulness Evaluation of Large Language Models (Research)"
+title: "Faithfulness Evaluation of Large Language Models (Research=>INLG24)"
 role: "Supervisor"
 collection: teaching
 type: "PhD"
