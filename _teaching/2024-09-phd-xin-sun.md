@@ -1,6 +1,6 @@
 ---
 name: "Xin Sun"
-title: "From Aligned Models to Trusted Interfaces: Explainable Health Intervention and Transparent Health Information Seeking (Research)"
+title: "Psycholinguistic Dialogue Generation (Research)"
 role: "Supervisor"
 collection: teaching
 type: "PhD"

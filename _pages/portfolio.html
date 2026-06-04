@@ -131,9 +131,13 @@ details.more-portfolio[open] summary { margin-bottom: 16px; }
     {% if post.youtube %}
     <div class="card-media">
       <div class="video-thumb" onclick="this.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/{{ post.youtube }}?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3\' allow=\'autoplay; encrypted-media\' allowfullscreen></iframe>'">
-        <img src="https://img.youtube.com/vi/{{ post.youtube }}/maxresdefault.jpg"
-             onerror="this.src='https://img.youtube.com/vi/{{ post.youtube }}/hqdefault.jpg'"
-             alt="{{ post.title }}">
+        {% if post.image %}
+          <img src="{{ post.image }}" alt="{{ post.title }}">
+        {% else %}
+          <img src="https://img.youtube.com/vi/{{ post.youtube }}/maxresdefault.jpg"
+               onerror="this.src='https://img.youtube.com/vi/{{ post.youtube }}/sddefault.jpg'"
+               alt="{{ post.title }}">
+        {% endif %}
         <div class="play-btn"></div>
       </div>
     </div>
