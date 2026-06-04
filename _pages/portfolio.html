@@ -42,13 +42,11 @@ author_profile: true
   overflow: hidden;
   margin: 0;
 }
-/* shift iframe up to hide YouTube title/channel bar; extend height so bottom is not clipped */
 .portfolio-card .card-media .video-wrapper iframe {
   position: absolute;
-  top: -46px;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
-  height: calc(100% + 46px);
+  height: 100%;
   border: none;
 }
 .portfolio-card .card-body {
