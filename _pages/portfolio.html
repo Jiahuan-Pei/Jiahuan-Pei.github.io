@@ -30,28 +30,26 @@ author_profile: true
   object-fit: cover;
   display: block;
 }
+.portfolio-card .card-media {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
 .portfolio-card .card-media .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+  margin: 0;
 }
+/* shift iframe up to hide YouTube title/channel bar; extend height so bottom is not clipped */
 .portfolio-card .card-media .video-wrapper iframe {
   position: absolute;
-  top: 0; left: 0;
+  top: -46px;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 46px);
   border: none;
-}
-/* fade out the YouTube title/channel bar at the top */
-.portfolio-card .card-media .video-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 42px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%);
-  pointer-events: none;
-  z-index: 1;
 }
 .portfolio-card .card-body {
   padding: 14px 16px;
