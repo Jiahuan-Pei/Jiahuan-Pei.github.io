@@ -127,11 +127,11 @@ def main():
         md += "---\n"
 
         # ── Body ──────────────────────────────────────────────────────────
-        if is_set(item.get("talk_url")):
-            md += f"\n[More information here]({str(item['talk_url']).strip()})\n"
-
         if is_set(item.get("description")):
             md += f"\n{html_escape(str(item['description']))}\n"
+
+        if is_set(item.get("talk_url")):
+            md += f"\n[More information here]({str(item['talk_url']).strip()})\n"
 
         # ── Write file ────────────────────────────────────────────────────
         out_path = os.path.join(args.output, os.path.basename(md_filename))
