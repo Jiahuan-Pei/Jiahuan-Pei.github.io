@@ -9,4 +9,6 @@ tags:
 ---
 
 Mithat Can Ozgun (master student) presented the demo of our paper accepted by CIKM 2025.
-Interested in more details? Please see our paper at: https://dl.acm.org/doi/abs/10.1145/3746252.3761164
+Interested in more details?  Please see our paper following resources.
+Paper: https://dl.acm.org/doi/abs/10.1145/3746252.3761164
+Code: https://github.com/mithatco/mental_health_multiagent

@@ -9,4 +9,5 @@ tags:
 ---
 
 Lei Wang (MSc student) and her AI co-presenter introduced our paper accepted by ICMI 2025.
-Interested in more details? Please see our paper at: https://arxiv.org/pdf/2507.20300
+Interested in more details?  Please see our paper following resources.  
+Paper: https://arxiv.org/pdf/2507.20300

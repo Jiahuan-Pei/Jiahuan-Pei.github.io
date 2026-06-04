@@ -9,5 +9,6 @@ tags:
 ---
 
 Jiahuan presented our paper accepted by ECAI 2020.
+Interested in more details?  Please see our paper following resources.
 Paper: https://arxiv.org/pdf/1911.08151.pdf
 Code: https://github.com/Jiahuan-Pei/multiwoz-mdrg

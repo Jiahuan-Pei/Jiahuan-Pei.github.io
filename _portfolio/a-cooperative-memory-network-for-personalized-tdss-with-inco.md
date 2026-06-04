@@ -9,5 +9,6 @@ tags:
 ---
 
 Jiahuan presented our paper accepted by The Web Conference 2021.
+Interested in more details?  Please see our paper following resources.
 Paper: https://arxiv.org/pdf/2102.08322.pdf
 Code: https://github.com/Jiahuan-Pei/CoMemNN
