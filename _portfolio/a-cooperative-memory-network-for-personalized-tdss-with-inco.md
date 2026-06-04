@@ -12,5 +12,5 @@ Jiahuan presented our paper accepted by TheWebConf 2021.
 
 Interested in more details? Please see our paper following resources.
 
-**Paper:** [https://dl.acm.org/doi/abs/10.1145/3442381.3449843C8](https://dl.acm.org/doi/abs/10.1145/3442381.3449843C8)
+**Paper:** [https://dl.acm.org/doi/pdf/10.1145/3442381.3449843](https://dl.acm.org/doi/pdf/10.1145/3442381.3449843)
 **Code:** [https://github.com/Jiahuan-Pei/CoMemNN](https://github.com/Jiahuan-Pei/CoMemNN)
