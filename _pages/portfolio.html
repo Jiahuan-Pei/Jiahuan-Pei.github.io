@@ -36,11 +36,14 @@ author_profile: true
   height: 0;
   overflow: hidden;
 }
+/* Scale iframe up slightly and center it so the
+   YouTube title/username/profile bar at the top is cropped out */
 .portfolio-card .card-media .video-wrapper iframe {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  top: -14%;    /* crop ~14% from top — hides title bar */
+  left: -1%;
+  width: 102%;  /* slight width expand to avoid side gaps */
+  height: 128%; /* extra height compensates for top crop */
   border: none;
 }
 .portfolio-card .card-body {
