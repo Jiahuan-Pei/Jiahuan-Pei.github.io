@@ -1,6 +1,7 @@
 ---
 title: "Trustworthy AI Psychotherapy: Multi-Agent LLM Workflow for Counseling and Explainable Mental Disorder Diagnosis"
 collection: portfolio
+date: "2025-11-01"
 youtube: "i6bKSkvH_OI"
 description: "Mithat Can Ozgun (master student) presented the demo of our paper accepted by CIKM 2025."
 tags:

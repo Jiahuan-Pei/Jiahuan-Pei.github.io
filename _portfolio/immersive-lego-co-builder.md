@@ -1,6 +1,7 @@
 ---
 title: "Immersive LEGO Co-Builder"
 collection: portfolio
+date: "2026-01-01"
 youtube: "KSMj4hYxoT4"
 description: "Mikita Yurchyk (bachelor student) and his AI co-presenter introduced the demo of our Immersive LEGO Co-Builder."
 tags:

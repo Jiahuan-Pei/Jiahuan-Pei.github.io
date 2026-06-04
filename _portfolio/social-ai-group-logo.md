@@ -1,6 +1,7 @@
 ---
 title: "Social AI Group Logo"
 collection: portfolio
+date: "2025-01-01"
 image: "/images/portfolio/Social AI@VU-logo.png"
 description: "I designed a logo for Social AI Group. Welcome to follow up our group&apos;s Linkedin page for our latest work."
 tags:
