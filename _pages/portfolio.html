@@ -43,13 +43,13 @@ author_profile: true
   height: 100%;
   border: none;
 }
-/* mask the YouTube title/channel bar at the top */
+/* fade out the YouTube title/channel bar at the top */
 .portfolio-card .card-media .video-wrapper::after {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 42px;
-  background: #000;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%);
   pointer-events: none;
   z-index: 1;
 }
