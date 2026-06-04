@@ -95,6 +95,9 @@ def main():
         description = str(row.get("description", "")).strip() if is_set(row.get("description")) else ""
         tags_raw    = str(row.get("tags",        "")).strip() if is_set(row.get("tags"))        else ""
         body        = str(row.get("body",        "")).strip() if is_set(row.get("body"))        else ""
+        paper       = str(row.get("paper",       "")).strip() if is_set(row.get("paper"))       else ""
+        code        = str(row.get("code",        "")).strip() if is_set(row.get("code"))        else ""
+        data        = str(row.get("data",        "")).strip() if is_set(row.get("data"))        else ""
 
         # Parse comma-separated tags
         tags = [t.strip() for t in tags_raw.split(",") if t.strip()] if tags_raw else []
@@ -121,6 +124,21 @@ def main():
         md += "---\n"
 
         # ── Body ──────────────────────────────────────────────────────────
+        if not body:
+            # Auto-construct body from description + resources
+            parts = []
+            if description:
+                parts.append(description)
+            if paper or code or data:
+                parts.append("\nInterested in more details? Please see our paper following resources.")
+                if paper:
+                    parts.append(f"\n**Paper:** [{paper}]({paper})")
+                if code:
+                    parts.append(f"**Code:** [{code}]({code})")
+                if data:
+                    parts.append(f"**Data:** [{data}]({data})")
+            body = "\n".join(parts)
+
         if body:
             md += f"\n{body}\n"
 

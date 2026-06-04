@@ -9,5 +9,7 @@ tags:
 ---
 
 Albert Tang (high school student) presented the demo of our paper accepted by CHI 2026.
-Interested in more details?  Please see our paper following resources. 
-Paper: https://dl.acm.org/doi/abs/10.1145/3772363.3798437
+
+Interested in more details? Please see our paper following resources.
+
+**Paper:** [https://dl.acm.org/doi/abs/10.1145/3772363.3798437](https://dl.acm.org/doi/abs/10.1145/3772363.3798437)
