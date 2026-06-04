@@ -49,6 +49,26 @@ author_profile: true
   height: 100%;
   border: none;
 }
+/* cover YouTube title/username/profile bar */
+.portfolio-card .card-media .video-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 40px;
+  background: #000;
+  z-index: 2;
+  pointer-events: none;
+}
+/* cover YouTube bottom bar on hover */
+.portfolio-card .card-media .video-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: #000;
+  z-index: 2;
+  pointer-events: none;
+}
 .portfolio-card .card-body {
   padding: 14px 16px;
   flex: 1;
