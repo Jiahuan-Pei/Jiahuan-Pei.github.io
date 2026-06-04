@@ -6,6 +6,7 @@ author_profile: true
 ---
 
 {% include base_path %}
+{% assign PAGE_SIZE = 6 %}
 
 <style>
 .portfolio-grid {
@@ -74,12 +75,27 @@ author_profile: true
   padding: 2px 7px;
   color: #555;
 }
+details.more-portfolio summary {
+  cursor: pointer;
+  color: #555;
+  font-size: 0.9em;
+  margin-top: 20px;
+  list-style: none;
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #f8f8f8;
+}
+details.more-portfolio summary::-webkit-details-marker { display: none; }
+details.more-portfolio[open] summary { margin-bottom: 16px; }
 </style>
 
-<div class="portfolio-grid">
-{% for post in site.portfolio %}
-  <div class="portfolio-card">
+{% capture card %}{% endcapture %}
 
+<div class="portfolio-grid">
+{% for post in site.portfolio limit: PAGE_SIZE %}
+  <div class="portfolio-card">
     {% if post.youtube %}
     <div class="card-media">
       <div class="video-wrapper">
@@ -93,7 +109,6 @@ author_profile: true
       <img src="{{ post.image }}" alt="{{ post.title }}">
     </div>
     {% endif %}
-
     <div class="card-body">
       <p class="card-title">
         {% if post.url %}<a href="{{ post.url }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
@@ -109,7 +124,48 @@ author_profile: true
       </div>
       {% endif %}
     </div>
-
   </div>
 {% endfor %}
 </div>
+
+{% assign total = site.portfolio | size %}
+{% if total > PAGE_SIZE %}
+{% assign more_count = total | minus: PAGE_SIZE %}
+<details class="more-portfolio">
+  <summary>Show {{ more_count }} more ▾</summary>
+  <div class="portfolio-grid">
+  {% for post in site.portfolio offset: PAGE_SIZE %}
+    <div class="portfolio-card">
+      {% if post.youtube %}
+      <div class="card-media">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/{{ post.youtube }}"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen title="{{ post.title }}"></iframe>
+        </div>
+      </div>
+      {% elsif post.image %}
+      <div class="card-media">
+        <img src="{{ post.image }}" alt="{{ post.title }}">
+      </div>
+      {% endif %}
+      <div class="card-body">
+        <p class="card-title">
+          {% if post.url %}<a href="{{ post.url }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
+        </p>
+        {% if post.description %}
+          <p class="card-desc">{{ post.description }}</p>
+        {% elsif post.excerpt %}
+          <p class="card-desc">{{ post.excerpt | strip_html }}</p>
+        {% endif %}
+        {% if post.tags and post.tags.size > 0 %}
+        <div class="card-tags">
+          {% for tag in post.tags %}<span class="card-tag">{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</details>
+{% endif %}
