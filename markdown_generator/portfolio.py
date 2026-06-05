@@ -130,14 +130,16 @@ def main():
             if description:
                 parts.append(description)
             if paper or code or data:
-                parts.append("\nInterested in more details? Please see our paper following resources.")
+                parts.append("\nInterested in more details? Please see the following resources.")
+                resources = []
                 if paper:
-                    parts.append(f"\n**Paper:** [{paper}]({paper})")
+                    resources.append(f"**Paper:** [{paper}]({paper})")
                 if code:
-                    parts.append(f"**Code:** [{code}]({code})")
+                    resources.append(f"**Code:** [{code}]({code})")
                 if data:
-                    parts.append(f"**Data:** [{data}]({data})")
-            body = "\n".join(parts)
+                    resources.append(f"**Data:** [{data}]({data})")
+                parts.append("  \n".join(resources))
+            body = "\n\n".join(parts)
 
         if body:
             md += f"\n{body}\n"

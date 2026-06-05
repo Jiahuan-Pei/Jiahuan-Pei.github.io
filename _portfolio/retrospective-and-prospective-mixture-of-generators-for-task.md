@@ -11,7 +11,8 @@ tags:
 
 Jiahuan presented our paper accepted by ECAI 2020.
 
-Interested in more details? Please see our paper following resources.
 
-**Paper:** [http://ecai2020.eu/papers/92_paper.pdf](http://ecai2020.eu/papers/92_paper.pdf)
+Interested in more details? Please see the following resources.
+
+**Paper:** [http://ecai2020.eu/papers/92_paper.pdf](http://ecai2020.eu/papers/92_paper.pdf)  
 **Code:** [https://github.com/Jiahuan-Pei/multiwoz-mdrg](https://github.com/Jiahuan-Pei/multiwoz-mdrg)
