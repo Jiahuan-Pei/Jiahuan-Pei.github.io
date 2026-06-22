@@ -11,6 +11,7 @@ Requires: scholarly >= 1.7, fp (free-proxy)
 
 import os
 import re
+import sys
 import time
 import logging
 import random
@@ -186,10 +187,15 @@ def main():
     except Exception:
         log.warning("Direct access failed. Trying via free proxy …")
         if not setup_proxy():
-            log.error("Could not set up proxy. Install free-proxy: pip install free-proxy")
-            raise
-        search_query = fetch_with_retry(scholarly.search_author_id, SCHOLAR_USER_ID)
-        author = fetch_with_retry(scholarly.fill, search_query, sections=["publications"])
+            log.warning("Proxy setup failed (technical error). Skipping Scholar update — existing publications unchanged.")
+            sys.exit(0)
+        try:
+            search_query = fetch_with_retry(scholarly.search_author_id, SCHOLAR_USER_ID)
+            author = fetch_with_retry(scholarly.fill, search_query, sections=["publications"])
+        except Exception as proxy_err:
+            log.error(f"Proxy access failed: {proxy_err}")
+            log.warning("Skipping Scholar update — existing publications unchanged.")
+            sys.exit(0)
 
     publications = author.get("publications", [])
     log.info(f"Found {len(publications)} publications total")
