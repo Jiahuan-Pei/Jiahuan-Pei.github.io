@@ -169,10 +169,12 @@ def fetch_with_retry(fn, *args, retries=3, base_delay=10, **kwargs):
 
 def main():
     import argparse
+    from datetime import datetime
+    current_year = datetime.now().year
     parser = argparse.ArgumentParser(description="Fetch publications from Google Scholar.")
     parser.add_argument(
-        "--since", type=int, default=None, metavar="YEAR",
-        help="Only fetch papers published in YEAR or later (e.g. --since 2024).",
+        "--since", type=int, default=current_year, metavar="YEAR",
+        help=f"Only fetch papers published in YEAR or later (default: current year {current_year}).",
     )
     args = parser.parse_args()
 
