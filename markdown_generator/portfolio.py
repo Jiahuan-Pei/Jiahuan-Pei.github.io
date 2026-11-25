@@ -58,7 +58,7 @@ def main():
     df = pd.read_excel(args.xlsx, header=0)
     # Sort newest-first by date if column present
     if "date" in df.columns:
-        df["_date_sort"] = pd.to_datetime(df["date"], dayfirst=True, errors="coerce")
+        df["_date_sort"] = pd.to_datetime(df["date"], dayfirst=False, errors="coerce")
         df = df.sort_values("_date_sort", ascending=False, na_position="last").drop(columns=["_date_sort"])
         df = df.reset_index(drop=True)
     print(f"Loaded {len(df)} rows from {args.xlsx}")
@@ -80,14 +80,14 @@ def main():
         if is_set(date_raw):
             try:
                 from datetime import datetime
-                for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%m/%d/%Y"):
+                for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%d/%m/%Y", "%m/%d/%Y"):
                     try:
                         date = datetime.strptime(str(date_raw).strip(), fmt).strftime("%Y-%m-%d")
                         break
                     except ValueError:
                         continue
                 if not date:
-                    date = pd.to_datetime(date_raw, dayfirst=True).strftime("%Y-%m-%d")
+                    date = pd.to_datetime(date_raw, dayfirst=False).strftime("%Y-%m-%d")
             except Exception:
                 pass
         image       = str(row.get("image",       "")).strip() if is_set(row.get("image"))       else ""

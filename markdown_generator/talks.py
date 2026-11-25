@@ -45,8 +45,8 @@ def is_set(value) -> bool:
 def normalise_date(raw: str) -> str:
     """
     Normalise a date string to YYYY-MM-DD.
-    Standard input format is DD/MM/YYYY (tried first).
-    Also accepts ISO YYYY-MM-DD and other common variants.
+    Standard input format is YYYY-MM-DD (tried first).
+    Also accepts DD/MM/YYYY and other common variants.
     """
     raw = str(raw).strip()
     if not raw:
@@ -54,9 +54,10 @@ def normalise_date(raw: str) -> str:
     # Already ISO format
     if len(raw) == 10 and raw[4] == "-":
         return raw
-    # DD/MM/YYYY first (canonical format), then fallbacks
-    for fmt in ("%d/%m/%Y", "%d-%m-%Y", "%d/%m/%y", "%d-%m-%y",
-                "%m/%d/%Y", "%m-%d-%Y", "%m/%d/%y", "%m-%d-%y"):
+    # YYYY-MM-DD first (canonical format), then fallbacks
+    for fmt in ("%Y-%m-%d", "%Y/%m/%d",
+                "%d/%m/%Y", "%d-%m-%Y", "%d/%m/%y", "%d-%m-%y",
+                "%m/%d/%Y", "%m-%d-%Y"):
         try:
             dt = datetime.strptime(raw, fmt)
             if dt.year < 100:
@@ -64,9 +65,9 @@ def normalise_date(raw: str) -> str:
             return dt.strftime("%Y-%m-%d")
         except ValueError:
             continue
-    # Fallback: let pandas infer with dayfirst=True
+    # Fallback: let pandas infer
     try:
-        dt = pd.to_datetime(raw, dayfirst=True)
+        dt = pd.to_datetime(raw, dayfirst=False)
         return dt.strftime("%Y-%m-%d")
     except Exception:
         raise ValueError(f"Cannot parse date: {raw!r}")
