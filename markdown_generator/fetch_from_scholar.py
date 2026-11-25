@@ -105,6 +105,20 @@ def format_authors(authors_list: list, highlight: str) -> str:
     return ", ".join(parts)
 
 
+def _existing_date(slug: str, year: str) -> str:
+    """Return date from an existing _publications/ file matching slug, or YYYY-01-01."""
+    pub_dir = os.path.join(os.path.dirname(__file__), "..", "_publications")
+    pattern = re.compile(rf"^(\d{{4}}-\d{{2}}-\d{{2}})-{re.escape(slug)}\.md$")
+    try:
+        for fname in os.listdir(pub_dir):
+            m = pattern.match(fname)
+            if m:
+                return m.group(1)
+    except OSError:
+        pass
+    return f"{year}-01-01"
+
+
 def build_md(pub: dict) -> tuple[str, str]:
     """Return (filename, markdown_content)."""
     bib   = pub.get("bib", {})
@@ -128,8 +142,8 @@ def build_md(pub: dict) -> tuple[str, str]:
 
     pubsource = classify_venue(title, venue, paper_url)
 
-    pub_date = f"{year}-01-01"
     url_slug  = slugify(title)
+    pub_date = _existing_date(url_slug, year)
     md_filename = f"{pub_date}-{url_slug}.md"
     html_filename = f"{pub_date}-{url_slug}"
 
@@ -209,9 +223,13 @@ def main():
     skipped = 0
     for i, pub in enumerate(publications):
         try:
-            filled = fetch_with_retry(scholarly.fill, pub)
-            # Polite delay with jitter to avoid rate limiting
-            time.sleep(random.uniform(2, 4))
+            try:
+                filled = fetch_with_retry(scholarly.fill, pub, retries=1, base_delay=5)
+                # Polite delay with jitter to avoid rate limiting
+                time.sleep(random.uniform(2, 4))
+            except Exception as fill_err:
+                log.warning(f"[{i+1}] detail fetch failed ({fill_err}), using listing data")
+                filled = pub
 
             md_filename, md_content = build_md(filled)
             out_path = os.path.join(OUTPUT_DIR, md_filename)
