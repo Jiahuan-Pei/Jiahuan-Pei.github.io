@@ -25,6 +25,8 @@ CONFERENCE_KEYWORDS = [
     "icml", "iclr", "cvpr", "iccv", "eccv", "acm", "ieee", "ntcir",
     "nlpcc", "findings", "aclanthology",
 ]
+BOOK_KEYWORDS = ["thesis", "dissertation"]
+
 JOURNAL_KEYWORDS = [
     "journal", "transactions", "letters", "review", "magazine",
     "frontiers", "plos", "nature", "science", "wiley", "springer",
@@ -50,14 +52,16 @@ def slugify(text: str) -> str:
     return re.sub(r"-{2,}", "-", text).strip("-")[:80]
 
 
-def classify(venue: str) -> str:
-    v = venue.lower()
+def classify(venue: str, title: str = "") -> str:
+    combined = (venue + " " + title).lower()
     for kw in ARXIV_KEYWORDS:
-        if kw in v: return "arxiv"
+        if kw in combined: return "arxiv"
+    for kw in BOOK_KEYWORDS:
+        if kw in combined: return "book"
     for kw in JOURNAL_KEYWORDS:
-        if kw in v: return "journal"
+        if kw in combined: return "journal"
     for kw in CONFERENCE_KEYWORDS:
-        if kw in v: return "proceeding"
+        if kw in combined: return "proceeding"
     return "proceeding"
 
 
@@ -131,7 +135,7 @@ def main():
         year      = row.get("Year", "").strip() or "????"
         publisher = row.get("Publisher", "").strip()
 
-        pubsource = classify(venue)
+        pubsource = classify(venue, title)
 
         url_slug  = slugify(title)
         pub_date  = existing_date(url_slug, year, args.output)
