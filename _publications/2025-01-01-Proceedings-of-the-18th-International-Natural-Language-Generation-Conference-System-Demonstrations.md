@@ -6,5 +6,5 @@ permalink: /publication/2025-01-01-Proceedings-of-the-18th-International-Natural
 date: 2025-01-01
 venue: 'Proceedings of the 18th International Natural Language Generation Conference: System Demonstrations'
 paperurl: 'https://aclanthology.org/2025.inlg-demos.0.pdf'
-citation: 'Lucie Flek, Shashi Narayan, <b>Jiahuan Pei</b>, &quot;Proceedings of the 18th International Natural Language Generation Conference: System Demonstrations.&quot; Proceedings of the 18th International Natural Language Generation Conference: System Demonstrations, 2025.'
+citation: 'Lucie Flek, Shashi Narayan, <b>Jiahuan Pei</b>, &quot;Proceedings of the 18th International Natural Language Generation Conference: System Demonstrations.&quot; In Proceedings of Proceedings of the 18th International Natural Language Generation Conference: System Demonstrations (2025).'
 ---

@@ -9,5 +9,5 @@ venue: 'In Proceedings of The Web Conference 2021 (WWW 2021)'
 paperurl: 'https://dl.acm.org/doi/pdf/10.1145/3442381.3449843'
 codeurl: 'https://github.com/Jiahuan-Pei/CoMemNN'
 talkurl: 'https://youtu.be/VrjDw3LDSvU?si=45xEPneb0exPT5CT'
-citation: ' <b>Jiahuan Pei</b>,  Pengjie Ren,  Maarten Rijke, &quot;A Cooperative Memory Network for Personalized Task-oriented Dialogue Systems with Incomplete User Profiles.&quot; In Proceedings of The Web Conference 2021 (WWW 2021).'
+citation: '<b>Jiahuan Pei</b>, Pengjie Ren, Maarten Rijke, &quot;A Cooperative Memory Network for Personalized Task-oriented Dialogue Systems with Incomplete User Profiles.&quot; In Proceedings of The Web Conference 2021 (WWW 2021) (2021).'
 ---

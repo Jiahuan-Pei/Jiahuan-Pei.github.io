@@ -2,8 +2,8 @@
 title: "StoryMI: Steerable Multi-Agent Therapeutic Dialogue Generation"
 collection: publications
 pubsource: proceeding
-permalink: /publication/2026-01-01-StoryMI-Steerable-Multi-Agent-Therapeutic-Dialogue-Generation
+permalink: /publication/2026-01-01-storymi-steerable-multi-agent-therapeutic-dialogue-generation
 date: 2026-01-01
-venue: ''
-citation: ', &quot;StoryMI: Steerable Multi-Agent Therapeutic Dialogue Generation.&quot; , 2026.'
+venue: 'ACL-Findings 2026'
+citation: 'Qingyu Meng, Min Chen, Dingming Liu, Yifan Mo, Yue Su, Xin Sun, Koen Hindriks, <b>Jiahuan Pei</b>, &quot;StoryMI: Steerable Multi-Agent Therapeutic Dialogue Generation.&quot; In Proceedings of ACL-Findings 2026 (2026).'
 ---

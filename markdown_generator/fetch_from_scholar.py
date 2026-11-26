@@ -14,6 +14,9 @@ import re
 import time
 import logging
 import random
+import urllib.parse
+import urllib.request
+import json
 from scholarly import scholarly, ProxyGenerator
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -105,6 +108,46 @@ def format_authors(authors_list: list, highlight: str) -> str:
     return ", ".join(parts)
 
 
+def enrich_from_semantic_scholar(pub: dict) -> dict:
+    """
+    Query Semantic Scholar by title and merge authors/venue/year into pub if missing.
+    Returns the (possibly enriched) pub dict.
+    """
+    title = pub.get("bib", {}).get("title", "").strip()
+    if not title:
+        return pub
+    # Only fetch if authors are missing
+    if pub.get("bib", {}).get("author", "").strip():
+        return pub
+    try:
+        q = urllib.parse.quote(title)
+        url = f"https://api.semanticscholar.org/graph/v1/paper/search?query={q}&fields=title,authors,year,venue,externalIds&limit=1"
+        req = urllib.request.Request(url, headers={"User-Agent": "academicpages-generator/1.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        papers = data.get("data", [])
+        if not papers:
+            return pub
+        p = papers[0]
+        # Verify title match (fuzzy: lowercased, stripped)
+        if slugify(p.get("title", "")).lower()[:40] != slugify(title).lower()[:40]:
+            return pub
+        pub = dict(pub)
+        pub["bib"] = dict(pub.get("bib", {}))
+        # Authors: list of {name: "First Last"}
+        authors = p.get("authors", [])
+        if authors:
+            pub["bib"]["author"] = " and ".join(a["name"] for a in authors)
+        if not pub["bib"].get("pub_year") and p.get("year"):
+            pub["bib"]["pub_year"] = str(p["year"])
+        if not pub["bib"].get("venue") and p.get("venue"):
+            pub["bib"]["venue"] = p["venue"]
+        log.info(f"  Enriched from Semantic Scholar: {len(authors)} authors")
+    except Exception as e:
+        log.debug(f"  Semantic Scholar lookup failed: {e}")
+    return pub
+
+
 def _existing_date(slug: str, year: str) -> str:
     """Return date from an existing _publications/ file matching slug, or YYYY-01-01."""
     pub_dir = os.path.join(os.path.dirname(__file__), "..", "_publications")
@@ -131,11 +174,13 @@ def build_md(pub: dict) -> tuple[str, str]:
         venue = ""
     abstract = bib.get("abstract", "").strip()
 
-    authors_raw = bib.get("author", "").split(" and ")
+    authors_raw = [a.strip() for a in bib.get("author", "").split(" and ") if a.strip()]
     citation_authors = format_authors(authors_raw, AUTHOR_DISPLAY)
 
     pub_url   = pub.get("pub_url", "") or ""
     eprint_id = pub.get("eprint_url", "") or ""
+    code_url  = pub.get("codeurl", "") or ""
+    data_url  = pub.get("dataurl", "") or ""
 
     # Pick best paper URL
     paper_url = pub_url or eprint_id or ""
@@ -147,9 +192,18 @@ def build_md(pub: dict) -> tuple[str, str]:
     md_filename = f"{pub_date}-{url_slug}.md"
     html_filename = f"{pub_date}-{url_slug}"
 
-    # Citation string
-    citation = f'{citation_authors}, "{html_escape(title)}." {html_escape(venue)}, {year}.'
-    citation = citation.replace("&quot;", "'").replace("&amp;", "")
+    # Citation string: "Authors, "Title." In Proceedings of Venue (Venue Year)." for proceedings
+    # or "Authors, "Title." Venue, Year." for journals/arxiv
+    escaped_title = html_escape(title).replace("&quot;", "'")
+    escaped_venue = html_escape(venue).replace("&amp;", "&")
+    if pubsource == "proceeding":
+        citation = f'{citation_authors}, &quot;{escaped_title}.&quot; In Proceedings of {escaped_venue} ({year}).'
+    elif pubsource == "journal":
+        citation = f'{citation_authors}, &quot;{escaped_title}.&quot; {escaped_venue}, {year}.'
+    elif pubsource == "arxiv":
+        citation = f'{citation_authors}, &quot;{escaped_title}.&quot; arXiv, {year}.'
+    else:
+        citation = f'{citation_authors}, &quot;{escaped_title}.&quot; {escaped_venue}, {year}.'
 
     # YAML front-matter
     md  = f'---\ntitle: "{html_escape(title)}"\n'
@@ -157,10 +211,14 @@ def build_md(pub: dict) -> tuple[str, str]:
     md += f'pubsource: {pubsource}\n'
     md += f'permalink: /publication/{html_filename}\n'
     md += f'date: {pub_date}\n'
-    md += f"venue: '{html_escape(venue)}'\n"
+    md += f"venue: '{escaped_venue}'\n"
     if paper_url:
         md += f"paperurl: '{paper_url}'\n"
-    md += f"citation: '{html_escape(citation)}'\n"
+    if code_url:
+        md += f"codeurl: '{code_url}'\n"
+    if data_url:
+        md += f"dataurl: '{data_url}'\n"
+    md += f"citation: '{citation}'\n"
     md += "---\n"
 
     return md_filename, md
@@ -228,8 +286,8 @@ def main():
                 # Polite delay with jitter to avoid rate limiting
                 time.sleep(random.uniform(2, 4))
             except Exception as fill_err:
-                log.warning(f"[{i+1}] detail fetch failed ({fill_err}), using listing data")
-                filled = pub
+                log.warning(f"[{i+1}] detail fetch failed ({fill_err}), trying Semantic Scholar …")
+                filled = enrich_from_semantic_scholar(pub)
 
             md_filename, md_content = build_md(filled)
             out_path = os.path.join(OUTPUT_DIR, md_filename)
