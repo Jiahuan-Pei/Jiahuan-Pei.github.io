@@ -7,7 +7,9 @@ author_profile: true
 
 {% include base_path %}
 
-<p>Publications are loaded live from <a href="https://www.semanticscholar.org/author/7616787" target="_blank">Semantic Scholar</a>. You can also find them on <a href="{{ author.googlescholar }}" target="_blank">my Google Scholar profile</a>.</p>
+{% if author.googlescholar %}
+<p>You can also find my articles on <u><a href="{{ author.googlescholar }}" target="_blank">my Google Scholar profile</a></u>.</p>
+{% endif %}
 
 <div id="pub-loading" style="color:#888; margin:16px 0;">Loading publications…</div>
 <div id="pub-error"   style="color:#c00; display:none;"></div>
@@ -27,7 +29,6 @@ author_profile: true
 
 <script>
 (function () {
-  var AUTHOR_ID  = "7616787";
   var HIGHLIGHT  = "Jiahuan Pei";
   var PUB_LINKS  = "/assets/js/pub_links.json";
 
@@ -115,11 +116,10 @@ author_profile: true
              html: "<li>" + citation + links + "</li>" };
   }
 
-  var ssUrl = "https://api.semanticscholar.org/graph/v1/author/" + AUTHOR_ID +
-              "/papers?fields=title,year,venue,journal,authors,externalIds,url&limit=200";
+  var ssUrl = "/assets/js/publications.json";
 
   Promise.all([
-    fetch(ssUrl).then(function(r) { return r.json(); }),
+    fetch(ssUrl).then(function(r) { return r.json(); }).then(function(d){ return {data: d.papers}; }),
     fetch(PUB_LINKS).then(function(r) { return r.ok ? r.json() : {papers:[]}; }).catch(function(){ return {papers:[]}; })
   ])
   .then(function(results) {
