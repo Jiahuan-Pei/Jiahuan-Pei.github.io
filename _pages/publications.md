@@ -59,4 +59,5 @@ author_profile: true
 <style>
 .pub-list { list-style: none; padding: 0; margin: 0 0 8px; }
 .pub-list li { margin-bottom: 8px; line-height: 1.5; }
+.pub-list li .pub-title { font-style: italic; }
 </style>

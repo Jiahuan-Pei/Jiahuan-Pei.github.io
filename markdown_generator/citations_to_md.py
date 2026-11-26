@@ -149,16 +149,17 @@ def main():
         v_clean = re.sub(r"^[Ii]n\s+", "", v_clean).strip()
 
         pub_inst = html_escape(publisher) if publisher else v_clean
+        ti = f'<em>{t}</em>'
         if pubsource == "proceeding":
-            citation = f'{authors_str}, &quot;{t}.&quot; In Proceedings of {v_clean} ({year}).'
+            citation = f'{authors_str}, {ti}. In Proceedings of {v_clean} ({year}).'
         elif pubsource == "journal":
-            citation = f'{authors_str}, &quot;{t}.&quot; {v_clean}, {year}.'
+            citation = f'{authors_str}, {ti}. {v_clean}, {year}.'
         elif pubsource == "arxiv":
-            citation = f'{authors_str}, &quot;{t}.&quot; arXiv, {year}.'
+            citation = f'{authors_str}, {ti}. arXiv, {year}.'
         elif pubsource == "book":
-            citation = f'{authors_str}, &quot;{t}.&quot; {pub_inst}, {year}.'
+            citation = f'{authors_str}, {ti}. {pub_inst}, {year}.'
         else:
-            citation = f'{authors_str}, &quot;{t}.&quot; {v_clean}, {year}.'
+            citation = f'{authors_str}, {ti}. {v_clean}, {year}.'
 
         # Front matter
         md  = "---\n"
