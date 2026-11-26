@@ -1,46 +1,87 @@
 #!/usr/bin/env python3
 """
-Fetch publications from Semantic Scholar and save as a static JSON file.
-Output: assets/js/publications.json
+Convert citations.csv (exported from Google Scholar) to assets/js/publications.json.
 
 Usage:
     python fetch_publications_json.py
+    python fetch_publications_json.py --input my.csv
 """
 
+import argparse
+import csv
 import json
 import os
-import urllib.parse
-import urllib.request
-import time
+import re
 
-AUTHOR_ID  = "7616787"
-OUTPUT     = os.path.join(os.path.dirname(__file__), "..", "assets", "js", "publications.json")
-FIELDS     = "title,year,venue,journal,authors,externalIds,url,openAccessPdf"
-LIMIT      = 200
+OUTPUT = os.path.join(os.path.dirname(__file__), "..", "assets", "js", "publications.json")
+
+CONF_KW  = ["proceedings","conference","workshop","symposium","acl","emnlp","naacl",
+             "coling","eacl","sigir","cikm","www","wsdm","ecir","aaai","ijcai",
+             "neurips","nips","icml","iclr","cvpr","iccv","eccv","acm","ieee",
+             "ntcir","nlpcc","findings","chi","uist","cscw","iui","assets"]
+JOUR_KW  = ["journal","transactions","letters","review","magazine","frontiers",
+             "plos","nature","science","wiley","springer","inderscience","elsevier"]
+ARXIV_KW = ["arxiv","preprint","corr"]
+BOOK_KW  = ["thesis","dissertation"]
 
 
-def fetch(url, retries=3, delay=10):
-    req = urllib.request.Request(url, headers={"User-Agent": "academicpages/1.0"})
-    for attempt in range(retries):
-        try:
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                return json.loads(resp.read())
-        except Exception as e:
-            if attempt < retries - 1:
-                print(f"  Attempt {attempt+1} failed: {e}. Retrying in {delay}s…")
-                time.sleep(delay)
-                delay *= 2
-            else:
-                raise
+def classify(venue, title=""):
+    t = (venue + " " + title).lower()
+    for k in ARXIV_KW:
+        if k in t: return "arxiv"
+    for k in BOOK_KW:
+        if k in t: return "book"
+    for k in JOUR_KW:
+        if k in t: return "journal"
+    for k in CONF_KW:
+        if k in t: return "proceeding"
+    return "proceeding"
+
+
+def parse_authors(raw):
+    """Parse 'Last, First; Last, First; ' → [{'name': 'First Last'}, ...]"""
+    authors = []
+    for entry in raw.split(";"):
+        entry = entry.strip().rstrip(",")
+        if not entry:
+            continue
+        if "," in entry:
+            parts = entry.split(",", 1)
+            name = parts[1].strip() + " " + parts[0].strip()
+        else:
+            name = entry.strip()
+        authors.append({"name": name})
+    return authors
 
 
 def main():
-    url = (f"https://api.semanticscholar.org/graph/v1/author/{AUTHOR_ID}"
-           f"/papers?fields={FIELDS}&limit={LIMIT}")
-    print(f"Fetching from Semantic Scholar (author {AUTHOR_ID})…")
-    data = fetch(url)
-    papers = data.get("data", [])
-    print(f"Found {len(papers)} papers.")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", default=os.path.join(os.path.dirname(__file__), "citations.csv"))
+    args = parser.parse_args()
+
+    with open(args.input, newline="", encoding="utf-8-sig") as f:
+        rows = list(csv.DictReader(f))
+    print(f"Loaded {len(rows)} rows from {args.input}")
+
+    papers = []
+    for row in rows:
+        title   = row.get("Title", "").strip()
+        venue   = row.get("Publication", "").strip()
+        year    = row.get("Year", "").strip()
+        authors = parse_authors(row.get("Authors", ""))
+
+        if not title:
+            continue
+
+        papers.append({
+            "title":      title,
+            "year":       int(year) if year.isdigit() else None,
+            "venue":      venue,
+            "authors":    authors,
+            "pubsource":  classify(venue, title),
+            "externalIds": {},
+            "url":        "",
+        })
 
     # Sort newest-first
     papers.sort(key=lambda p: p.get("year") or 0, reverse=True)

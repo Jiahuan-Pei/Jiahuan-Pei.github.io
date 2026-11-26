@@ -1,1419 +1,1427 @@
 {
   "papers": [
     {
-      "paperId": "4aaa7809b1d450a65661b9fa2708d9d7e527380e",
-      "externalIds": {
-        "ArXiv": "2604.12872",
-        "DBLP": "journals/corr/abs-2604-12872",
-        "DOI": "10.48550/arXiv.2604.12872",
-        "CorpusId": 287473349
-      },
-      "url": "https://www.semanticscholar.org/paper/4aaa7809b1d450a65661b9fa2708d9d7e527380e",
-      "title": "OVAL: Open-Vocabulary Augmented Memory Model for Lifelong Object Goal Navigation",
-      "venue": "arXiv.org",
+      "title": "LEGO Co-builder: Exploring Fine-Grained Vision-Language Modeling for Multimodal Assembly Assistants",
       "year": 2026,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "volume": "abs/2604.12872",
-        "name": "ArXiv"
-      },
+      "venue": "ICMI 2026",
       "authors": [
         {
-          "authorId": "7616787",
+          "name": "Haochen Huang"
+        },
+        {
+          "name": "Yue Su"
+        },
+        {
+          "name": "Xin Sun"
+        },
+        {
+          "name": "Moonisa Ahsan"
+        },
+        {
+          "name": "Mohammad Aliannejadi"
+        },
+        {
+          "name": "Irene Viola"
+        },
+        {
+          "name": "Zhaochun Ren"
+        },
+        {
+          "name": "Chuang Yu"
+        },
+        {
+          "name": "Aneta Lisowska"
+        },
+        {
+          "name": "Artem Belopolsky"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "NeuroWise: A Multi-Agent LLM \"Glass-Box\" System for Practicing Double-Empathy Communication with Autistic Partners",
+      "year": 2026,
+      "venue": "CHI 2026",
+      "authors": [
+        {
+          "name": "Albert Tang"
+        },
+        {
+          "name": "Yifan Mo"
+        },
+        {
+          "name": "Jie Li"
+        },
+        {
+          "name": "Yue Su"
+        },
+        {
+          "name": "Mengyuan Zhang"
+        },
+        {
+          "name": "Sander L Koole"
+        },
+        {
+          "name": "Koen Hindriks"
+        },
+        {
+          "name": "Jiahuan Pei"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "\"It Talks Like a Patient, But Feels Different\": Co-Designing AI Standardized Patients with Medical Learners",
+      "year": 2026,
+      "venue": "CHI 2026",
+      "authors": [
+        {
+          "name": "Zhiqi Gao"
+        },
+        {
+          "name": "Guo Zhu"
+        },
+        {
+          "name": "Huarui Luo"
+        },
+        {
+          "name": "Dongyijie Primo Pan"
+        },
+        {
+          "name": "Haoming Tang"
+        },
+        {
+          "name": "Bingquan Zhang"
+        },
+        {
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "2379374429",
-          "name": "Yi Liu"
+          "name": "Jie Li"
         },
         {
-          "authorId": "2293396602",
-          "name": "Guo-Ping Pan"
-        },
-        {
-          "authorId": "2267906682",
-          "name": "Yuan Jiang"
-        },
-        {
-          "authorId": "2293440971",
-          "name": "Hou-De Liu"
-        },
-        {
-          "authorId": "2275989943",
-          "name": "Xue-Qian Wang"
+          "name": "Benyou Wang"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "72a64c2ebc4d0724a811997c8e83ddd00d6ad205",
-      "externalIds": {
-        "DBLP": "journals/corr/abs-2606-21498",
-        "ArXiv": "2606.21498",
-        "DOI": "10.48550/arXiv.2606.21498",
-        "CorpusId": 289626671
-      },
-      "url": "https://www.semanticscholar.org/paper/72a64c2ebc4d0724a811997c8e83ddd00d6ad205",
-      "title": "Balancing Performance and Diversity in GRPO Autoregressive Text-to-Image Post-Training",
-      "venue": "arXiv.org",
-      "year": 2026,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "volume": "abs/2606.21498",
-        "name": "ArXiv"
-      },
-      "authors": [
-        {
-          "authorId": "2402718807",
-          "name": "Yuan-Hao Chiang"
-        },
-        {
-          "authorId": "2427850999",
-          "name": "H. Duan"
-        },
-        {
-          "authorId": "2445087997",
-          "name": "Chunru Yang"
-        },
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2402998392",
-          "name": "Yi Liu"
-        },
-        {
-          "authorId": "2281904842",
-          "name": "Xue-Qian Wang"
-        }
-      ]
-    },
-    {
-      "paperId": "7ffc4d5aa602bacc342907fd62c09c14b74b94e7",
-      "externalIds": {
-        "DOI": "10.1016/j.atech.2026.101971",
-        "CorpusId": 286577974
-      },
-      "url": "https://www.semanticscholar.org/paper/7ffc4d5aa602bacc342907fd62c09c14b74b94e7",
       "title": "Deep Reinforcement Learning for Adaptive Control of Heater Position and Heating Power in a Smart Greenhouse",
-      "venue": "Smart Agricultural Technology",
       "year": 2026,
-      "openAccessPdf": {
-        "url": "https://doi.org/10.1016/j.atech.2026.101971",
-        "status": "GOLD",
-        "license": "CCBYNCND"
-      },
-      "journal": {
-        "name": "Smart Agricultural Technology"
-      },
+      "venue": "Smart Agricultural Technology",
       "authors": [
         {
-          "authorId": "2424102925",
           "name": "Ratta Chindasilpa"
         },
         {
-          "authorId": "67233108",
           "name": "Durrotun Nashihin"
         },
         {
-          "authorId": "7616787",
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "2000419924",
           "name": "Long Cheng"
         },
         {
-          "authorId": "2155800298",
           "name": "Xiaohan Zhou"
         },
         {
-          "authorId": "2256302183",
           "name": "Qingzhi Liu"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "ef30b8bfb906eb3f7e8a1afed3a1481666710c31",
-      "externalIds": {
-        "ArXiv": "2605.22247",
-        "DBLP": "journals/corr/abs-2605-22247",
-        "DOI": "10.48550/arXiv.2605.22247",
-        "CorpusId": 288651600
-      },
-      "url": "https://www.semanticscholar.org/paper/ef30b8bfb906eb3f7e8a1afed3a1481666710c31",
-      "title": "IdioLink: Retrieving Meaning Beyond Words Across Idiomatic and Literal Expressions",
-      "venue": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+      "title": "Trust Stack for Mental Health AI: A Survey of Calibration across Human, Interaction, and AI Layers",
       "year": 2026,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "volume": "abs/2605.22247",
-        "name": "ArXiv"
-      },
+      "venue": "INLG 2026",
       "authors": [
         {
-          "authorId": "2391600351",
+          "name": "Xin Sun"
+        },
+        {
+          "name": "Yue Su"
+        },
+        {
+          "name": "Yifan Mo"
+        },
+        {
+          "name": "Qingyu Meng"
+        },
+        {
+          "name": "Yuxuan Li"
+        },
+        {
+          "name": "Min Chen"
+        },
+        {
+          "name": "Mengyuan Zhang"
+        },
+        {
+          "name": "Saku Sugawara"
+        },
+        {
+          "name": "Charlotte Gerritsen"
+        },
+        {
+          "name": "Sander L Koole"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "IdioLink: Retrieving Meaning Beyond Words Across Idiomatic and Literal Expressions",
+      "year": 2026,
+      "venue": "EMNLP 2026",
+      "authors": [
+        {
           "name": "Kai Golan Hashiloni"
         },
         {
-          "authorId": "2412109753",
           "name": "Daniel Fadlon"
         },
         {
-          "authorId": "2438606016",
           "name": "Lior Livyatan"
         },
         {
-          "authorId": "2391600233",
           "name": "Ofri Hefetz"
         },
         {
-          "authorId": "7616787",
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "2291585268",
-          "name": "K. Bar"
+          "name": "Kfir Bar"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "bdb696958887126f4666c0a8271076dda0b33e6e",
-      "externalIds": {
-        "DBLP": "journals/tois/LiuPZLCR25",
-        "DOI": "10.1145/3712588",
-        "CorpusId": 275679829
-      },
-      "url": "https://www.semanticscholar.org/paper/bdb696958887126f4666c0a8271076dda0b33e6e",
-      "title": "Augmentation with Neighboring Information for Conversational Recommendation",
-      "venue": "ACM Trans. Inf. Syst.",
-      "year": 2025,
-      "openAccessPdf": {
-        "url": "https://research.vu.nl/en/publications/ad1ed5dd-3c8b-4751-8a61-1d9b63e3dde7",
-        "status": "GREEN",
-        "license": "other-oa"
-      },
-      "journal": {
-        "volume": "43",
-        "pages": "1 - 49",
-        "name": "ACM Transactions on Information Systems"
-      },
+      "title": "Herculean: An Agentic Benchmark for Financial Intelligence",
+      "year": 2026,
+      "venue": "arXiv preprint arXiv:2605.14355",
       "authors": [
         {
-          "authorId": "113317827",
-          "name": "Yuanxing Liu"
+          "name": "Xueqing Peng"
         },
         {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
+          "name": "Zhuohan Xie"
         },
         {
-          "authorId": "2261356021",
-          "name": "Weinan Zhang"
+          "name": "Yupeng Cao"
         },
         {
-          "authorId": "2150654536",
-          "name": "Ming Li"
+          "name": "Haohang Li"
         },
         {
-          "authorId": "2256319",
-          "name": "W. Che"
+          "name": "Lingfei Qian"
         },
         {
-          "authorId": "121213569",
-          "name": "M. de Rijke"
+          "name": "Yan Wang"
+        },
+        {
+          "name": "Vincent Jim Zhang"
+        },
+        {
+          "name": "Huan He"
+        },
+        {
+          "name": "Xuguang Ai"
+        },
+        {
+          "name": "Linhai Ma"
         }
-      ]
+      ],
+      "pubsource": "arxiv",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "ed437036de1708d69e9ea4a55e27fbddb976276c",
-      "externalIds": {
-        "DBLP": "journals/corr/abs-2510-06307",
-        "ArXiv": "2510.06307",
-        "DOI": "10.48550/arXiv.2510.06307",
-        "CorpusId": 281892021
-      },
-      "url": "https://www.semanticscholar.org/paper/ed437036de1708d69e9ea4a55e27fbddb976276c",
-      "title": "Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks",
-      "venue": "Neural Information Processing Systems",
-      "year": 2025,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "volume": "abs/2510.06307",
-        "name": "ArXiv"
-      },
+      "title": "StoryMI: Steerable Multi-Agent Therapeutic Dialogue Generation",
+      "year": 2026,
+      "venue": "ACL-Findings 2026",
       "authors": [
         {
-          "authorId": "2161719283",
-          "name": "Wen-Tao Deng"
+          "name": "Qingyu Meng"
         },
         {
-          "authorId": "7616787",
+          "name": "Min Chen"
+        },
+        {
+          "name": "Dingming Liu"
+        },
+        {
+          "name": "Yifan Mo"
+        },
+        {
+          "name": "Yue Su"
+        },
+        {
+          "name": "Xin Sun"
+        },
+        {
+          "name": "Koen Hindriks"
+        },
+        {
           "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "153008118",
-          "name": "Zhiwei Xu"
-        },
-        {
-          "authorId": "2260895127",
-          "name": "Zhao-Chun Ren"
-        },
-        {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
-        },
-        {
-          "authorId": "2315980792",
-          "name": "Peng-Jie Ren"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "102f187ee10353e049ca8a29c149f1e3a5509ed2",
-      "externalIds": {
-        "DOI": "10.1039/d4ay00490f",
-        "CorpusId": 269849066,
-        "PubMed": "38842108"
-      },
-      "url": "https://www.semanticscholar.org/paper/102f187ee10353e049ca8a29c149f1e3a5509ed2",
-      "title": "Detection of carbofuran in fruits and vegetables by Raman spectroscopy combined with immunochromatography.",
-      "venue": "Analytical Methods",
-      "year": 2024,
-      "openAccessPdf": {
-        "url": "",
-        "status": "CLOSED",
-        "license": null
-      },
-      "journal": {
-        "name": "Analytical methods : advancing methods and applications"
-      },
+      "title": "SciText2Eq: Assessing LLMs for Explainable Equation Generation for Scientific Creativity",
+      "year": 2026,
+      "venue": "ACL-Findings 2026",
       "authors": [
         {
-          "authorId": "7616787",
+          "name": "Yifan Mo"
+        },
+        {
+          "name": "Xiao Fu"
+        },
+        {
+          "name": "Yue Su"
+        },
+        {
+          "name": "Qingyu Meng"
+        },
+        {
+          "name": "Koen Hindriks"
+        },
+        {
+          "name": "Qingzhi Liu"
+        },
+        {
           "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2301884811",
-          "name": "Yong Jin"
-        },
-        {
-          "authorId": "2301823801",
-          "name": "Chunsheng Ren"
-        },
-        {
-          "authorId": "2144284779",
-          "name": "Yan Chen"
-        },
-        {
-          "authorId": "5279535",
-          "name": "M. Zou"
-        },
-        {
-          "authorId": "50121308",
-          "name": "X. Qi"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "3b583f3354667b1e184030f21fa2dddbd7986efc",
-      "externalIds": {
-        "DBLP": "conf/mm/Zhou0CPC24",
-        "DOI": "10.1145/3664647.3680566",
-        "CorpusId": 273640772
-      },
-      "url": "https://www.semanticscholar.org/paper/3b583f3354667b1e184030f21fa2dddbd7986efc",
-      "title": "Deciphering Perceptual Quality in Colored Point Cloud: Prioritizing Geometry or Texture Distortion?",
-      "venue": "ACM Multimedia",
-      "year": 2024,
-      "openAccessPdf": {
-        "url": "https://doi.org/10.1145/3664647.3680566",
-        "status": "HYBRID",
-        "license": "CCBY"
-      },
-      "journal": {
-        "name": "Proceedings of the 32nd ACM International Conference on Multimedia"
-      },
+      "title": "MedEasy: Designing AI Standardized Patients for Clinical Consultation Training",
+      "year": 2026,
+      "venue": "arXiv preprint arXiv:2606.17512",
       "authors": [
         {
-          "authorId": "2268430350",
-          "name": "Xue-Mei Zhou"
+          "name": "Zhiqi Gao"
         },
         {
-          "authorId": "10399052",
-          "name": "Irene Viola"
+          "name": "Huarui Luo"
         },
         {
-          "authorId": "3086701",
-          "name": "Yun-Lu Chen"
+          "name": "Guo Zhu"
         },
         {
-          "authorId": "7616787",
+          "name": "Bingquan Zhang"
+        },
+        {
+          "name": "Dongyijie Primo Pan"
+        },
+        {
+          "name": "Yizhan Feng"
+        },
+        {
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "2158578518",
-          "name": "Pablo César"
+          "name": "Jie Li"
+        },
+        {
+          "name": "Benyou Wang"
         }
-      ]
+      ],
+      "pubsource": "arxiv",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "5b1e194df4663c3dd9b51421ae65a4c386842df3",
-      "externalIds": {
-        "DBLP": "conf/aaai/ZhangZ0PRRCR25",
-        "ArXiv": "2404.17288",
-        "DOI": "10.48550/arXiv.2404.17288",
-        "CorpusId": 269430346
-      },
-      "url": "https://www.semanticscholar.org/paper/5b1e194df4663c3dd9b51421ae65a4c386842df3",
+      "title": "When Trust Meets Truth: Trust-Truth Separability in LLM-as-Judge",
+      "year": 2026,
+      "venue": "EMNLP 2026",
+      "authors": [
+        {
+          "name": "Xin Sun"
+        },
+        {
+          "name": "Di Wu"
+        },
+        {
+          "name": "Yuchen Guo"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Isao Echizen"
+        },
+        {
+          "name": "Abdallah El Ali"
+        },
+        {
+          "name": "Saku Sugawara"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "SEAL: Reinforcing Global Safety in Mixture-of-Experts through Shared Expert ALignment",
+      "year": 2026,
+      "venue": "CCS 2026",
+      "authors": [
+        {
+          "name": "Qingyu Meng"
+        },
+        {
+          "name": "Yiwei Zha"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Koen Hindriks"
+        },
+        {
+          "name": "Herbert Bos"
+        },
+        {
+          "name": "Min Chen"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Soften Resistance: Adaptive Therapeutic Policy Management for Disengaged Clients in Mental Health Support",
+      "year": 2026,
+      "venue": "Proceedings of the 1st Workshop on Multimodal, Multilingual, and Multicultural Mental Health and Psychotherapy (MultiPsyche)",
+      "authors": [
+        {
+          "name": "Hristina Chalakova"
+        },
+        {
+          "name": "Yifan Mo"
+        },
+        {
+          "name": "Xin Sun"
+        },
+        {
+          "name": "Jiahuan Pei"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
       "title": "ExcluIR: Exclusionary Neural Information Retrieval",
-      "venue": "AAAI Conference on Artificial Intelligence",
-      "year": 2024,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "pages": "13295-13303"
-      },
+      "year": 2025,
+      "venue": "AAAI 2025",
       "authors": [
         {
-          "authorId": "2298859941",
           "name": "Wenhao Zhang"
         },
         {
-          "authorId": "2457752900",
-          "name": "Meng-Qi Zhang"
-        },
-        {
-          "authorId": "2265538185",
-          "name": "Shiguang Wu"
-        },
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2260895127",
-          "name": "Zhao-Chun Ren"
-        },
-        {
-          "authorId": "2265490493",
-          "name": "M. de Rijke"
-        },
-        {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
-        },
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
-        }
-      ]
-    },
-    {
-      "paperId": "5edc5c9ef281534ce0fed98908a40dcb94595837",
-      "externalIds": {
-        "DBLP": "journals/tois/PeiYRR24",
-        "DOI": "10.1145/3676956",
-        "CorpusId": 271739689
-      },
-      "url": "https://www.semanticscholar.org/paper/5edc5c9ef281534ce0fed98908a40dcb94595837",
-      "title": "Mixture-of-Languages Routing for Multilingual Dialogues",
-      "venue": "ACM Trans. Inf. Syst.",
-      "year": 2024,
-      "openAccessPdf": {
-        "url": "https://doi.org/10.1145/3676956",
-        "status": "HYBRID",
-        "license": "CCBY"
-      },
-      "journal": {
-        "volume": "42",
-        "pages": "1 - 33",
-        "name": "ACM Transactions on Information Systems"
-      },
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2146975074",
-          "name": "Guo-Jun Yan"
-        },
-        {
-          "authorId": "121213569",
-          "name": "M. de Rijke"
-        },
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
-        }
-      ]
-    },
-    {
-      "paperId": "68505397a2ec40a241e7b23eb06b26038ae4e0c0",
-      "externalIds": {
-        "DBLP": "journals/corr/abs-2405-13034",
-        "ArXiv": "2405.13034",
-        "DOI": "10.48550/arXiv.2405.13034",
-        "CorpusId": 269982847
-      },
-      "url": "https://www.semanticscholar.org/paper/68505397a2ec40a241e7b23eb06b26038ae4e0c0",
-      "title": "Autonomous Workflow for Multimodal Fine-Grained Training Assistants Towards Mixed Reality",
-      "venue": "Annual Meeting of the Association for Computational Linguistics",
-      "year": 2024,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "pages": "4051-4066"
-      },
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "10399052",
-          "name": "Irene Viola"
-        },
-        {
-          "authorId": "2302783188",
-          "name": "Hao-Chen Huang"
-        },
-        {
-          "authorId": "2302811189",
-          "name": "Junxiao Wang"
-        },
-        {
-          "authorId": "2301141669",
-          "name": "Moonisa Ahsan"
-        },
-        {
-          "authorId": "2302772987",
-          "name": "Fanghua Ye"
-        },
-        {
-          "authorId": "2348584187",
-          "name": "Yi-Ming Jiang"
-        },
-        {
-          "authorId": "2302801299",
-          "name": "Sai Yao"
-        },
-        {
-          "authorId": "2302808496",
-          "name": "Di Wang"
-        },
-        {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
-        },
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
-        },
-        {
-          "authorId": "2249603733",
-          "name": "Pablo César"
-        }
-      ]
-    },
-    {
-      "paperId": "8c307cbf2d081a3a84e30266eb340fc99576526c",
-      "externalIds": {
-        "ArXiv": "2402.17263",
-        "DBLP": "journals/corr/abs-2402-17263",
-        "DOI": "10.48550/arXiv.2402.17263",
-        "CorpusId": 268032715
-      },
-      "url": "https://www.semanticscholar.org/paper/8c307cbf2d081a3a84e30266eb340fc99576526c",
-      "title": "Mini-Ensemble Low-Rank Adapters for Parameter-Efficient Fine-Tuning",
-      "venue": "Annual Meeting of the Association for Computational Linguistics",
-      "year": 2024,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "pages": "3052-3064"
-      },
-      "authors": [
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
-        },
-        {
-          "authorId": "2292904456",
-          "name": "Chen Shi"
-        },
-        {
-          "authorId": "2265538185",
-          "name": "Shiguang Wu"
-        },
-        {
-          "authorId": "48985110",
           "name": "Mengqi Zhang"
         },
         {
-          "authorId": "2260895127",
-          "name": "Zhao-Chun Ren"
+          "name": "Shiguang Wu"
         },
         {
-          "authorId": "2265490493",
-          "name": "M. de Rijke"
-        },
-        {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
-        },
-        {
-          "authorId": "7616787",
           "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Zhaochun Ren"
+        },
+        {
+          "name": "Maarten de Rijke"
+        },
+        {
+          "name": "Zhumin Chen"
+        },
+        {
+          "name": "Pengjie Ren"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "2c0e9075f40f2cdce56a288ae2b6a3212074309d",
-      "externalIds": {
-        "DBLP": "conf/emnlp/DengPKCWLRCR23",
-        "DOI": "10.18653/v1/2023.emnlp-main.864",
-        "CorpusId": 266163898
-      },
-      "url": "https://www.semanticscholar.org/paper/2c0e9075f40f2cdce56a288ae2b6a3212074309d",
-      "title": "Syllogistic Reasoning for Legal Judgment Analysis",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "year": 2023,
-      "openAccessPdf": {
-        "url": "https://aclanthology.org/2023.emnlp-main.864.pdf",
-        "status": "HYBRID",
-        "license": "CCBY"
-      },
-      "journal": {
-        "pages": "13997-14009"
-      },
+      "title": "Rethinking the Alignment of Psychotherapy Dialogue Generation with Motivational Interviewing Strategies",
+      "year": 2025,
+      "venue": "COLING 2025",
       "authors": [
         {
-          "authorId": "2161719283",
-          "name": "Wen-Tao Deng"
+          "name": "Xin Sun"
         },
         {
-          "authorId": "7616787",
+          "name": "Xiao Tang"
+        },
+        {
+          "name": "Abdallah El Ali"
+        },
+        {
+          "name": "Zhuying Li"
+        },
+        {
+          "name": "Xiaoyu Shen"
+        },
+        {
+          "name": "Pengjie Ren"
+        },
+        {
+          "name": "Jan de Wit"
+        },
+        {
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "2367734399",
-          "name": "Ke-Yi Kong"
-        },
-        {
-          "authorId": "2273558933",
-          "name": "Zhe Chen"
-        },
-        {
-          "authorId": "2286243004",
-          "name": "Fu-Ru Wei"
-        },
-        {
-          "authorId": "2273464104",
-          "name": "Yujun Li"
-        },
-        {
-          "authorId": "2260895127",
-          "name": "Zhao-Chun Ren"
-        },
-        {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
-        },
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
+          "name": "Jos A Bosch"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "ae3dd09607d4efa2d8bdd32805617ff11e1bd62c",
-      "externalIds": {
-        "DBLP": "journals/corr/abs-2307-06703",
-        "ArXiv": "2307.06703",
-        "DOI": "10.1162/tacl_a_00599",
-        "CorpusId": 259847792
-      },
-      "url": "https://www.semanticscholar.org/paper/ae3dd09607d4efa2d8bdd32805617ff11e1bd62c",
-      "title": "Intent-calibrated Self-training for Answer Selection in Open-domain Dialogues",
-      "venue": "Transactions of the Association for Computational Linguistics",
-      "year": 2023,
-      "openAccessPdf": {
-        "url": "https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl_a_00599/2161212/tacl_a_00599.pdf",
-        "status": "GOLD",
-        "license": "CCBY"
-      },
-      "journal": {
-        "volume": "11",
-        "pages": "1232-1249",
-        "name": "Transactions of the Association for Computational Linguistics"
-      },
+      "title": "Script-Strategy Aligned Generation: Aligning LLMs with Expert-Crafted Dialogue Scripts and Therapeutic Strategies for Psychotherapy",
+      "year": 2025,
+      "venue": "CSCW 2025",
       "authors": [
         {
-          "authorId": "2161719283",
-          "name": "Wen-Tao Deng"
+          "name": "Xin Sun"
         },
         {
-          "authorId": "7616787",
+          "name": "Jan de Wit"
+        },
+        {
+          "name": "Zhuying Li"
+        },
+        {
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "2780667",
-          "name": "Zhao-Chun Ren"
+          "name": "Abdallah El Ali"
         },
         {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
-        },
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
+          "name": "Jos A Bosch"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "03229d15414f82417d1862f69a835e560611977e",
-      "externalIds": {
-        "DBLP": "conf/sigir/YanPRRXLRC22",
-        "ArXiv": "2109.00430",
-        "DOI": "10.1145/3477495.3531809",
-        "CorpusId": 247188125
-      },
-      "url": "https://www.semanticscholar.org/paper/03229d15414f82417d1862f69a835e560611977e",
-      "title": "ReMeDi: Resources for Multi-domain, Multi-service, Medical Dialogues",
-      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
-      "year": 2021,
-      "openAccessPdf": {
-        "url": "",
-        "status": "CLOSED",
-        "license": null
-      },
-      "journal": {
-        "name": "Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval"
-      },
+      "title": "Augmentation with Neighboring Information for Conversational Recommendation",
+      "year": 2025,
+      "venue": "ACM Transactions on Information Systems (TOIS)",
       "authors": [
         {
-          "authorId": "2146975074",
-          "name": "Guo-Jun Yan"
+          "name": "Yuanxing Liu"
         },
         {
-          "authorId": "7616787",
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "1749477",
-          "name": "P. Ren"
+          "name": "Wei-Nan Zhang"
         },
         {
-          "authorId": "2780667",
-          "name": "Zhao-Chun Ren"
+          "name": "Ming Li"
         },
         {
-          "authorId": "2054666716",
-          "name": "Xin Xin"
+          "name": "Wanxiang Che"
         },
         {
-          "authorId": "2108951842",
-          "name": "Hua-Sheng Liang"
-        },
-        {
-          "authorId": "1696030",
-          "name": "M. de Rijke"
-        },
-        {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
+          "name": "Maarten de Rijke"
         }
-      ]
+      ],
+      "pubsource": "journal",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "3f7fae7ace36c562158c2e9b24f02d824f4a203c",
-      "externalIds": {
-        "DBLP": "journals/corr/abs-2112-13776",
-        "ArXiv": "2112.13776",
-        "DOI": "10.48550/arXiv.2112.13776",
-        "CorpusId": 245501917
-      },
-      "url": "https://www.semanticscholar.org/paper/3f7fae7ace36c562158c2e9b24f02d824f4a203c",
-      "title": "Transformer Uncertainty Estimation with Hierarchical Stochastic Attention",
-      "venue": "AAAI Conference on Artificial Intelligence",
-      "year": 2021,
-      "openAccessPdf": {
-        "url": "http://arxiv.org/pdf/2112.13776",
-        "status": "GREEN",
-        "license": null
-      },
-      "journal": {
-        "volume": "abs/2112.13776",
-        "name": "ArXiv"
-      },
+      "title": "MultiJustice: A Chinese Dataset for Multi-Party, Multi-Charge Legal Prediction",
+      "year": 2025,
+      "venue": "NLPCC 2025",
       "authors": [
         {
-          "authorId": "7616787",
+          "name": "Xiao Wang"
+        },
+        {
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "2119128430",
-          "name": "Cheng Wang"
+          "name": "Diancheng Shui"
         },
         {
-          "authorId": "3081065",
-          "name": "G. Szarvas"
+          "name": "Zhiguang Han"
+        },
+        {
+          "name": "Xin Sun"
+        },
+        {
+          "name": "Dawei Zhu"
+        },
+        {
+          "name": "Xiaoyu Shen"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "5b2002c1d58c10638ad78998d6f0775d0bffba26",
-      "externalIds": {
-        "DBLP": "journals/corr/abs-2109-00430",
-        "DOI": "10.48550/arXiv.2109.00430",
-        "CorpusId": 295413417
-      },
-      "url": "https://www.semanticscholar.org/paper/5b2002c1d58c10638ad78998d6f0775d0bffba26",
-      "title": "M^2-MedDialog: A Dataset and Benchmarks for Multi-domain Multi-service Medical Dialogues",
-      "venue": "arXiv.org",
-      "year": 2021,
-      "openAccessPdf": {
-        "url": "http://arxiv.org/pdf/2109.00430",
-        "status": "GREEN",
-        "license": null
-      },
-      "journal": {
-        "volume": "abs/2109.00430",
-        "name": "ArXiv"
-      },
+      "title": "Talking-to-Build: How LLM-Assisted Interface Shapes Player Performance and Experience in Minecraft",
+      "year": 2025,
+      "venue": "ICMI 2025",
       "authors": [
         {
-          "authorId": "2146975074",
-          "name": "Guo-Jun Yan"
+          "name": "Xin Sun"
         },
         {
-          "authorId": "7616787",
+          "name": "Lei Wang"
+        },
+        {
+          "name": "Yue Li"
+        },
+        {
+          "name": "Jie Li"
+        },
+        {
+          "name": "Massimo Poesio"
+        },
+        {
+          "name": "Julian Frommel"
+        },
+        {
+          "name": "Koen Hinriks"
+        },
+        {
           "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
-        },
-        {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
-        },
-        {
-          "authorId": "2780667",
-          "name": "Zhao-Chun Ren"
-        },
-        {
-          "authorId": "2108951842",
-          "name": "Hua-Sheng Liang"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
     },
     {
-      "paperId": "d25895584b6179735fcb9428092c0b1fadf95ca2",
-      "externalIds": {
-        "ArXiv": "2102.08322",
-        "DBLP": "conf/www/PeiRR21",
-        "MAG": "3131612584",
-        "DOI": "10.1145/3442381.3449843",
-        "CorpusId": 231933995
-      },
-      "url": "https://www.semanticscholar.org/paper/d25895584b6179735fcb9428092c0b1fadf95ca2",
-      "title": "A Cooperative Memory Network for Personalized Task-oriented Dialogue Systems with Incomplete User Profiles",
-      "venue": "The Web Conference",
-      "year": 2021,
-      "openAccessPdf": {
-        "url": "https://doi.org/10.1145/3442381.3449843",
-        "status": "HYBRID",
-        "license": "CCBY"
-      },
-      "journal": {
-        "name": "Proceedings of the Web Conference 2021"
-      },
+      "title": "Conversational Education at Scale: A Multi-LLM Agent Workflow for Procedural Learning and Pedagogic Quality Assessment",
+      "year": 2025,
+      "venue": "EMNLP-Findings 2025",
       "authors": [
         {
-          "authorId": "7616787",
           "name": "Jiahuan Pei"
         },
         {
-          "authorId": "1749477",
-          "name": "P. Ren"
-        },
-        {
-          "authorId": "2265490493",
-          "name": "M. de Rijke"
-        }
-      ]
-    },
-    {
-      "paperId": "1b7942148cba547a56013ccc6e292cdeb008be71",
-      "externalIds": {
-        "DBLP": "journals/corr/abs-1906-06788",
-        "ArXiv": "1906.06788",
-        "MAG": "2951084251",
-        "DOI": "10.48550/arXiv.1906.06788",
-        "CorpusId": 189928132
-      },
-      "url": "https://www.semanticscholar.org/paper/1b7942148cba547a56013ccc6e292cdeb008be71",
-      "title": "SEntNet: Source-aware Recurrent Entity Network for Dialogue Response Selection",
-      "venue": "arXiv.org",
-      "year": 2019,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "volume": "abs/1906.06788",
-        "name": "ArXiv"
-      },
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "146198058",
-          "name": "A. Stienstra"
-        },
-        {
-          "authorId": "1755651",
-          "name": "J. Kiseleva"
-        },
-        {
-          "authorId": "1696030",
-          "name": "M. de Rijke"
-        }
-      ]
-    },
-    {
-      "paperId": "76dc7de6658bdddc80dbfddc72055eb13cb14fb1",
-      "externalIds": {
-        "MAG": "2956474441",
-        "DBLP": "journals/corr/abs-1907-05346",
-        "ArXiv": "1907.05346",
-        "DOI": "10.48550/arXiv.1907.05346",
-        "CorpusId": 195886264
-      },
-      "url": "https://www.semanticscholar.org/paper/76dc7de6658bdddc80dbfddc72055eb13cb14fb1",
-      "title": "A Modular Task-oriented Dialogue System Using a Neural Mixture-of-Experts",
-      "venue": "arXiv.org",
-      "year": 2019,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "volume": "abs/1907.05346",
-        "name": "ArXiv"
-      },
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
-        },
-        {
-          "authorId": "1696030",
-          "name": "M. de Rijke"
-        }
-      ]
-    },
-    {
-      "paperId": "cb73b31614c66937563470226ab90fa66b2cb8cb",
-      "externalIds": {
-        "MAG": "2607297631",
-        "DBLP": "journals/ijcse/MaPHS18",
-        "DOI": "10.1504/IJCSE.2016.10004598",
-        "CorpusId": 52823461
-      },
-      "url": "https://www.semanticscholar.org/paper/cb73b31614c66937563470226ab90fa66b2cb8cb",
-      "title": "Syntactic parsing of clause constituents for statistical machine translation",
-      "venue": "Int. J. Comput. Sci. Eng.",
-      "year": 2018,
-      "openAccessPdf": {
-        "url": "http://www.inderscience.com/info/leaflet.php?filename=IJCSE_leaflet.pdf",
-        "status": "BRONZE",
-        "license": null
-      },
-      "journal": {
-        "volume": "17",
-        "pages": "126-132",
-        "name": "Int. J. Comput. Sci. Eng."
-      },
-      "authors": [
-        {
-          "authorId": "2146392731",
-          "name": "Jianjun Ma"
-        },
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2610330",
-          "name": "De-Gen Huang"
-        },
-        {
-          "authorId": "2598400",
-          "name": "Dingxin Song"
-        }
-      ]
-    },
-    {
-      "paperId": "f4d5cbeefaf1d5b81ebd673754a51890a9ae44a0",
-      "externalIds": {
-        "MAG": "2796055497",
-        "DBLP": "journals/talip/HuangPZHM18",
-        "DOI": "10.1145/3182622",
-        "CorpusId": 44098202
-      },
-      "url": "https://www.semanticscholar.org/paper/f4d5cbeefaf1d5b81ebd673754a51890a9ae44a0",
-      "title": "Incorporating Prior Knowledge into Word Embedding for Chinese Word Similarity Measurement",
-      "venue": "ACM Trans. Asian Low Resour. Lang. Inf. Process.",
-      "year": 2018,
-      "openAccessPdf": {
-        "url": "",
-        "status": "CLOSED",
-        "license": null
-      },
-      "journal": {
-        "volume": "17",
-        "pages": "1 - 21",
-        "name": "ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP)"
-      },
-      "authors": [
-        {
-          "authorId": "2610330",
-          "name": "De-Gen Huang"
-        },
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2143528075",
-          "name": "Cong Zhang"
-        },
-        {
-          "authorId": "2112768206",
-          "name": "Kai-Yu Huang"
-        },
-        {
-          "authorId": "2146392731",
-          "name": "Jianjun Ma"
-        }
-      ]
-    },
-    {
-      "paperId": "55bf5a3b537a5ab4e67d8a87aca40e69b051be68",
-      "externalIds": {
-        "MAG": "2592853526",
-        "CorpusId": 17556096
-      },
-      "url": "https://www.semanticscholar.org/paper/55bf5a3b537a5ab4e67d8a87aca40e69b051be68",
-      "title": "DUT-NLP-CH @ NTCIR-12 Temporalia TID Subtask.",
-      "venue": "",
-      "year": 2016,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": {
-        "volume": "",
-        "name": ""
-      },
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2610330",
-          "name": "De-Gen Huang"
-        },
-        {
-          "authorId": "2146392731",
-          "name": "Jianjun Ma"
-        },
-        {
-          "authorId": "2598400",
-          "name": "Dingxin Song"
-        },
-        {
-          "authorId": "39617454",
-          "name": "Leyuan Sang"
-        }
-      ]
-    },
-    {
-      "paperId": "56177ae5e1e719091a5f154ec453422b87b80760",
-      "externalIds": {
-        "MAG": "2559175785",
-        "DBLP": "conf/nlpcc/PeiZHM16",
-        "DOI": "10.1007/978-3-319-50496-4_69",
-        "CorpusId": 36955875
-      },
-      "url": "https://www.semanticscholar.org/paper/56177ae5e1e719091a5f154ec453422b87b80760",
-      "title": "Combining Word Embedding and Semantic Lexicon for Chinese Word Similarity Computation",
-      "venue": "NLPCC/ICCPOL",
-      "year": 2016,
-      "openAccessPdf": {
-        "url": "",
-        "status": "CLOSED",
-        "license": null
-      },
-      "journal": {
-        "pages": "766-777"
-      },
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2143528075",
-          "name": "Cong Zhang"
-        },
-        {
-          "authorId": "2610330",
-          "name": "De-Gen Huang"
-        },
-        {
-          "authorId": "2146392731",
-          "name": "Jianjun Ma"
-        }
-      ]
-    },
-    {
-      "paperId": "78d9298e199535b4c011ca57617b2e5265e7eca9",
-      "externalIds": {
-        "DBLP": "conf/ntcir/PeiHMSS16",
-        "CorpusId": 195349542
-      },
-      "url": "https://www.semanticscholar.org/paper/78d9298e199535b4c011ca57617b2e5265e7eca9",
-      "title": "DUT-NLP-CH @ NTCIR-12 Temporalia TID Subtask",
-      "venue": "NTCIR Conference on Evaluation of Information Access Technologies",
-      "year": 2016,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": null,
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2610330",
-          "name": "De-Gen Huang"
-        },
-        {
-          "authorId": "2146392731",
-          "name": "Jianjun Ma"
-        },
-        {
-          "authorId": "2598400",
-          "name": "Dingxin Song"
-        },
-        {
-          "authorId": "39617454",
-          "name": "Leyuan Sang"
-        }
-      ]
-    },
-    {
-      "paperId": "8bb805fa4d2b92aaa7c698e098d2e7d422a7c6b5",
-      "externalIds": {
-        "CorpusId": 209423452
-      },
-      "url": "https://www.semanticscholar.org/paper/8bb805fa4d2b92aaa7c698e098d2e7d422a7c6b5",
-      "title": "Identification of English Functional Noun Phrases Using CRFs Combining the Semantic Information",
-      "venue": "",
-      "year": 2016,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": null,
-      "authors": [
-        {
-          "authorId": "2256464514",
-          "name": "Jian-hua Ma"
-        },
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2610330",
-          "name": "De-Gen Huang"
-        }
-      ]
-    },
-    {
-      "paperId": "540e5264f7e6a683924bafd28f84447bc81a3fe0",
-      "externalIds": {
-        "CorpusId": 208158107
-      },
-      "url": "https://www.semanticscholar.org/paper/540e5264f7e6a683924bafd28f84447bc81a3fe0",
-      "title": "UvA-DARE (Digital Academic Repository) Retrospective and Prospective Mixture-of-Generators for Task-oriented Dialogue Response Generation Retrospective and Prospective Mixture-of-Generators for Task-oriented Dialogue Response Generation",
-      "venue": "",
-      "year": null,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": null,
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "1749477",
-          "name": "P. Ren"
-        },
-        {
-          "authorId": "1696402",
-          "name": "Christof Monz"
-        },
-        {
-          "authorId": "1696030",
-          "name": "M. de Rijke"
-        }
-      ]
-    },
-    {
-      "paperId": "76637b490256d42db3998cfc7c9361670b4f1bb6",
-      "externalIds": {
-        "CorpusId": 293066035
-      },
-      "url": "https://www.semanticscholar.org/paper/76637b490256d42db3998cfc7c9361670b4f1bb6",
-      "title": "UvA-DARE (Digital Academic Repository) A Cooperative Memory Network for Personalized Task-oriented Dialogue Systems with Incomplete User Profiles",
-      "venue": "",
-      "year": null,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": null,
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "2315980792",
-          "name": "Peng-Jie Ren"
-        }
-      ]
-    },
-    {
-      "paperId": "b36fcd22a03c1caa0164f5a31811e126fff0bcbe",
-      "externalIds": {
-        "CorpusId": 274890314
-      },
-      "url": "https://www.semanticscholar.org/paper/b36fcd22a03c1caa0164f5a31811e126fff0bcbe",
-      "title": "Autonomous Work  ow for Multimodal Fine-Grained Training Assistants Towards Mixed Reality",
-      "venue": "",
-      "year": null,
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null
-      },
-      "journal": null,
-      "authors": [
-        {
-          "authorId": "7616787",
-          "name": "Jiahuan Pei"
-        },
-        {
-          "authorId": "10399052",
-          "name": "Irene Viola"
-        },
-        {
-          "authorId": "2302783188",
-          "name": "Hao-Chen Huang"
-        },
-        {
-          "authorId": "2302811189",
-          "name": "Junxiao Wang"
-        },
-        {
-          "authorId": "2301141669",
-          "name": "Moonisa Ahsan"
-        },
-        {
-          "authorId": "2302772987",
           "name": "Fanghua Ye"
         },
         {
-          "authorId": "2348584187",
-          "name": "Yi-Ming Jiang"
+          "name": "Xin Sun"
         },
         {
-          "authorId": "2302801299",
-          "name": "Sai Yao"
+          "name": "Wentao Deng"
         },
         {
-          "authorId": "2302808496",
+          "name": "Koen Hindriks"
+        },
+        {
+          "name": "Junxiao Wang"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Trustworthy AI Psychotherapy: Multi-Agent LLM Workflow for Counseling and Explainable Mental Disorder Diagnosis",
+      "year": 2025,
+      "venue": "CIKM 2025",
+      "authors": [
+        {
+          "name": "Mithat Can Ozgun"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Koen Hindriks"
+        },
+        {
+          "name": "Lucia Donatelli"
+        },
+        {
+          "name": "Qingzhi Liu"
+        },
+        {
+          "name": "Junxiao Wang"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks",
+      "year": 2025,
+      "venue": "NeurIPS 2025",
+      "authors": [
+        {
+          "name": "Wentao Deng"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Zhiwei Xu"
+        },
+        {
+          "name": "Zhaochun Ren"
+        },
+        {
+          "name": "Zhumin Chen"
+        },
+        {
+          "name": "Pengjie Ren"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Proceedings of the 18th International Natural Language Generation Conference",
+      "year": 2025,
+      "venue": "Proceedings of the 18th International Natural Language Generation Conference",
+      "authors": [
+        {
+          "name": "Lucie Flek"
+        },
+        {
+          "name": "Shashi Narayan"
+        },
+        {
+          "name": "Jiahuan Pei"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Proceedings of the 18th International Natural Language Generation Conference: System Demonstrations",
+      "year": 2025,
+      "venue": "Proceedings of the 18th International Natural Language Generation Conference: System Demonstrations",
+      "authors": [
+        {
+          "name": "Lucie Flek"
+        },
+        {
+          "name": "Shashi Narayan"
+        },
+        {
+          "name": "Jiahuan Pei"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs: A Bilingual Dataset and Analytical Study",
+      "year": 2024,
+      "venue": "COLING 2024",
+      "authors": [
+        {
+          "name": "Xin Sun"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Jan de Wit"
+        },
+        {
+          "name": "Mohammad Aliannejadi"
+        },
+        {
+          "name": "Emiel Krahmer"
+        },
+        {
+          "name": "Jos T.P. Dobber"
+        },
+        {
+          "name": "Jos A. Bosch"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Autonomous Workflow for Multimodal Fine-Grained Training Assistants Towards Mixed Reality",
+      "year": 2024,
+      "venue": "ACL-Findings 2024",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Irene Viola"
+        },
+        {
+          "name": "Haochen Huang"
+        },
+        {
+          "name": "Junxiao Wang"
+        },
+        {
+          "name": "Moonisa Ahsan"
+        },
+        {
+          "name": "Fanghua Ye"
+        },
+        {
+          "name": "Yiming Jiang"
+        },
+        {
+          "name": "Yao Sai"
+        },
+        {
           "name": "Di Wang"
         },
         {
-          "authorId": "1721165",
-          "name": "Zhu-Min Chen"
-        },
-        {
-          "authorId": "2315980792",
-          "name": "Peng-Jie Ren"
-        },
-        {
-          "authorId": "2249603733",
-          "name": "Pablo César"
-        },
-        {
-          "authorId": "1693392350",
-          "name": "Carola Botto"
-        },
-        {
-          "authorId": "10088699",
-          "name": "Alberto Cannavò"
-        },
-        {
-          "authorId": "133819276",
-          "name": "Daniele Cappuccio"
-        },
-        {
-          "authorId": "1693372848",
-          "name": "Giada Morat"
-        },
-        {
-          "authorId": "2336266295",
-          "name": "A. Nematollahi"
-        },
-        {
-          "authorId": "2336269169",
-          "name": "P. Sarvestani"
-        },
-        {
-          "authorId": "2383601280",
-          "name": "V. Ricci"
-        },
-        {
-          "authorId": "2486422795",
-          "name": "Alessandra de Marchi"
-        },
-        {
-          "authorId": "2104651608",
-          "name": "Saturnino"
-        },
-        {
-          "authorId": "1918984784",
-          "name": "I. Butaslac"
-        },
-        {
-          "authorId": "1981023",
-          "name": "Yuichiro Fujimoto"
-        },
-        {
-          "authorId": "3390656",
-          "name": "Taishi Sawabe"
-        },
-        {
-          "authorId": "1796418",
-          "name": "Masayuki Kanbara"
-        },
-        {
-          "authorId": "2262728792",
-          "name": "H. Kato"
-        },
-        {
-          "authorId": "2103688696",
-          "name": "Systematic"
-        },
-        {
-          "authorId": "2310444068",
-          "name": "Jun Chen"
-        },
-        {
-          "authorId": "1388731230",
-          "name": "Deyao Zhu"
-        },
-        {
-          "authorId": "2151708219",
-          "name": "Xiaoqian Shen"
-        },
-        {
-          "authorId": "2315793363",
-          "name": "Xiang Li"
-        },
-        {
-          "authorId": "2258786725",
-          "name": "Ze-Chun Liu"
-        },
-        {
-          "authorId": "2325206338",
-          "name": "Peng-Chuan Zhang"
-        },
-        {
-          "authorId": "2065915235",
-          "name": "Raghuraman Krishnamoorthi"
-        },
-        {
-          "authorId": "2241356548",
-          "name": "Vikas Chandra"
-        },
-        {
-          "authorId": "2259018056",
-          "name": "Yun-Yang Xiong"
-        },
-        {
-          "authorId": "1712479",
-          "name": "M. Elhoseiny"
-        },
-        {
-          "authorId": "2536637311",
-          "name": "Minigpt-v"
+          "name": "Zhumin Chen"
         }
-      ]
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Towards Fine-Grained Citation Evaluation in Generated Text: A Comparative Analysis of Faithfulness Metrics",
+      "year": 2024,
+      "venue": "INLG 2024",
+      "authors": [
+        {
+          "name": "Weijia Zhang"
+        },
+        {
+          "name": "Mohammad Aliannejadi"
+        },
+        {
+          "name": "Yifei Yuan"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Jia-Hong Huang"
+        },
+        {
+          "name": "Evangelos Kanoulas"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Deciphering Perceptual Quality in Colored Point Cloud: Prioritizing Geometry or Texture Distortion?",
+      "year": 2024,
+      "venue": "ACM Multimedia 2024",
+      "authors": [
+        {
+          "name": "Xuemei Zhou"
+        },
+        {
+          "name": "Irene Viola"
+        },
+        {
+          "name": "Yunlu Chen"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Pablo Cesar"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Mixture-of-languages Routing for Multilingual Dialogues",
+      "year": 2024,
+      "venue": "ACM Transactions on Information Systems (TOIS)",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Guojun Yan"
+        },
+        {
+          "name": "Maarten de Rijke"
+        },
+        {
+          "name": "Pengjie Ren"
+        }
+      ],
+      "pubsource": "journal",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "MELoRA: Mini-Ensemble Low-Rank Adapters for Parameter-Efficient Fine-Tuning",
+      "year": 2024,
+      "venue": "ACL 2024",
+      "authors": [
+        {
+          "name": "Pengjie Ren"
+        },
+        {
+          "name": "Chengshun Shi"
+        },
+        {
+          "name": "Shiguang Wu"
+        },
+        {
+          "name": "Mengqi Zhang"
+        },
+        {
+          "name": "Zhaochun Ren"
+        },
+        {
+          "name": "Maarten Rijke"
+        },
+        {
+          "name": "Zhumin Chen"
+        },
+        {
+          "name": "Jiahuan Pei"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Assessing \"Implicit\" Retrieval Robustness of Large Language Models",
+      "year": 2024,
+      "venue": "EMNLP 2024",
+      "authors": [
+        {
+          "name": "Xiaoyu Shen"
+        },
+        {
+          "name": "Rexhina Blloshmi"
+        },
+        {
+          "name": "Dawei Zhu"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Wei Zhang"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "A Comparative Analysis of Faithfulness Metrics and Humans in Citation Evaluation",
+      "year": 2024,
+      "venue": "LLM4EVAL Workshop at SIGIR 2024",
+      "authors": [
+        {
+          "name": "Weijia Zhang"
+        },
+        {
+          "name": "Mohammad Aliannejadi"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Yifei Yuan"
+        },
+        {
+          "name": "Jia-Hong Huang"
+        },
+        {
+          "name": "Evangelos Kanoulas"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs",
+      "year": 2024,
+      "venue": "",
+      "authors": [
+        {
+          "name": "X Sun"
+        },
+        {
+          "name": "J Pei"
+        },
+        {
+          "name": "J de Wit"
+        },
+        {
+          "name": "M Aliannejadi"
+        },
+        {
+          "name": "E Krahmer"
+        },
+        {
+          "name": "JTP Dobber"
+        },
+        {
+          "name": "JA Bosch"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Pre-trained Language Models in Biomedical Domain: A Systematic Survey",
+      "year": 2023,
+      "venue": "ACM Computing Surveys",
+      "authors": [
+        {
+          "name": "Benyou Wang"
+        },
+        {
+          "name": "Qianqian Xie"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Prayag Tiwari"
+        },
+        {
+          "name": "Zhao Li"
+        },
+        {
+          "name": "Jie Fu"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Intent-calibrated Self-training for Answer Selection in Open-domain Dialogues",
+      "year": 2023,
+      "venue": "Transactions of the Association for Computational Linguistics (TACL)",
+      "authors": [
+        {
+          "name": "Wentao Deng"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Zhaochun Ren"
+        },
+        {
+          "name": "Zhumin Chen"
+        },
+        {
+          "name": "Pengjie Ren"
+        }
+      ],
+      "pubsource": "journal",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Syllogistic Reasoning for Legal Judgment Analysis",
+      "year": 2023,
+      "venue": "EMNLP 2023",
+      "authors": [
+        {
+          "name": "Wentao Deng"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Keyi Kong"
+        },
+        {
+          "name": "Zhe Chen"
+        },
+        {
+          "name": "Furu Wei"
+        },
+        {
+          "name": "Yujun Li"
+        },
+        {
+          "name": "Zhaochun Ren"
+        },
+        {
+          "name": "Zhumin Chen"
+        },
+        {
+          "name": "Pengjie Ren"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Learning Embeddings to Represent Information Retrieval Systems",
+      "year": 2022,
+      "venue": "Amazon Machine Learning Conference (AMLC 2022), Deep Metric Learning and Semantic Similarity Search Workshop",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Danushka Bollegala"
+        },
+        {
+          "name": "Omar Zaidan"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Collaborative Agents for Task-oriented Dialogue Systems (Doctoral Thesis)",
+      "year": 2022,
+      "venue": "",
+      "authors": [
+        {
+          "name": "J Pei"
+        }
+      ],
+      "pubsource": "book",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "A Cooperative Memory Network for Personalized Task-oriented Dialogue Systems with Incomplete User Profiles",
+      "year": 2021,
+      "venue": "TheWebConf 2021 (WWW)",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Pengjie Ren"
+        },
+        {
+          "name": "Maarten de Rijke"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "ReMeDi: Resources for Multi-domain, Multi-service, Medical Dialogues",
+      "year": 2021,
+      "venue": "SIGIR 2022",
+      "authors": [
+        {
+          "name": "Guojun Yan"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Pengjie Ren"
+        },
+        {
+          "name": "Zhumin Chen"
+        },
+        {
+          "name": "Zhaochun Ren"
+        },
+        {
+          "name": "Huasheng Liang"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Transformer Uncertainty Estimation with Hierarchical Stochastic Attention",
+      "year": 2021,
+      "venue": "AAAI 2022",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Cheng Wang"
+        },
+        {
+          "name": "Gy{\\\"o}rgy Szarvas"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Retrospective and Prospective Mixture-of-Generators for Task-oriented Dialogue Response Generation",
+      "year": 2020,
+      "venue": "ECAI 2020",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Pengjie Ren"
+        },
+        {
+          "name": "Christof Monz"
+        },
+        {
+          "name": "Maarten de Rijke"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "SEntNet: Source-aware Recurrent Entity Network for Dialogue Response Selection",
+      "year": 2019,
+      "venue": "IJCAI 2019 Workshop on Search-Oriented Conversational AI",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Arent Stienstra"
+        },
+        {
+          "name": "Julia Kiseleva"
+        },
+        {
+          "name": "Maarten de Rijke"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "A Modular Task-oriented Dialogue System Using a Neural Mixture-of-Experts",
+      "year": 2019,
+      "venue": "SIGIR 2019 Workshop on Conversational Interaction Systems",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Pengjie Ren"
+        },
+        {
+          "name": "Maarten de Rijke"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Incorporating Prior Knowledge into Word Embedding for Chinese Word Similarity Measurement",
+      "year": 2018,
+      "venue": "ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP)",
+      "authors": [
+        {
+          "name": "Degen Huang"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Cong Zhang"
+        },
+        {
+          "name": "Kaiyu Huang"
+        },
+        {
+          "name": "Jianjun Ma"
+        }
+      ],
+      "pubsource": "journal",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Syntactic Parsing of Clause Constituents for Statistical Machine Translation",
+      "year": 2018,
+      "venue": "International Journal of Computational Science and Engineering",
+      "authors": [
+        {
+          "name": "Jianjun Ma"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Degen Huang"
+        },
+        {
+          "name": "Dingxin Song"
+        }
+      ],
+      "pubsource": "journal",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Research on Chinese Word Semantic Similarity Computation (Master's Thesis)",
+      "year": 2017,
+      "venue": "",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        }
+      ],
+      "pubsource": "book",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Semantic Graph Optimization Algorithm Based Chinese Microblog Opinion Summarization",
+      "year": 2017,
+      "venue": "Journal of Shandong University",
+      "authors": [
+        {
+          "name": "Cong Zhang"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Kaiyu Huang"
+        },
+        {
+          "name": "Degen Huang"
+        },
+        {
+          "name": "Zhangzhi Yin"
+        }
+      ],
+      "pubsource": "journal",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Combining Word Embedding and Semantic Lexicon for Chinese Word Similarity Computation",
+      "year": 2016,
+      "venue": "NLPCC 2016",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Cong Zhang"
+        },
+        {
+          "name": "Degen Huang"
+        },
+        {
+          "name": "Jianjun Ma"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "DUT-NLP-CH@ NTCIR-12 Temporalia Temporal Intent Disambiguation Subtask",
+      "year": 2016,
+      "venue": "NTCIR-12",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Degen Huang"
+        },
+        {
+          "name": "Jianjun Ma"
+        },
+        {
+          "name": "Dingxin Song"
+        },
+        {
+          "name": "Leyuan Sang"
+        }
+      ],
+      "pubsource": "proceeding",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Identification of English Functional Noun Phrases by CRFs and the Semantic Information",
+      "year": 2016,
+      "venue": "Journal of Chinese Information Processing",
+      "authors": [
+        {
+          "name": "Jianjun Ma"
+        },
+        {
+          "name": "Jiahuan Pei"
+        },
+        {
+          "name": "Degen Huang"
+        }
+      ],
+      "pubsource": "journal",
+      "externalIds": {},
+      "url": ""
+    },
+    {
+      "title": "Chinese Functional Maximal-length Noun Phrase Recognition (Bachelor's Thesis)",
+      "year": 2014,
+      "venue": "",
+      "authors": [
+        {
+          "name": "Jiahuan Pei"
+        }
+      ],
+      "pubsource": "book",
+      "externalIds": {},
+      "url": ""
     }
   ]
 }

@@ -1,9 +1,10 @@
 name: Update Publications
 
 on:
-  schedule:
-    - cron: "0 2 * * 0"   # every Sunday at 02:00 UTC
-  workflow_dispatch:        # manual trigger from GitHub UI
+  push:
+    paths:
+      - "markdown_generator/citations.csv"   # trigger when you commit a new export
+  workflow_dispatch:                           # or trigger manually from GitHub UI
 
 permissions:
   contents: write
@@ -18,7 +19,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Fetch publications from Semantic Scholar
+      - name: Convert citations.csv → publications.json
         run: python markdown_generator/fetch_publications_json.py
 
       - name: Commit and push if changed
@@ -29,6 +30,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes."
           else
-            git commit -m "chore: auto-update publications [skip ci]"
+            git commit -m "chore: auto-update publications from citations.csv [skip ci]"
             git push
           fi
