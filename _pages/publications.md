@@ -11,134 +11,52 @@ author_profile: true
 <p>You can also find my articles on <u><a href="{{ author.googlescholar }}" target="_blank">my Google Scholar profile</a></u>.</p>
 {% endif %}
 
-<div id="pub-loading" style="color:#888; margin:16px 0;">Loading publications…</div>
-<div id="pub-error" style="color:#c00; display:none;"></div>
+{% assign proceedings = site.publications | where: "pubsource", "proceeding" | sort: "date" | reverse %}
+{% assign journals    = site.publications | where: "pubsource", "journal"    | sort: "date" | reverse %}
+{% assign arxivs      = site.publications | where: "pubsource", "arxiv"      | sort: "date" | reverse %}
+{% assign books       = site.publications | where: "pubsource", "book"       | sort: "date" | reverse %}
 
-<div id="pub-section-proceeding" style="display:none"><h2>Conference Papers</h2><ul class="pub-list" id="pub-proceeding"></ul></div>
-<div id="pub-section-journal"   style="display:none"><h2>Journal Articles</h2><ul class="pub-list" id="pub-journal"></ul></div>
-<div id="pub-section-arxiv"     style="display:none"><h2>arXiv Preprints</h2><ul class="pub-list" id="pub-arxiv"></ul></div>
-<div id="pub-section-book"      style="display:none"><h2>Theses &amp; Books</h2><ul class="pub-list" id="pub-book"></ul></div>
+{% if proceedings.size > 0 %}
+## Conference Papers
+
+<ul class="pub-list">
+{% for pub in proceedings %}
+  <li>{{ pub.citation }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if journals.size > 0 %}
+## Journal Articles
+
+<ul class="pub-list">
+{% for pub in journals %}
+  <li>{{ pub.citation }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if arxivs.size > 0 %}
+## arXiv Preprints
+
+<ul class="pub-list">
+{% for pub in arxivs %}
+  <li>{{ pub.citation }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if books.size > 0 %}
+## Theses & Books
+
+<ul class="pub-list">
+{% for pub in books %}
+  <li>{{ pub.citation }}</li>
+{% endfor %}
+</ul>
+{% endif %}
 
 <style>
 .pub-list { list-style: none; padding: 0; margin: 0 0 8px; }
 .pub-list li { margin-bottom: 8px; line-height: 1.5; }
 </style>
-
-<script>
-(function () {
-  var HIGHLIGHT = "Jiahuan Pei";
-  var CSV_URL   = "/markdown_generator/citations.csv";
-
-  var CONF_KW  = ["proceedings","conference","workshop","symposium","acl","emnlp","naacl",
-                  "coling","eacl","sigir","cikm","www","wsdm","ecir","aaai","ijcai",
-                  "neurips","nips","icml","iclr","cvpr","iccv","eccv","acm","ieee",
-                  "ntcir","nlpcc","findings","chi","uist","cscw","iui","assets"];
-  var JOUR_KW  = ["journal","transactions","letters","review","magazine","frontiers",
-                  "plos","nature","science","wiley","springer","inderscience","elsevier"];
-  var ARXIV_KW = ["arxiv","preprint","corr"];
-  var BOOK_KW  = ["thesis","dissertation"];
-
-  function classify(venue, title) {
-    var t = (venue + " " + title).toLowerCase();
-    for (var k of ARXIV_KW) if (t.includes(k)) return "arxiv";
-    for (var k of BOOK_KW)  if (t.includes(k)) return "book";
-    for (var k of JOUR_KW)  if (t.includes(k)) return "journal";
-    for (var k of CONF_KW)  if (t.includes(k)) return "proceeding";
-    return "proceeding";
-  }
-
-  function parseCSV(text) {
-    // Strip BOM
-    text = text.replace(/^﻿/, "");
-    var rows = [], row = [], cur = "", i = 0, n = text.length;
-    while (i < n) {
-      if (text[i] === '"') {
-        i++;
-        while (i < n) {
-          if (text[i] === '"' && text[i+1] === '"') { cur += '"'; i += 2; }
-          else if (text[i] === '"') { i++; break; }
-          else { cur += text[i++]; }
-        }
-      } else if (text[i] === ',') {
-        row.push(cur); cur = ""; i++;
-      } else if (text[i] === '\r' || text[i] === '\n') {
-        row.push(cur); cur = "";
-        if (row.some(function(c){return c;})) rows.push(row);
-        row = [];
-        if (text[i] === '\r' && text[i+1] === '\n') i++;
-        i++;
-      } else {
-        cur += text[i++];
-      }
-    }
-    if (cur || row.length) { row.push(cur); rows.push(row); }
-    return rows;
-  }
-
-  function parseAuthors(raw) {
-    return raw.split(";").map(function(e) {
-      e = e.trim().replace(/,$/, "");
-      if (!e) return null;
-      if (e.indexOf(",") !== -1) {
-        var p = e.split(","); return (p[1]||"").trim() + " " + p[0].trim();
-      }
-      return e;
-    }).filter(Boolean);
-  }
-
-  function formatAuthors(authors) {
-    return authors.map(function(name) {
-      return name.toLowerCase().includes(HIGHLIGHT.toLowerCase())
-        ? "<b>" + name + "</b>" : name;
-    }).join(", ");
-  }
-
-  fetch(CSV_URL)
-    .then(function(r) { if (!r.ok) throw new Error(r.status); return r.text(); })
-    .then(function(text) {
-      var rows   = parseCSV(text);
-      var header = rows[0];
-      var col    = {};
-      header.forEach(function(h, i){ col[h] = i; });
-
-      var papers = rows.slice(1).filter(function(r){ return r[col["Title"]]; });
-      // Sort newest-first
-      papers.sort(function(a, b){
-        return (parseInt(b[col["Year"]])||0) - (parseInt(a[col["Year"]])||0);
-      });
-
-      var buckets = { proceeding:[], journal:[], arxiv:[], book:[] };
-
-      papers.forEach(function(r) {
-        var title   = r[col["Title"]]       || "";
-        var venue   = r[col["Publication"]] || "";
-        var year    = r[col["Year"]]        || "";
-        var authors = formatAuthors(parseAuthors(r[col["Authors"]] || ""));
-        var kind    = classify(venue, title);
-
-        var v = venue.replace(/^[Ii]n [Pp]roceedings of\s*/,"").replace(/^[Ii]n\s*/,"");
-        var citation;
-        if      (kind==="proceeding") citation = authors+', "'+title+'." In Proceedings of '+v+' ('+year+').';
-        else if (kind==="journal")    citation = authors+', "'+title+'." '+v+', '+year+'.';
-        else if (kind==="arxiv")      citation = authors+', "'+title+'." arXiv, '+year+'.';
-        else                          citation = authors+', "'+title+'." '+v+', '+year+'.';
-
-        if (buckets[kind]) buckets[kind].push("<li>"+citation+"</li>");
-      });
-
-      document.getElementById("pub-loading").style.display = "none";
-      ["proceeding","journal","arxiv","book"].forEach(function(k) {
-        if (buckets[k].length) {
-          document.getElementById("pub-"+k).innerHTML = buckets[k].join("");
-          document.getElementById("pub-section-"+k).style.display = "";
-        }
-      });
-    })
-    .catch(function() {
-      document.getElementById("pub-loading").style.display = "none";
-      var el = document.getElementById("pub-error");
-      el.textContent = "Could not load publications.";
-      el.style.display = "";
-    });
-})();
-</script>
