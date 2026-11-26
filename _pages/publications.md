@@ -12,25 +12,22 @@ author_profile: true
 {% endif %}
 
 <div id="pub-loading" style="color:#888; margin:16px 0;">Loading publications…</div>
-<div id="pub-error"   style="color:#c00; display:none;"></div>
+<div id="pub-error" style="color:#c00; display:none;"></div>
 
-<div id="pub-section-proceeding"><h2>Conference Papers</h2><ul class="pub-list" id="pub-proceeding"></ul></div>
-<div id="pub-section-journal">   <h2>Journal Articles</h2><ul class="pub-list" id="pub-journal"></ul></div>
-<div id="pub-section-arxiv">     <h2>arXiv Preprints</h2><ul class="pub-list" id="pub-arxiv"></ul></div>
-<div id="pub-section-book">      <h2>Theses &amp; Books</h2><ul class="pub-list" id="pub-book"></ul></div>
+<div id="pub-section-proceeding" style="display:none"><h2>Conference Papers</h2><ul class="pub-list" id="pub-proceeding"></ul></div>
+<div id="pub-section-journal"   style="display:none"><h2>Journal Articles</h2><ul class="pub-list" id="pub-journal"></ul></div>
+<div id="pub-section-arxiv"     style="display:none"><h2>arXiv Preprints</h2><ul class="pub-list" id="pub-arxiv"></ul></div>
+<div id="pub-section-book"      style="display:none"><h2>Theses &amp; Books</h2><ul class="pub-list" id="pub-book"></ul></div>
 
 <style>
 .pub-list { list-style: none; padding: 0; margin: 0 0 8px; }
 .pub-list li { margin-bottom: 8px; line-height: 1.5; }
-.pub-list a { color: inherit; }
-#pub-section-proceeding, #pub-section-journal,
-#pub-section-arxiv, #pub-section-book { display: none; }
 </style>
 
 <script>
 (function () {
-  var HIGHLIGHT  = "Jiahuan Pei";
-  var PUB_LINKS  = "/assets/js/pub_links.json";
+  var HIGHLIGHT = "Jiahuan Pei";
+  var CSV_URL   = "/markdown_generator/citations.csv";
 
   var CONF_KW  = ["proceedings","conference","workshop","symposium","acl","emnlp","naacl",
                   "coling","eacl","sigir","cikm","www","wsdm","ecir","aaai","ijcai",
@@ -50,90 +47,86 @@ author_profile: true
     return "proceeding";
   }
 
+  function parseCSV(text) {
+    var rows = [], cur = "", inQ = false, row = [];
+    for (var i = 0; i < text.length; i++) {
+      var c = text[i];
+      if (c === '"') { inQ = !inQ; }
+      else if (c === ',' && !inQ) { row.push(cur.trim()); cur = ""; }
+      else if ((c === '\n' || c === '\r') && !inQ) {
+        if (cur || row.length) { row.push(cur.trim()); rows.push(row); }
+        cur = ""; row = [];
+        if (c === '\r' && text[i+1] === '\n') i++;
+      } else { cur += c; }
+    }
+    if (cur || row.length) { row.push(cur.trim()); rows.push(row); }
+    return rows;
+  }
+
+  function parseAuthors(raw) {
+    return raw.split(";").map(function(e) {
+      e = e.trim().replace(/,$/, "");
+      if (!e) return null;
+      if (e.indexOf(",") !== -1) {
+        var p = e.split(","); return (p[1]||"").trim() + " " + p[0].trim();
+      }
+      return e;
+    }).filter(Boolean);
+  }
+
   function formatAuthors(authors) {
-    return authors.map(function(a) {
-      var name = a.name || "";
+    return authors.map(function(name) {
       return name.toLowerCase().includes(HIGHLIGHT.toLowerCase())
         ? "<b>" + name + "</b>" : name;
     }).join(", ");
   }
 
-  // Build a lookup map from pub_links.json: lowercase title → {code, data, demo}
-  function buildOverrideMap(linkData) {
-    var map = {};
-    (linkData.papers || []).forEach(function(entry) {
-      if (entry.title) map[entry.title.toLowerCase().trim()] = entry;
+  fetch(CSV_URL)
+    .then(function(r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function(text) {
+      var rows   = parseCSV(text);
+      var header = rows[0].map(function(h){ return h.replace(/^﻿/,""); });
+      var col    = {};
+      header.forEach(function(h, i){ col[h] = i; });
+
+      var papers = rows.slice(1).filter(function(r){ return r[col["Title"]]; });
+      // Sort newest-first
+      papers.sort(function(a, b){
+        return (parseInt(b[col["Year"]])||0) - (parseInt(a[col["Year"]])||0);
+      });
+
+      var buckets = { proceeding:[], journal:[], arxiv:[], book:[] };
+
+      papers.forEach(function(r) {
+        var title   = r[col["Title"]]       || "";
+        var venue   = r[col["Publication"]] || "";
+        var year    = r[col["Year"]]        || "";
+        var authors = formatAuthors(parseAuthors(r[col["Authors"]] || ""));
+        var kind    = classify(venue, title);
+
+        var v = venue.replace(/^[Ii]n [Pp]roceedings of\s*/,"").replace(/^[Ii]n\s*/,"");
+        var citation;
+        if      (kind==="proceeding") citation = authors+', "'+title+'." In Proceedings of '+v+' ('+year+').';
+        else if (kind==="journal")    citation = authors+', "'+title+'." '+v+', '+year+'.';
+        else if (kind==="arxiv")      citation = authors+', "'+title+'." arXiv, '+year+'.';
+        else                          citation = authors+', "'+title+'." '+v+', '+year+'.';
+
+        if (buckets[kind]) buckets[kind].push("<li>"+citation+"</li>");
+      });
+
+      document.getElementById("pub-loading").style.display = "none";
+      ["proceeding","journal","arxiv","book"].forEach(function(k) {
+        if (buckets[k].length) {
+          document.getElementById("pub-"+k).innerHTML = buckets[k].join("");
+          document.getElementById("pub-section-"+k).style.display = "";
+        }
+      });
+    })
+    .catch(function() {
+      document.getElementById("pub-loading").style.display = "none";
+      var el = document.getElementById("pub-error");
+      el.textContent = "Could not load publications.";
+      el.style.display = "";
     });
-    return map;
-  }
-
-  function renderPaper(p, overrides, pwcCode) {
-    var title   = p.title || "Untitled";
-    var year    = p.year  || "";
-    var venue   = (p.venue || (p.journal && p.journal.name) || "").trim();
-    var authors = formatAuthors(p.authors || []);
-    var paperUrl = p.url || (p.externalIds && p.externalIds.DOI
-                    ? "https://doi.org/" + p.externalIds.DOI : "");
-    var arxivId  = p.externalIds && p.externalIds.ArXiv ? p.externalIds.ArXiv : "";
-    var arxivUrl = arxivId ? "https://arxiv.org/abs/" + arxivId : "";
-
-    var ov = overrides[title.toLowerCase().trim()] || {};
-    var codeUrl = ov.code || pwcCode || "";
-    var dataUrl = ov.data || "";
-    var demoUrl = ov.demo || "";
-
-    var kind = classify(venue, title);
-    var venueClean = venue.replace(/^[Ii]n [Pp]roceedings of\s*/,"").replace(/^[Ii]n\s*/,"");
-
-    var citation;
-    if      (kind === "proceeding") citation = authors + ', "' + title + '." In Proceedings of ' + venueClean + ' (' + year + ').';
-    else if (kind === "journal")    citation = authors + ', "' + title + '." ' + venueClean + ', ' + year + '.';
-    else if (kind === "arxiv")      citation = authors + ', "' + title + '." arXiv, ' + year + '.';
-    else                            citation = authors + ', "' + title + '." ' + venueClean + ', ' + year + '.';
-
-    var links = "";
-    if (paperUrl) links += ' <a href="' + paperUrl + '" target="_blank">[Paper]</a>';
-    if (arxivUrl) links += ' <a href="' + arxivUrl + '" target="_blank">[arXiv]</a>';
-    if (codeUrl)  links += ' <a href="' + codeUrl  + '" target="_blank">[Code]</a>';
-    if (dataUrl)  links += ' <a href="' + dataUrl  + '" target="_blank">[Data]</a>';
-    if (demoUrl)  links += ' <a href="' + demoUrl  + '" target="_blank">[Demo]</a>';
-
-    return { kind: kind, year: year,
-             html: "<li>" + citation + links + "</li>" };
-  }
-
-  var ssUrl = "/assets/js/publications.json";
-
-  Promise.all([
-    fetch(ssUrl).then(function(r) { return r.json(); }),
-    fetch(PUB_LINKS).then(function(r) { return r.ok ? r.json() : {papers:[]}; }).catch(function(){ return {papers:[]}; })
-  ])
-  .then(function(results) {
-    var ssData    = results[0];
-    var linksData = results[1];
-    var overrides = buildOverrideMap(linksData);
-    var papers = (ssData.papers || []);
-
-    document.getElementById("pub-loading").style.display = "none";
-
-    var buckets = { proceeding: [], journal: [], arxiv: [], book: [] };
-    papers.forEach(function(p) {
-      var r = renderPaper(p, overrides, null);
-      if (buckets[r.kind]) buckets[r.kind].push(r.html);
-    });
-
-    ["proceeding","journal","arxiv","book"].forEach(function(k) {
-      if (buckets[k].length) {
-        document.getElementById("pub-" + k).innerHTML = buckets[k].join("");
-        document.getElementById("pub-section-" + k).style.display = "";
-      }
-    });
-  })
-  .catch(function(e) {
-    document.getElementById("pub-loading").style.display = "none";
-    var el = document.getElementById("pub-error");
-    el.textContent = "Could not load publications. Please visit my Google Scholar profile.";
-    el.style.display = "";
-  });
 })();
 </script>
