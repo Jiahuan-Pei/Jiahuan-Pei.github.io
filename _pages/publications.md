@@ -67,20 +67,6 @@ author_profile: true
     return map;
   }
 
-  // Fetch code repo from Papers with Code by arXiv ID
-  function fetchPwC(arxivId) {
-    var url = "https://paperswithcode.com/api/v1/papers/?arxiv_id=" + arxivId;
-    return fetch(url)
-      .then(function(r) { return r.ok ? r.json() : null; })
-      .then(function(data) {
-        if (!data || !data.results || !data.results.length) return null;
-        var paper = data.results[0];
-        if (!paper.repository_url) return null;
-        return paper.repository_url;
-      })
-      .catch(function() { return null; });
-  }
-
   function renderPaper(p, overrides, pwcCode) {
     var title   = p.title || "Untitled";
     var year    = p.year  || "";
@@ -119,39 +105,28 @@ author_profile: true
   var ssUrl = "/assets/js/publications.json";
 
   Promise.all([
-    fetch(ssUrl).then(function(r) { return r.json(); }).then(function(d){ return {data: d.papers}; }),
+    fetch(ssUrl).then(function(r) { return r.json(); }),
     fetch(PUB_LINKS).then(function(r) { return r.ok ? r.json() : {papers:[]}; }).catch(function(){ return {papers:[]}; })
   ])
   .then(function(results) {
     var ssData    = results[0];
     var linksData = results[1];
     var overrides = buildOverrideMap(linksData);
+    var papers = (ssData.papers || []);
 
     document.getElementById("pub-loading").style.display = "none";
-    var papers = (ssData.data || []).slice().sort(function(a,b){ return (b.year||0)-(a.year||0); });
 
-    // Fetch PwC code for all papers with arXiv IDs, then render
-    var pwcPromises = papers.map(function(p) {
-      var arxivId = p.externalIds && p.externalIds.ArXiv ? p.externalIds.ArXiv : null;
-      var titleKey = (p.title || "").toLowerCase().trim();
-      // Skip PwC fetch if we already have a manual code override
-      if (!arxivId || (overrides[titleKey] && overrides[titleKey].code)) return Promise.resolve(null);
-      return fetchPwC(arxivId);
+    var buckets = { proceeding: [], journal: [], arxiv: [], book: [] };
+    papers.forEach(function(p) {
+      var r = renderPaper(p, overrides, null);
+      if (buckets[r.kind]) buckets[r.kind].push(r.html);
     });
 
-    Promise.all(pwcPromises).then(function(pwcCodes) {
-      var buckets = { proceeding: [], journal: [], arxiv: [], book: [] };
-      papers.forEach(function(p, i) {
-        var r = renderPaper(p, overrides, pwcCodes[i]);
-        if (buckets[r.kind]) buckets[r.kind].push(r.html);
-      });
-
-      ["proceeding","journal","arxiv","book"].forEach(function(k) {
-        if (buckets[k].length) {
-          document.getElementById("pub-" + k).innerHTML = buckets[k].join("");
-          document.getElementById("pub-section-" + k).style.display = "";
-        }
-      });
+    ["proceeding","journal","arxiv","book"].forEach(function(k) {
+      if (buckets[k].length) {
+        document.getElementById("pub-" + k).innerHTML = buckets[k].join("");
+        document.getElementById("pub-section-" + k).style.display = "";
+      }
     });
   })
   .catch(function(e) {
