@@ -48,18 +48,30 @@ author_profile: true
   }
 
   function parseCSV(text) {
-    var rows = [], cur = "", inQ = false, row = [];
-    for (var i = 0; i < text.length; i++) {
-      var c = text[i];
-      if (c === '"') { inQ = !inQ; }
-      else if (c === ',' && !inQ) { row.push(cur.trim()); cur = ""; }
-      else if ((c === '\n' || c === '\r') && !inQ) {
-        if (cur || row.length) { row.push(cur.trim()); rows.push(row); }
-        cur = ""; row = [];
-        if (c === '\r' && text[i+1] === '\n') i++;
-      } else { cur += c; }
+    // Strip BOM
+    text = text.replace(/^﻿/, "");
+    var rows = [], row = [], cur = "", i = 0, n = text.length;
+    while (i < n) {
+      if (text[i] === '"') {
+        i++;
+        while (i < n) {
+          if (text[i] === '"' && text[i+1] === '"') { cur += '"'; i += 2; }
+          else if (text[i] === '"') { i++; break; }
+          else { cur += text[i++]; }
+        }
+      } else if (text[i] === ',') {
+        row.push(cur); cur = ""; i++;
+      } else if (text[i] === '\r' || text[i] === '\n') {
+        row.push(cur); cur = "";
+        if (row.some(function(c){return c;})) rows.push(row);
+        row = [];
+        if (text[i] === '\r' && text[i+1] === '\n') i++;
+        i++;
+      } else {
+        cur += text[i++];
+      }
     }
-    if (cur || row.length) { row.push(cur.trim()); rows.push(row); }
+    if (cur || row.length) { row.push(cur); rows.push(row); }
     return rows;
   }
 
@@ -85,7 +97,7 @@ author_profile: true
     .then(function(r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function(text) {
       var rows   = parseCSV(text);
-      var header = rows[0].map(function(h){ return h.replace(/^﻿/,""); });
+      var header = rows[0];
       var col    = {};
       header.forEach(function(h, i){ col[h] = i; });
 
