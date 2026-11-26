@@ -1,7 +1,7 @@
 ﻿Authors,Title,Publication,Volume,Number,Pages,Year,Publisher
 "Pei, Jiahuan; Zhang, Cong; Huang, Degen; Ma, Jianjun; ",Combining Word Embedding and Semantic Lexicon for Chinese Word Similarity Computation,NLPCC 2016,,,,2016,"Springer, Cham"
 "Pei, Jiahuan; Huang, Degen; Ma, Jianjun; Song, Dingxin; Sang, Leyuan; ",DUT-NLP-CH@ NTCIR-12 Temporalia Temporal Intent Disambiguation Subtask,NTCIR-12,,,,2016,
-"Huang, Degen; Pei, Jiahuan; Zhang, Cong; Huang, Kaiyu; Ma, Jianjun; ",Incorporating Prior Knowledge into Word Embedding for Chinese Word Similarity Measurement,ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP),17,3,1-21,2018,ACM
+"Huang, Degen; Pei, Jiahuan; Zhang, Cong; Huang, Kaiyu; Ma, Jianjun; ",Incorporating Prior Knowledge into Word Embedding for Chinese Word Similarity Measurement,ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP),17,3,21-Jan,2018,ACM
 "Ma, Jianjun; Pei, Jiahuan; Huang, Degen; Song, Dingxin; ",Syntactic Parsing of Clause Constituents for Statistical Machine Translation,International Journal of Computational Science and Engineering,,1,126-132,2018,Inderscience Publishers (IEL)
 "Pei, Jiahuan; Stienstra, Arent; Kiseleva, Julia; de Rijke, Maarten; ",SEntNet: Source-aware Recurrent Entity Network for Dialogue Response Selection,IJCAI 2019 Workshop on Search-Oriented Conversational AI,,,,2019,
 "Pei, Jiahuan; Ren, Pengjie; de Rijke, Maarten; ",A Modular Task-oriented Dialogue System Using a Neural Mixture-of-Experts,SIGIR 2019 Workshop on Conversational Interaction Systems,,,,2019,
@@ -14,7 +14,7 @@
 "Wang, Benyou; Xie, Qianqian; Pei, Jiahuan; Tiwari, Prayag; Li, Zhao; Fu, Jie; ",Pre-trained Language Models in Biomedical Domain: A Systematic Survey,ACM Computing Surveys,,,,2023,
 "Pei, Jiahuan; Wang, Cheng; Szarvas, Gyorgy; ",Transformer Uncertainty Estimation with Hierarchical Stochastic Attention,AAAI 2022,,,,2021,We release our source code at https://github.com/amzn/sto-transformer
 "Zhang, Cong; Pei, Jiahuan; Huang, Kaiyu; Huang, Degen; Yin, Zhangzhi; ",Semantic Graph Optimization Algorithm Based Chinese Microblog Opinion Summarization,Journal of Shandong University,52,7,59-65,2017,
-"Pei, Jiahuan; Bollegala, Danushka; Zaidan, Omar; ",Learning Embeddings to Represent Information Retrieval Systems,"Amazon Machine Learning Conference (AMLC 2022), Deep Metric Learning and Semantic Similarity Search Workshop",,,1-8,2022,
+"Pei, Jiahuan; Bollegala, Danushka; Zaidan, Omar; ",Learning Embeddings to Represent Information Retrieval Systems,"Amazon Machine Learning Conference (AMLC 2022), Deep Metric Learning and Semantic Similarity Search Workshop",,,8-Jan,2022,
 "Pei, Jiahuan; ",Collaborative Agents for Task-oriented Dialogue Systems (Doctoral Thesis),,,,,2022,University of Amsterdam
 "Deng, Wentao; Pei, Jiahuan; Ren, Zhaochun; Chen, Zhumin; Ren, Pengjie; ",Intent-calibrated Self-training for Answer Selection in Open-domain Dialogues,Transactions of the Association for Computational Linguistics (TACL),,,,2023,
 "Sun, Xin; Pei, Jiahuan; de Wit, Jan; Aliannejadi, Mohammad; Krahmer, Emiel; Dobber, Jos T.P.; Bosch, Jos A.; ",Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs: A Bilingual Dataset and Analytical Study,COLING 2024,,,,2024,
@@ -45,9 +45,8 @@
 "Hashiloni, Kai Golan; Fadlon, Daniel; Livyatan, Lior; Hefetz, Ofri; Pei, Jiahuan; Bar, Kfir; ",IdioLink: Retrieving Meaning Beyond Words Across Idiomatic and Literal Expressions,EMNLP 2026,,,,2026,
 "Peng, Xueqing; Xie, Zhuohan; Cao, Yupeng; Li, Haohang; Qian, Lingfei; Wang, Yan; Zhang, Vincent Jim; He, Huan; Ai, Xuguang; Ma, Linhai; ",Herculean: An Agentic Benchmark for Financial Intelligence,arXiv preprint arXiv:2605.14355,,,,2026,
 "Meng, Qingyu; Chen, Min; Liu, Dingming; Mo, Yifan; Su, Yue; Sun, Xin; Hindriks, Koen; Pei, Jiahuan; ",StoryMI: Steerable Multi-Agent Therapeutic Dialogue Generation,ACL-Findings 2026,,,,2026,
-"Sun, Xin; Pei, Jiahuan; de Wit, Jan; Aliannejadi, Mohammad; Krahmer, Emiel; Dobber, Jos TP; Bosch, Jos A; ",Eliciting Motivational Interviewing Skill Codes in Psychotherapy with LLMs,,,,,2024,
 "Mo, Yifan; Fu, Xiao; Su, Yue; Meng, Qingyu; Hindriks, Koen; Liu, Qingzhi; Pei, Jiahuan; ",SciText2Eq: Assessing LLMs for Explainable Equation Generation for Scientific Creativity,ACL-Findings 2026,,,,2026,
 "Gao, Zhiqi; Luo, Huarui; Zhu, Guo; Zhang, Bingquan; Pan, Dongyijie Primo; Feng, Yizhan; Pei, Jiahuan; Li, Jie; Wang, Benyou; ",MedEasy: Designing AI Standardized Patients for Clinical Consultation Training,arXiv preprint arXiv:2606.17512,,,,2026,
 "Sun, Xin; Wu, Di; Guo, Yuchen; Pei, Jiahuan; Echizen, Isao; Ali, Abdallah El; Sugawara, Saku; ",When Trust Meets Truth: Trust-Truth Separability in LLM-as-Judge,EMNLP 2026,,,,2026,
 "Meng, Qingyu; Zha, Yiwei; Pei, Jiahuan; Hindriks, Koen; Bos, Herbert; Chen, Min; ",SEAL: Reinforcing Global Safety in Mixture-of-Experts through Shared Expert ALignment,CCS 2026,,,,2026,
-"Chalakova, Hristina; Mo, Yifan; Sun, Xin; Pei, Jiahuan; ",Soften Resistance: Adaptive Therapeutic Policy Management for Disengaged Clients in Mental Health Support,"Proceedings of the 1st Workshop on Multimodal, Multilingual, and Multicultural Mental Health and Psychotherapy (MultiPsyche)",,,1-14,2026,
+"Chalakova, Hristina; Mo, Yifan; Sun, Xin; Pei, Jiahuan; ",Soften Resistance: Adaptive Therapeutic Policy Management for Disengaged Clients in Mental Health Support,"Proceedings of the 1st Workshop on Multimodal, Multilingual, and Multicultural Mental Health and Psychotherapy (MultiPsyche)",,,14-Jan,2026,
